@@ -1,0 +1,207 @@
+This document  describes the MP file format for storing
+merged prefixes of Petri nets. The file is textual, and 
+contains the following information.
+
+- the total number of mp-conditions, mp-events, places and transitions (one line).
+
+- for each mp-condition (from first to last, separate line for each mp-condition):
+	--  the number of the original place
+	--  the occurrence-depth 
+	--  the initial marking
+
+- for each mp-event (from first to last, separate line for each mp-condition):
+	-- the number of the original transition
+	-- the cut-off status (0 - no, 1 - yes)
+	-- the size of the preset
+	-- the size of the postset
+	-- the list of numbers of mp-conditions in the preset
+	-- the list of numbers of mp-conditions in the postset
+
+- the maximal string length + 1 for place/transition names (on a separate line)
+  (useful for memory allocation in the parser)
+
+- for each place (from first to last, separate line for each place):
+	-- the name of the place
+
+- for each transition (from first to last, separate line for each place):
+	-- the name of the transition
+
+The following C++ code implements an MP parser, and might
+hopefully be useful as a reference:
+
+void readMP(const char* filename){
+	unsigned num_mpcond,num_mpev,num_net_pl,num_net_tr;
+	unsigned orig_node_num,odepth,init_marking;
+	unsigned cutoff,preset_size,postset_size,mpcond_num;
+
+	unsigned len;
+	char* name;
+	size_t name_len;
+
+	unsigned line_no=1, read_fields;
+	int read_chars;
+
+	FILE* f=fopen(filename,"rb");
+	if(!f){
+		Error(cannot_open_file_inp(filename));
+		return;
+	}
+
+	read_fields=fscanf(f," %u%*[ \t]%u%*[ \t]%u%*[ \t]%u%*[ \t]",
+					&num_mpcond,
+					&num_mpev,
+					&num_net_pl,
+					&num_net_tr );
+	if(read_fields==EOF || read_fields<4) goto fail;
+	fscanf(f,"\n%n",&read_chars);
+	if(read_chars<1) goto fail;
+	line_no++;
+
+	this->arr_pl.destroy_all();
+	this->arr_tr.destroy_all();
+
+	for(unsigned i=0;i<num_mpcond;i++){
+		read_fields=fscanf(f," %u%*[ \t]%u%*[ \t]%u%*[ \t]",
+						&orig_node_num,
+						&odepth,
+						&init_marking );
+		if(read_fields==EOF || read_fields<3) goto fail;
+
+		if(orig_node_num<1 || orig_node_num>num_net_pl
+			|| odepth<1
+			|| (init_marking && odepth!=1) ) goto fail;
+
+		fscanf(f,"\n%n",&read_chars);
+		if(read_chars<1) goto fail;
+		line_no++;
+
+		CONDITION* mpcond=new CONDITION(i+1,odepth,(typename ORIGINAL_NET::PLACE*)orig_node_num,init_marking);
+		this->arr_pl.add(mpcond);
+	}
+
+	for(unsigned i=0;i<num_mpev;i++){
+		read_fields=fscanf(f," %u%*[ \t]%u%*[ \t]%u%*[ \t]%u%*[ \t]",
+						&orig_node_num,
+						&cutoff,
+						&preset_size,
+						&postset_size );
+		if(read_fields==EOF || read_fields<4) goto fail;
+
+		if(orig_node_num<1 || orig_node_num>num_net_tr
+			|| cutoff>1
+			|| preset_size<1 ) goto fail;
+
+		EVENT* mpev=new EVENT(i+1,0);
+		mpev->orig_node=(typename ORIGINAL_NET::TRANSITION*)orig_node_num;
+		if(cutoff){
+			mpev->cutoff_corr.assign_unspecified();
+		}
+		this->arr_tr.add(mpev);
+
+		for(unsigned j=0;j<preset_size;j++){
+			read_fields=fscanf(f,"%u%*[ \t]",&mpcond_num);
+			if(read_fields==EOF || read_fields<1) goto fail;
+			if(mpcond_num>=num_mpcond) goto fail;
+			mpev->preset.add(this->arr_pl[mpcond_num]);
+			this->arr_pl[mpcond_num]->postset.add(mpev);
+		}
+		for(unsigned j=0;j<postset_size;j++){
+			read_fields=fscanf(f,"%u%*[ \t]",&mpcond_num);
+			if(read_fields==EOF || read_fields<1) goto fail;
+			if(mpcond_num>=num_mpcond) goto fail;
+			mpev->postset.add(this->arr_pl[mpcond_num]);
+			this->arr_pl[mpcond_num]->preset.add(mpev);
+		}
+
+		fscanf(f,"\n%n",&read_chars);
+		if(read_chars<1) goto fail;
+		line_no++;
+	}
+
+	read_fields=fscanf(f," %u%*[ \t]",&len);
+	if(read_fields==EOF || read_fields<1) goto fail;
+	fscanf(f,"\n%n",&read_chars);
+	if(read_chars<1) goto fail;
+	line_no++;
+
+	name=new char[len+2];
+	if(!this->net){
+		this->net=new ORIGINAL_NET();
+	}
+	this->net->arr_pl.destroy_all();
+	this->net->arr_tr.destroy_all();
+
+	for(unsigned i=0;i<num_net_pl;i++){
+		fgets(name,len+1,f);
+		name_len=strlen(name);
+		// \n is included if encountered
+		if(!name_len || name[name_len-1]!='\n') goto fail;
+		name[name_len-1]='\0';
+		typename ORIGINAL_NET::PLACE* pl=new typename ORIGINAL_NET::PLACE(name,i+1);
+		this->net->arr_pl.add(pl);
+	}
+
+	for(unsigned i=0;i<num_net_tr;i++){
+		fgets(name,len+1,f);
+		name_len=strlen(name);
+		// \n is included if encountered
+		if(!name_len || name[name_len-1]!='\n') goto fail;
+		name[name_len-1]='\0';
+		typename ORIGINAL_NET::TRANSITION* tr=new typename ORIGINAL_NET::TRANSITION(name,i+1);
+		this->net->arr_tr.add(tr);
+	}
+
+	// fix the orig_node field of all mp-conditions and mp-events
+	for(unsigned i=0;i<this->arr_pl.numit;i++){
+		CONDITION* mpcond=this->arr_pl[i];
+		mpcond->orig_node=this->net->arr_pl[(unsigned)mpcond->orig_node-1];
+	}
+	for(unsigned i=0;i<this->arr_tr.numit;i++){
+		EVENT* mpev=this->arr_tr[i];
+		mpev->orig_node=this->net->arr_tr[(unsigned)mpev->orig_node-1];
+	}
+
+	// calculate the initial marking
+	for(unsigned i=0;i<this->arr_pl.numit;i++){
+		CONDITION* mpcond=this->arr_pl[i];
+		typename ORIGINAL_NET::PLACE* pl=mpcond->orig_node;
+		for(unsigned j=0;j<mpcond->init_marking;++j){
+			pl->init_marking.add(new PNToken(PNToken::t_dot));
+		}
+	}
+
+	for(unsigned i=0;i<this->arr_tr.numit;i++){
+		EVENT* mpev=this->arr_tr[i];
+		typename ORIGINAL_NET::TRANSITION* tr=mpev->orig_node;
+		if(tr->preset.numit || tr->postset.numit) continue;
+		for(unsigned j=0;j<mpev->preset.numit;j++){
+			typename ORIGINAL_NET::PLACE* pl=mpev->preset[j]->orig_node;
+			tr->preset.add(pl);
+			pl->postset.add(tr);
+		}
+		for(unsigned j=0;j<mpev->postset.numit;j++){
+			typename ORIGINAL_NET::PLACE* pl=mpev->postset[j]->orig_node;
+			tr->postset.add(pl);
+			pl->preset.add(tr);
+		}
+		
+	}
+	// sort places' presets and postsets
+	for(unsigned i=0;i<this->net->arr_pl.numit;i++){
+		this->net->arr_pl[i]->template sort_preset<cmp_numbers<TRANSITION>>();
+		this->net->arr_pl[i]->template sort_postset<cmp_numbers<TRANSITION>>();
+	}
+	// sort transitions' presets and postsets
+	for(unsigned i=0;i<this->net->arr_tr.numit;i++){
+		this->net->arr_tr[i]->template sort_preset<cmp_numbers<PLACE>>();
+		this->net->arr_tr[i]->template sort_postset<cmp_numbers<PLACE>>();
+	}
+
+	delete[] name;
+	goto exit;
+
+fail:
+	Error(syntax_error(filename,line_no));
+exit:
+	fclose(f);
+}
