@@ -1,0 +1,3 @@
+# Force CRLF on windows dist
+windows/*.txt text eol=crlf
+windows/*.bat text eol=crlf
