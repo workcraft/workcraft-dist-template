@@ -17,18 +17,18 @@ IF NOT DEFINED JAVA_BIN (
     IF NOT DEFINED JAVA_HOME (
         SET JAVA_BIN=javaw.exe
     ) ELSE (
-        IF EXIST "%JAVA_HOME%bin\javaw.exe" (
-            SET "JAVA_BIN=%JAVA_HOME%bin\javaw.exe"
+        IF EXIST "%JAVA_HOME%\bin\javaw.exe" (
+            SET "JAVA_BIN=%JAVA_HOME%\bin\javaw.exe"
         ) ELSE (
-            SET "JAVA_BIN=%JAVA_HOME%javaw.exe"
+            SET "JAVA_BIN=%JAVA_HOME%\javaw.exe"
         )
     )
 )
 
 :: Add tools\GraphvizMinimal\ to the path so tools\Petrify\draw_astg can find dot.exe
-SET "PATH=%PATH%;%WORKCRAFT_HOME%tools\GraphvizMinimal\"
+SET "PATH=%PATH%;%WORKCRAFT_HOME%\tools\GraphvizMinimal\"
 
-SET "CLASSPATH=%WORKCRAFT_HOME%workcraft.jar;%WORKCRAFT_HOME%plugins\*"
+SET "CLASSPATH=%WORKCRAFT_HOME%\workcraft.jar;%WORKCRAFT_HOME%\plugins\*"
 
 "%JAVA_BIN%" org.workcraft.Console %*
 
