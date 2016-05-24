@@ -1,0 +1,156 @@
+# --- COMBINATIONAL GATES
+
+GATE    "inv:combinational"     16  O=!A;
+PIN *   INV 1 999 1 .2 1 .2
+
+
+GATE    "and2:combinational"    32  O=A*B;
+PIN *   NONINV 1 999 1 .2 1 .2
+
+GATE    "and2_1:combinational"  32  O=A*!B;
+PIN *   NONINV 1 999 1 .2 1 .2
+
+GATE    "nand2:combinational"   24  O=!(A*B);
+PIN *   INV 1 999 1 .2 1 .2
+
+GATE    "nand2_1:combinational" 24  O=!(A*!B);
+PIN *   INV 1 999 1 .2 1 .2
+
+
+GATE    "and3:combinational"    40  O=A*B*C;
+PIN *   NONINV 1 999 1 .2 1 .2
+
+GATE    "nand3:combinational"   32  O=!(A*B*C);
+PIN     * INV 1 999 1 .2 1 .2
+
+GATE    "and4:combinational"    48  O=A*B*C*D;
+PIN *   NONINV 1 999 1 .2 1 .2
+
+GATE    "nand4:combinational"   40  O=!(A*B*C*D);
+PIN     * INV 1 999 1 .2 1 .2
+
+
+GATE    "or2:combinational"     32  O=A+B;
+PIN *   NONINV 1 999 1 .2 1 .2
+
+GATE    "or2_1:combinational"   32  O=A+!B;
+PIN *   NONINV 1 999 1 .2 1 .2
+
+GATE    "nor2:combinational"    24  O=!(A+B);
+PIN *   INV 1 999 1 .2 1 .2
+
+GATE    "or3:combinational"     40  O=A+B+C;
+PIN *   NONINV 1 999 1 .2 1 .2
+
+GATE    "nor3:combinational"    32  O=!(A+B+C);
+PIN     * INV 1 999 1 .2 1 .2
+
+GATE    "or4:combinational"     48  O=A+B+C+D;
+PIN *   NONINV 1 999 1 .2 1 .2
+
+GATE    "nor4:combinational"    40  O=!(A+B+C+D);
+PIN     * INV 1 999 1 .2 1 .2
+
+
+GATE    "aoi22:combinational"   40  O=!(A*B+C*D);
+PIN *   INV 1 999 1 .2 1 .2
+
+GATE    "aoi12:combinational"   32  O=!(A+B*C);
+PIN *   INV 1 999 1 .2 1 .2
+
+
+GATE    "oai22:combinational"   40  O=!((A+B)*(C+D));
+PIN *   INV 1 999 1 .2 1 .2
+
+GATE    "oai12:combinational"   32  O=!(A*(B+C));
+PIN *   INV 1 999 1 .2 1 .2
+
+
+GATE    "ao22:combinational"    56  O=A*B+C*D;
+PIN *   NONINV 1 999 1 .2 1 .2
+
+# The following functions are not used. They are binate and
+# there is no guarantee of being hazard-free. Use them at
+# your own risk
+
+#GATE    "xor:combinational"    40  O=!(A*B+!A*!B);
+#PIN *   UNKNOWN 1 999 1 .2 1 .2
+
+#GATE    "xorbar:combinational" 48  O=A*B+!A*!B;
+#PIN *   UNKNOWN 1 999 1 .2 1 .2
+
+#GATE    "mux2:combinational"   48  O=D1*SEL+D2*!SEL;
+#PIN D1  NONINV 1 999 1 .2 1 .2
+#PIN D2  NONINV 1 999 1 .2 1 .2
+#PIN SEL UNKNOWN 1 999 1 .2 1 .2
+
+GATE    "const1:combinational"  8   O=CONST1;
+GATE    "const0:combinational"  8   O=CONST0;
+
+# --- ASYNCH LATCHES
+
+# Pure delay
+LATCH   "delay:asynch"          0   Q=D;
+PIN D   NONINV 1 999 0.00001 0.00001 0.00001 0.00001
+SEQ Q ANY ASYNCH
+
+# Inverter
+LATCH   "delay_inv:asynch"      16   Q=!D;
+PIN D   NONINV 1 999 0.00001 0.00001 0.00001 0.00001
+SEQ Q ANY ASYNCH
+
+# Cross-coupled NAND (SR latch)
+LATCH   "sr_nand:asynch"        40  Q=!S+R*Q_NEXT;
+PIN S   INV 1 999 1 .2 1 .2
+PIN R   NONINV 1 999 1 .2 1 .2
+SEQ Q   Q_NEXT ASYNCH
+
+# Cross-coupled NOR (SR latch)
+LATCH   "sr_nor:asynch"         40  Q=S+!R*Q_NEXT;
+PIN S   NONINV 1 999 1 .2 1 .2
+PIN R   INV 1 999 1 .2 1 .2
+SEQ Q   Q_NEXT ASYNCH
+
+# Cross-coupled NAND (RS latch)
+LATCH   "rs_nand:asynch"        40  Q=!R+S*Q_NEXT;
+PIN S   INV 1 999 1 .2 1 .2
+PIN R   NONINV 1 999 1 .2 1 .2
+SEQ Q   Q_NEXT ASYNCH
+
+# Cross-coupled NOR (RS latch)
+LATCH   "rs_nor:asynch"         40  Q=!R*Q_NEXT+!R*S;
+PIN S   NONINV 1 999 1 .2 1 .2
+PIN R   INV 1 999 1 .2 1 .2
+SEQ Q   Q_NEXT ASYNCH
+
+
+# C-element
+LATCH   "c_element1:asynch"     40  C = !A*B+(!A+B)*C_NEXT;
+PIN A   NONINV 1 999 1 .2 1 .2
+PIN B   NONINV 1 999 1 .2 1 .2
+SEQ C   C_NEXT ASYNCH
+
+# C-element
+LATCH   "c_element0:asynch"     40  C = A*B+(A+B)*C_NEXT;
+PIN A   NONINV 1 999 1 .2 1 .2
+PIN B   NONINV 1 999 1 .2 1 .2
+SEQ C   C_NEXT ASYNCH
+
+# C-element
+LATCH   "c_element2:asynch"     40  C = !A*!B+(!A+!B)*C_NEXT;
+PIN A   NONINV 1 999 1 .2 1 .2
+PIN B   NONINV 1 999 1 .2 1 .2
+SEQ C   C_NEXT ASYNCH
+
+
+# Gated Latch
+LATCH   "gated_latch0:asynch"   40  Q=D*G+Q_NEXT*(!G+D);
+PIN D   NONINV 1 999 1 .2 1 .2
+PIN G   UNKNOWN 1 999 1 .2 1 .2
+SEQ Q   Q_NEXT ASYNCH
+
+# Gated Latch
+LATCH   "gated_latch1:asynch"   40  Q=D*!G+Q_NEXT*G;
+PIN D   NONINV 1 999 1 .2 1 .2
+PIN G   UNKNOWN 1 999 1 .2 1 .2
+SEQ Q   Q_NEXT ASYNCH
