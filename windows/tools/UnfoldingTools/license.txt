@@ -1,7 +1,8 @@
 Unfolding Tools
+http://homepages.cs.ncl.ac.uk/victor.khomenko/tools/UnfoldingTools/
 Author: Victor Khomenko
 Copyright (C) 2000-2016 Newcastle University, UK
-                       
+
 TERMS AND CONDITIONS
 
 This License Agreement applies to the Unfolding Tools
@@ -11,8 +12,8 @@ owned and licensed by Newcastle University, UK, Licensors.
 Licensors grant you, Licensee, a non-exclusive,
 non-transferable license to use the Software without fee.
 Licensee may distribute the Software to third parties
-provided that all the files of the original distribution
-are included without changes.
+in whole or in part provided that the distributed files
+are not modified and this license is included.
 
 The Software must not be included as a part of any
 commercial package or product without a written permission
