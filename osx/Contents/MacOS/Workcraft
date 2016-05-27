@@ -4,7 +4,8 @@
 CURRENT_DIR="$PWD"
 
 # Change to Workcraft home directory and put it into the WORKCRAFT_HOME variable
-cd "$(dirname "$0")"
+cd "$(dirname "$0")"/../Resources
+
 WORKCRAFT_HOME="$PWD"
 
 # Set the JVM executable in JAVA_BIN variable (if not defined yet)
@@ -22,4 +23,6 @@ fi
 
 export CLASSPATH="$WORKCRAFT_HOME/workcraft.jar:$WORKCRAFT_HOME/plugins/*"
 
-"$JAVA_BIN" org.workcraft.Console -dir:"$CURRENT_DIR" "$@"
+"$JAVA_BIN" -Xdock:icon="$WORKCRAFT_HOME"/workcraft.icns \
+            -Xdock:name="Workcraft" \
+            org.workcraft.Console -dir:"$CURRENT_DIR" "$@"
