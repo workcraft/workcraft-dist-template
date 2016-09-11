@@ -1,5 +1,8 @@
 #!/bin/sh -e
 
+# Prepend the PATH with the directories where Graphviz is tipically installed
+export PATH="/usr/local/bin:/opt/local/bin:$PATH"
+
 # Remember the current working directory
 CURRENT_DIR="$PWD"
 
