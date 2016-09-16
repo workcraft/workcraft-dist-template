@@ -30,7 +30,9 @@ SET "PATH=%PATH%;%WORKCRAFT_HOME%\tools\GraphvizMinimal\"
 
 SET "CLASSPATH=%WORKCRAFT_HOME%\workcraft.jar;%WORKCRAFT_HOME%\plugins\*"
 
-"%JAVA_BIN%" org.workcraft.Console %*
+start "Workcraft" "%JAVA_BIN%" org.workcraft.Console %*
+
+timeout 1 /nobreak
 
 :: Rreleases the network drives created by PUSHD restores the current directory
 POPD
