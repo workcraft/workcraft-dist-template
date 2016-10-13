@@ -20,6 +20,6 @@ if [ -z "$JAVA_BIN" ]; then
     fi
 fi
 
-export CLASSPATH="$WORKCRAFT_HOME/workcraft.jar:$WORKCRAFT_HOME/plugins/*"
+export CLASSPATH="$WORKCRAFT_HOME/bin/*"
 
 "$JAVA_BIN" org.workcraft.Console -dir:"$CURRENT_DIR" "$@"

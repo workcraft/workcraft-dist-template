@@ -28,7 +28,7 @@ IF NOT DEFINED JAVA_BIN (
 :: Add tools\GraphvizMinimal\ to the path so tools\Petrify\draw_astg can find dot.exe
 SET "PATH=%PATH%;%WORKCRAFT_HOME%\tools\GraphvizMinimal\"
 
-SET "CLASSPATH=%WORKCRAFT_HOME%\workcraft.jar;%WORKCRAFT_HOME%\plugins\*"
+SET "CLASSPATH=%WORKCRAFT_HOME%\bin\*"
 
 start "Workcraft" "%JAVA_BIN%" org.workcraft.Console %*
 
