@@ -1,64 +1,48 @@
 module Tuura.Concept.STG.Translation where
 
-import Data.Char
 import Data.List.Extra
 import Text.Printf
 
+import Tuura.Plato.Translation
+
 import Tuura.Concept.STG
 
-data Signal = Signal Int deriving Eq
+import qualified Language.Haskell.Interpreter as GHC
+import qualified Language.Haskell.Interpreter.Unsafe as GHC
 
-instance Show Signal where
-    show (Signal i)
-        | i < 26    = [chr (ord 'A' + i)]
-        | otherwise = 'S' : show i
+translateSTG :: (Show a, Ord a) => String -> String -> [a] -> GHC.Interpreter ()
+translateSTG circuitName ctype signs = do
+    circ <- GHC.unsafeInterpret circuitName ctype
+    apply <- GHC.unsafeInterpret "apply" $ "(" ++ ctype ++ ") -> CircuitConcept Signal"
+    let circuit = apply circ
+    GHC.liftIO $ putStr (translate circuit signs)
 
-instance Ord Signal
-    where
-        compare (Signal x) (Signal y) = compare x y
-
-translate :: (Show a, Ord a) => [a] -> CircuitConcept a -> String
-translate signs circuit = do
+translate :: (Show a, Ord a) => CircuitConcept a -> [a] -> String
+translate circuit signs =
     case validate signs circuit of
         Valid -> do
             let initStrs = map (\s -> (show s, (getDefined $ initial circuit s))) signs
-            let arcStrs = concatMap handleArcs (groupSortOn snd (arcs circuit))
-            let inputSigns = filter ((==Input) . interface circuit) signs
-            let outputSigns = filter ((==Output) . interface circuit) signs
-            let internalSigns = filter ((==Internal) . interface circuit) signs
-            genSTG inputSigns outputSigns internalSigns arcStrs initStrs
-        Invalid unused incons undef -> "Error. \n" ++ addErrors unused incons undef
-
-addErrors :: (Eq a, Show a) => [a] -> [a] -> [a] -> String
-addErrors unused incons undef = un ++ ic ++ ud
-  where
-    un = if (unused /= []) then ("The following signals are not declared as input, output or internal: \n" ++ unlines (map show unused) ++ "\n") else ""
-    ic = if (unused /= []) then ("The following signals have inconsistent inital states: \n" ++ unlines (map show incons) ++ "\n") else ""
-    ud = if (undef  /= []) then ("The following signals have undefined initial states: \n" ++ unlines (map show undef) ++ "\n") else ""
-
-data ValidationResult a = Valid | Invalid [a] [a] [a] deriving Eq
-
-validate :: Eq a => [a] -> CircuitConcept a -> ValidationResult a
-validate signs circuit
-    | unused ++ inconsistent ++ undef == [] = Valid
-    | otherwise                             = Invalid unused inconsistent undef
-  where
-    unused       = filter ((==Unused) . interface circuit) signs
-    inconsistent = filter ((==Inconsistent) . initial circuit) signs
-    undef        = filter ((==Undefined) . initial circuit) signs
+                arcStrs = nubOrd (concatMap handleArcs (groupSortOn snd (arcs circuit)))
+                invStrs = map genInvStrs (invariant circuit)
+                inputSigns = filter ((==Input) . interface circuit) signs
+                outputSigns = filter ((==Output) . interface circuit) signs
+                internalSigns = filter ((==Internal) . interface circuit) signs
+            genSTG inputSigns outputSigns internalSigns arcStrs initStrs invStrs
+        Invalid errs ->
+            "Error. \n" ++ addErrors errs
 
 handleArcs :: Show a => [([Transition a], Transition a)] -> [String]
 handleArcs arcLists = addConsistencyTrans effect n ++ concatMap transition arcMap
         where
             effect = snd (head arcLists)
             effectCauses = map fst arcLists
-            transCauses = sequence effectCauses
+            transCauses = cartesianProduct effectCauses
             n = length transCauses
             arcMap = concat (map (\m -> arcPairs m effect) (zip transCauses [0..(n-1)]))
 
-genSTG :: Show a => [a] -> [a] -> [a] -> [String] -> [(String, Bool)] -> String
-genSTG inputSigns outputSigns internalSigns arcStrs initStrs =
-    printf tmpl (unwords ins) (unwords outs) (unwords ints) (unlines allArcs) (unwords marks)
+genSTG :: Show a => [a] -> [a] -> [a] -> [String] -> [(String, Bool)] -> [String] -> String
+genSTG inputSigns outputSigns internalSigns arcStrs initStrs invStrs =
+    printf tmpl (unwords ins) (unwords outs) (unwords ints) (unlines allArcs) (unwords marks) (unlines invStrs)
     where
         allSigns = output initStrs
         outs = map show outputSigns
@@ -85,7 +69,7 @@ transition (f, t)
         | otherwise  = readArc (init (show f) ++ "0") t
 
 tmpl :: String
-tmpl = unlines [".model out", ".inputs %s", ".outputs %s", ".internal %s", ".graph", "%s.marking {%s}", ".end"]
+tmpl = unlines [".model out", ".inputs %s", ".outputs %s", ".internal %s", ".graph", "%s.marking {%s}", "%s.end"]
 
 output :: [(String, Bool)] -> [String]
 output = nubOrd . map fst
@@ -101,3 +85,10 @@ initVal s ls = sum (map (\x -> if (fst x == s) then fromEnum (snd x) else 0) ls)
 
 readArc :: String -> String -> [String]
 readArc f t = [f ++ " " ++ t, t ++ " " ++ f]
+
+genInvStrs :: (Ord a, Show a) => Invariant (Transition a) -> String
+genInvStrs (NeverAll es)
+        | es        == [] = []
+        | otherwise = "# invariant = not (" ++  (intercalate " && " (map format es)) ++ ")"
+    where
+        format e = if (newValue e) then show (signal e) else "not " ++ show (signal e)

@@ -10,23 +10,30 @@ import Control.Exception
 import System.Environment
 import System.IO.Error
 
-import Tuura.Concept.STG
-import Tuura.Concept.STG.Simulation
-import Tuura.Concept.STG.Translation hiding (Signal)
+import qualified Tuura.Concept.FSM as FSM hiding (Concept, CircuitConcept)
+import qualified Tuura.Concept.FSM.Simulation as FSM
+import qualified Tuura.Concept.FSM.Translation as FSM
+
+import qualified Tuura.Concept.STG as STG hiding (Concept, CircuitConcept)
+import qualified Tuura.Concept.STG.Simulation as STG
+import qualified Tuura.Concept.STG.Translation as STG
+
+import Tuura.Plato.Options
+
+import Tuura.Plato.Options
+
+import Tuura.Plato.Options
 
 import qualified Language.Haskell.Interpreter as GHC
 import qualified Language.Haskell.Interpreter.Unsafe as GHC
 
 main :: IO ()
 main = do
-    args <- getArgs
-    if length args /= 1
-        then putStrLn "Exactly one path needed"
-        else do
-            r <- GHC.runInterpreter $ doWork (head args)
-            case r of
-               Left err -> putStrLn $ displayException err
-               Right () -> return ()
+    options <- getOptions
+    let input = optInput options
+    let paths = [input] ++ optInclude options
+    r <- GHC.runInterpreter $ doWork (optFSM options) paths
+    either (putStrLn . displayException) return r
 
 {- Our own Signal type. Contains the signal index, from 0 to x-1 if
  - there are x signals. -}
@@ -82,25 +89,23 @@ loadModulesTopLevel paths = do
     mods <- GHC.getLoadedModules
     GHC.setTopLevelModules mods
 
-doWork :: String -> GHC.Interpreter () {- TODO: much of this is duplicated -}
-doWork path = do
+doWork :: Bool -> [String] -> GHC.Interpreter () {- TODO: much of this is duplicated -}
+doWork transFSM paths = do
     {- Load user's module to gather info. -}
-    loadModulesTopLevel [path]
+    loadModulesTopLevel paths
     {- Use the circuit's type to gather how many signals it takes. -}
     t <- GHC.typeOf circuitName
     let numSigns = count "->" t
     {- Load the generated module too. -}
-    liftIO $ writeTmpFile $ signalsApply numSigns
-    loadModulesTopLevel [path, tmpModuleFile]
-    liftIO $ removeIfExists tmpModuleFile
+    GHC.liftIO $ writeTmpFile $ signalsApply numSigns
+    loadModulesTopLevel (paths ++ [tmpModuleFile])
+    GHC.liftIO $ removeIfExists tmpModuleFile
     {- Fetch our signals. -}
     signs <- GHC.interpret "signs" (GHC.as :: [Signal])
     {- Obtain the circuit in terms of any signal (takes them as args). -}
     let ctype = strRepeat numSigns "Signal ->" ++ "CircuitConcept Signal"
-    circuit <- GHC.unsafeInterpret circuitName ctype
-    {- Use our generated code to apply our signals to the circuit above -}
-    apply <- GHC.unsafeInterpret "apply" $ "(" ++ ctype ++ ") -> CircuitConcept Signal"
-    let fullCircuit = apply circuit
-    let translation = liftIO $ putStr $ translate signs fullCircuit
-    (_, _) <- liftIO $ runSimulation translation (State $ const False)
+    if transFSM then do
+        FSM.translateFSM circuitName ctype signs
+    else
+        STG.translateSTG circuitName ctype signs
     return ()

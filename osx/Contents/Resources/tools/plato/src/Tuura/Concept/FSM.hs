@@ -1,4 +1,4 @@
-module Tuura.Concept.STG (
+module Tuura.Concept.FSM (
     module Data.Monoid,
     module Tuura.Concept.Circuit.Basic,
     module Tuura.Concept.Circuit.Derived,
