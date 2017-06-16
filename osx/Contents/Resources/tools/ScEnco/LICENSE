@@ -1,29 +1,40 @@
-BSD License
+SCENCO encoding  system
+Copyright (C) 2014-2015 by Alessandro de Gennaro and Andrey Mokhov,
+Newcastle University, UK
 
-Copyright (c) 2016, Tuura authors
-All rights reserved.
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
+TERMS AND CONDITIONS 
 
-* Redistributions of source code must retain the above copyright notice, this
-  list of conditions and the following disclaimer.
+This License Agreement applies only to the SCENCO encoding system - the
+Software. The Software is owned and
+licensed by the University of Newcastle upon Tyne, UK, Licensors.
+Licensors grant to you, Licensee, a non-exclusive,
+non-transferable license to use the Software without fee. Licensee may
+distribute the Software to third parties provided that
+all the files of the original distribution are included without changes.
 
-* Redistributions in binary form must reproduce the above copyright notice,
-  this list of conditions and the following disclaimer in the documentation
-  and/or other materials provided with the distribution.
+The Software must be used only for research purposes. In particular, 
+it must not be included as a part of any commercial software 
+package or product without written permission of the Licensors. 
 
-* Neither the name of the Tuura project nor the names of its
-  contributors may be used to endorse or promote products derived from
-  this software without specific prior written permission.
+LICENSORS MAKE NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
+NON-INFRINGEMENT. LICENSORS SHALL NOT BE LIABLE FOR ANY DAMAGES
+SUFFERED EITHER BY LICENSEE OR BY THIRD PARTIES AS A RESULT OF
+USE OR INABILITY TO USE, MODIFYING OR DISTRIBUTING THE 
+SOFTWARE, EVEN IF THE LICENSORS HAVE BEEN ADVISED OF THE POSSIBILITY 
+OF SUCH DAMAGES. THE SOFTWARE IS SUPPLIED AS IS, AND 
+LICENSORS SHALL NOT PROVIDE MAINTENANCE OR USER-ASSISTANCE.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+By downloading, using or copying the Software, Licensee
+agrees to abide by the intellectual property laws and the terms
+of this License. Ownership of the software shall remain solely
+in Licensors.
+
+Licensors shall have the right to terminate this license
+immediately by written notice upon Licensee's breach of, or
+non-compliance with, any of its terms. Licensee shall be liable
+for any infringement or damages resulting from Licensee's
+failure to abide by the terms of this License.
