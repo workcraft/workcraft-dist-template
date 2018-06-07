@@ -1,6 +1,6 @@
 # workcraft-dist-template
 
-![Repo Size](https://reposs.herokuapp.com/?path=workcraft/workcraft-dist-template&color=lightgray)
+![Repo size](https://img.shields.io/github/repo-size/workcraft/workcraft-dist-template.svg)
 
 Template for building Windows, Linux and OS X distributions of
 Workcraft. It contains binaries of backend tools, gate libraries
