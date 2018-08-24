@@ -7,8 +7,8 @@ IF ERRORLEVEL 1 (
 )
 
 :: Change to Workcraft home directory and put it into the WORKCRAFT_HOME variable
-:: Note that CD does not support UNC paths (those started with \\). Therefore
-:: PUSHD should be used instead as it creates a network drive in case of UNC path.
+:: (CD does not support UNC paths (those started with \\), and therefore
+:: PUSHD is used instead as it creates a network drive in case of UNC path)
 SET WORKCRAFT_HOME=%~dp0
 PUSHD "%WORKCRAFT_HOME%"
 
@@ -34,7 +34,7 @@ start "Workcraft" "%JAVA_BIN%" org.workcraft.Console %*
 
 timeout 1 /nobreak
 
-:: Rreleases the network drives created by PUSHD restores the current directory
+:: Release the network drives created by PUSHD and restore the current directory
 POPD
 
 ENDLOCAL
