@@ -24,14 +24,6 @@ if ((Get-Command $JAVA_BIN -ErrorAction SilentlyContinue) -eq $null) {
    exit 1
 }
 
-# Check correctness of Java version
-$JAVA_VERSION=(Get-Command $JAVA_BIN | Select-Object -ExpandProperty Version).Major
-if ($JAVA_VERSION -ne 8) {
-   Write-Host "Java 8 is required, but version $JAVA_VERSION is found."
-   Read-Host -Prompt "Press Enter to exit"
-   exit 1
-}
-
 # Add tools\GraphvizMinimal\ to the path so tools\Petrify\draw_astg can find dot.exe
 $env:Path += ";$WORKCRAFT_HOME\tools\GraphvizMinimal\"
 

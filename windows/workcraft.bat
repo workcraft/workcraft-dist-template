@@ -36,14 +36,6 @@ IF ERRORLEVEL 1 (
     EXIT /B 1
 )
 
-:: Check correctness of Java version
-FOR /F tokens^=2-3^ delims^=.-_^" %%j IN ('%JAVA_BIN% -fullversion 2^>^&1') DO SET "JAVA_VERSION=%%j.%%k"
-IF NOT "%JAVA_VERSION%" == "1.8" (
-    ECHO Java 1.8 is required, but version %JAVA_VERSION% is found.
-    PAUSE
-    EXIT /B 1
-)
-
 :: Add tools\GraphvizMinimal\ to the path so tools\Petrify\draw_astg can find dot.exe
 SET "PATH=%PATH%;%WORKCRAFT_HOME%\tools\GraphvizMinimal\"
 
