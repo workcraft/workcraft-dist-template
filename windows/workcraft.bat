@@ -28,14 +28,6 @@ IF NOT DEFINED JAVA_BIN (
     )
 )
 
-:: Check presence of Java binary
-WHERE /Q "%JAVA_BIN%"
-IF ERRORLEVEL 1 (
-    ECHO Cannot find Java binary %JAVA_BIN%.
-    PAUSE
-    EXIT /B 1
-)
-
 :: Add tools\GraphvizMinimal\ to the path so tools\Petrify\draw_astg can find dot.exe
 SET "PATH=%PATH%;%WORKCRAFT_HOME%\tools\GraphvizMinimal\"
 
