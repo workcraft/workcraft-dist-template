@@ -2,7 +2,7 @@
 
 # Note that the buffer size and delay are intentionally low
 GATE    BUF          0  O=I;
-PIN *   NONINV 1 999 0.00001 0.00001 0.00001 0.00001
+PIN *   NONINV 1 999 1 0.2 1 0.2
 
 GATE    INV          8  ON=!I;
 PIN *   INV 1 999 1 0.2 1 0.2
