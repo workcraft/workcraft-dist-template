@@ -1,3 +1,6 @@
+# Remember the current working directory
+$CURRENT_DIR=Get-Location
+
 # Change to Workcraft home directory and put it into the WORKCRAFT_HOME variable
 # (Set-Location does not support UNC paths (those started with \\) and therefore
 # Push-Location is used instead as it creates a network drive in case of UNC path)
@@ -24,12 +27,13 @@ if ((Get-Command $JAVA_BIN -ErrorAction SilentlyContinue) -eq $null) {
    exit 1
 }
 
-# Add tools\GraphvizMinimal\ to the path so tools\Petrify\draw_astg can find dot.exe
+# Add tools\GraphvizMinimal\ to the path so tools\PetrifyTools\petrify.exe can find dot.exe
 $env:Path += ";$WORKCRAFT_HOME\tools\GraphvizMinimal\"
 
 $ARGUMENT_LIST = @()
 $ARGUMENT_LIST += "-classpath $WORKCRAFT_HOME\bin\*"
 $ARGUMENT_LIST += 'org.workcraft.Console'
+$ARGUMENT_LIST += "-dir:$CURRENT_DIR"
 $ARGUMENT_LIST += $args
 Start-Process $JAVA_BIN -ArgumentList $ARGUMENT_LIST -Wait
 

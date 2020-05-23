@@ -9,6 +9,9 @@ IF ERRORLEVEL 1 (
     EXIT /B 1
 )
 
+:: Remember the current working directory
+SET "CURRENT_DIR=%cd%"
+
 :: Change to Workcraft home directory and put it into the WORKCRAFT_HOME variable
 :: Note that CD does not support UNC paths (those started with \\). Therefore
 :: PUSHD should be used instead as it creates a network drive in case of UNC path.
@@ -28,16 +31,16 @@ IF NOT DEFINED JAVA_BIN (
     )
 )
 
-:: Add tools\GraphvizMinimal\ to the path so tools\Petrify\draw_astg can find dot.exe
+:: Add tools\GraphvizMinimal\ to the path so tools\PetrifyTools\petrify.exe can find dot.exe
 SET "PATH=%PATH%;%WORKCRAFT_HOME%\tools\GraphvizMinimal\"
 
 SET "CLASSPATH=%WORKCRAFT_HOME%\bin\*"
 
-START "Workcraft" "%JAVA_BIN%" org.workcraft.Console %*
+START "Workcraft" "%JAVA_BIN%" org.workcraft.Console -dir:"%CURRENT_DIR%" %*
 
 TIMEOUT 1 /NOBREAK
 
-:: Rreleases the network drives created by PUSHD restores the current directory
+:: Releases the network drives created by PUSHD restores the current directory
 POPD
 
 ENDLOCAL
