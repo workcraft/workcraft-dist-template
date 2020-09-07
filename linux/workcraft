@@ -4,7 +4,7 @@
 CURRENT_DIR="$PWD"
 
 # Change to Workcraft home directory and put it into the WORKCRAFT_HOME variable
-cd "$(dirname "$0")"
+cd "$(dirname "$(readlink -f $0)")"
 WORKCRAFT_HOME="$PWD"
 
 # Set the JVM executable in JAVA_BIN variable (if not defined yet)
