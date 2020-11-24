@@ -1,8 +1,8 @@
 This is ltl2tgba tool from Spot platform (https://spot.lrde.epita.fr/).
 
-Static binaries for all supported platforms are built from Spot v2.9
-source code (http://www.lrde.epita.fr/dload/spot/spot-2.9.tar.gz
-or https://workcraft.org/_media/spot/spot-2.9.tar.gz) as follows:
+Static binaries for all supported platforms are built from Spot v2.9.5
+source code (http://www.lrde.epita.fr/dload/spot/spot-2.9.5.tar.gz
+or https://workcraft.org/_media/spot/spot-2.9.5.tar.gz) as follows:
 
 * Linux (using GCC v9.3.0):
   ./configure --disable-shared --disable-python --disable-devel --enable-optimizations
