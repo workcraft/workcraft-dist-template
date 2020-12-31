@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>tutorial:model:instruction_decoder:start - Workcraft</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="tutorial,model,instruction_decoder,start"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.html" title="Workcraft"/>
+<link rel="start" href="start.html"/>
+<link rel="contents" href="start.html" title="Sitemap"/>
+<link rel="manifest" href="../../lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="edit" title="Edit this page" href="start.html"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="../../_export/xhtml/tutorial/model/instruction_decoder/start.xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../_export/raw/tutorial/model/instruction_decoder/start.raw"/>
+<link rel="canonical" href="https://workcraft.org/tutorial/model/instruction_decoder/start"/>
+<link rel="stylesheet" href="../../lib/exe/css.php.t.dokuwiki-light-export.css"/>
+<!--[if gte IE 9]><!-->
+<script >/*<![CDATA[*/var NS='tutorial:model:instruction_decoder';var SIG=" --- \/\/[[support@workcraft.org| ]] 2020\/11\/24 09:02\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"id":"tutorial:model:instruction_decoder:start","namespace":"tutorial:model:instruction_decoder","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script charset="utf-8" src="../../lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<script charset="utf-8" src="../../lib/exe/js.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../../favicon.ico" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki-light-export loggedIn    ">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <h1><a href="../../start.html"  accesskey="" title=""><img src="../../logo.png" width="381" height="64" alt="" /></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+<!--
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="action profile"><a href="start.html" title="Profile" rel="nofollow"><span>Profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 3h20c1.05 0 2 .95 2 2v14c0 1.05-.95 2-2 2H2c-1.05 0-2-.95-2-2V5c0-1.05.95-2 2-2m12 3v1h8V6h-8m0 2v1h8V8h-8m0 2v1h7v-1h-7m-6 3.91C6 13.91 2 15 2 17v1h12v-1c0-2-4-3.09-6-3.09M8 6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a></li><li class="action admin"><a href="start.html" title="Admin" rel="nofollow"><span>Admin</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></a></li><li class="action logout"><a href="start.html" title="Log Out" rel="nofollow"><span>Log Out</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg></a></li>                </ul>
+            </div>
+        -->
+        <!-- SITE TOOLS -->
+<!--
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="../../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="tutorial:model:instruction_decoder:start" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="tutorial:model:instruction_decoder:start" /><input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="start.html" title="Changes [r]" rel="nofollow" accesskey="r">Changes</a></li><li class="action media"><a href="start.html" title="Media" rel="nofollow">Media</a></li><li class="action index"><a href="start.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+-->
+    </div>
+
+    <!-- BREADCRUMBS -->
+<!--
+    -->
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>tutorial:model:instruction_decoder:start</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_fastwiki_marker" style="display:none"></div><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#exercise_1arithmetic_instructions">Exercise 1: Arithmetic Instructions</a></div></li>
+<li class="level1"><div class="li"><a href="#exercise_2branch_instructions">Exercise 2: Branch Instructions</a></div></li>
+<li class="level1"><div class="li"><a href="#exercise_3simplify_the_model">Exercise 3: Simplify the model</a></div></li>
+<li class="level1"><div class="li"><a href="#exercise_4load_and_store_instructions">Exercise 4: Load and Store Instructions</a></div></li>
+<li class="level1"><div class="li"><a href="#solutions">Solutions</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 id="instruction_decoder_and_controller">Instruction decoder and controller</h1>
+<div class="level1">
+
+<p>
+An Instruction Decoder is a circuit that processors implement in order to interpret instructions coming from memory. In synchronous designs, this circuit feeds the appropriate operands into the datapath of the processor, according to the instruction. Additionally, it must communicate with a Controller, whose role is to direct the flow of the execution at every stage of the pipeline. 
+</p>
+
+<p>
+In this exercise we are interested in implementing the instruction decoder and controller for a small asynchronous processor. While these are often different circuits, in this case the simplicity of the processor allows us to incorporate all the functionality into a single module. From now on, in this exercise, we will refer to this combined module simply as Decoder.
+</p>
+
+<p>
+The following figure shows a block diagram of the relevant processor modules. 
+</p>
+
+<p>
+<img src="instruction_decoder-diagram.svg" width="500" height="653" class="svgscaleinsert mediacenter" alt="tutorial:model:instruction_decoder:instruction_decoder-diagram.svg">
+</p>
+
+<p>
+The diagram contains 6 blocks. Your task is to implement the block labelled as <em>DEC</em>. All the input and output signals for <em>DEC</em> are colored in red and blue, respectively. Signals in black do not interact with <em>DEC</em> and are shown only to provide context.
+</p>
+
+<p>
+The different modules operate in the following way:
+</p>
+<ul>
+<li class="level1"><div class="li"> The instruction controller <em>INST</em> loads an instruction from memory and sets it into the instruction bus. When the bus is stabilised, it initiates a decoding request by firing the signal <code><span style='color:red; '>dec</span></code>. After the instruction has been executed, as indicated by the <code><span style='color:blue; '>dec_ack</span></code> signal, this module requests a new address from the <em>IPC</em> module and loads it from memory.</div>
+</li>
+<li class="level1"><div class="li"> The data memory <em>DATA MEM</em> has an address port <code>@</code> obtained directly from the instruction bus. It supports two types of operations, read and write, that are requested with the signals <code><span style='color:blue; '>mr</span></code> and <code><span style='color:blue; '>mw</span></code>, respectively. After a read operation is finished, <em>DATA MEM</em> will set the memory value from the address in <code>@</code> into the read port <code>r</code> and enable <code><span style='color:red; '>mr_ack</span></code>. Write operations are similarly handled with the signals <code><span style='color:blue; '>mw</span></code> and <code><span style='color:red; '>mw_ack</span></code>. In this case, the data to write must be stable before <code><span style='color:blue; '>mw</span></code> is enabled.</div>
+</li>
+<li class="level1"><div class="li"> The register block <em>REG</em> contains a small number of registers that can store values to perform arithmetic operations. It contains two read ports, <code>a</code> and <code>b</code>, and one write port <code>d</code>. Like in the case of <em>DATA MEM</em>, the port addresses are obtained directly from the instruction bus. The signals <code><span style='color:blue; '>rgr</span></code> and <code><span style='color:blue; '>rgw</span></code> are used to request read and write operations, respectively. The signals <code><span style='color:red; '>rgr_ack</span></code> and <code><span style='color:red; '>rgw_ack</span></code> acknowledge these operations in the same way as in the <em>DATA MEM</em> module.</div>
+</li>
+<li class="level1"><div class="li"> The <em>ALU</em> module performs arithmetic operations. It decides what operation to execute according to the <code>op</code> port that comes from the instruction bus. It has three ports for its operands: <code>imm</code>, <code>a</code> and <code>b</code>. The first port allows the <em>ALU</em> to obtain values directly from the instruction bus, while <code>a</code> and <code>b</code> must be read from the register. The signal <code><span style='color:blue; '>alu</span></code> informs the <em>ALU</em> that the operands are set and an operation can take place. The result of this operation is placed in the output port <code>d</code>. After an operation is complete, the signal <code><span style='color:red; '>alu_ack</span></code> is enabled. Furthermore, a signal <code><span style='color:red; '>z</span></code> is enabled if the result of the operation was <em>zero</em>. This value is guaranteed to remain stable until after the following operation is requested.</div>
+</li>
+<li class="level1"><div class="li"> The <em>IPC</em> module stands for Instruction Process Counter, and its role is to keep track of the address for the instruction memory. In general, it keeps a copy of the last address loaded and increases it by one when the instruction controller requests a new address. It is also possible to request the module to add an <em>offset</em> different than one to the next address by enabling the signal <code><span style='color:blue; '>jmp</span></code>. The offset is obtained from the port <code>imp_ofs</code> directly from the instruction bus.</div>
+</li>
+</ul>
+
+<p>
+The processor implements four instructions that must be decoded and controlled by <em>DEC</em>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Arithmetic operation</strong>. Performs an arithmetic operation and stores the result in the register. Corresponds to the code <code><span style='color:red; '>op0</span> = 0</code>, <code><span style='color:red; '>op1</span> = 0</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Branch operation</strong>. If the result of the last arithmetic operation is a <code>0</code>, adds an offset into the next instruction address. Corresponds to the code <code><span style='color:red; '>op0</span> = 0</code>, <code><span style='color:red; '>op1</span> = 1</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Load from memory</strong>. Reads from memory and stores the value into the register. Corresponds to the code <code><span style='color:red; '>op0</span> = 1</code>, <code><span style='color:red; '>op1</span> = 0</code>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Store in memory</strong>. Stores a value from the register into memory. Corresponds to the code <code><span style='color:red; '>op0</span> = 1</code>, <code><span style='color:red; '>op1</span> = 1</code>.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 id="exercise_1arithmetic_instructions">Exercise 1: Arithmetic Instructions</h2>
+<div class="level2">
+
+<p>
+The first instruction you have to implement is the arithmetic instruction. But before that, it is always a good idea with <abbr title="Waveform Transition Graph">WTG</abbr> to first set the basic structure of the controller. This not only makes it easier to approach the problem, but also allows Workcraft to infer signal values when possible. 
+</p>
+
+<p>
+Let us first define the initialization and leave a waveform for every instruction. Remember to rename every waveform with the instruction it intends to solve.
+</p>
+<p><a class="folder" href="#folded_b56de2aaff68d5d97076622826a13dd3_1">Detailed instructions </a></p><div class="folded hidden" id="folded_b56de2aaff68d5d97076622826a13dd3_1"><ul>
+<li class="level1"><div class="li"> Place a state and double click on it to set it as initial.</div>
+</li>
+<li class="level1 node"><div class="li"> Add a new waveform, rename it <em>initialisation</em> and add a connection from the initial state. A signal cannot be <code>unstable</code> in the first initial state. We will assume that, in the initialization of this circuit, the signals <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code> are <code>low</code> before becoming <code>unstable</code>.</div>
+<ul>
+<li class="level2"><div class="li"> Click on the signal tool and hold <kbd class="__keyboard">Shift</kbd> while clicking twice to add two input signals.</div>
+</li>
+<li class="level2"><div class="li"> Rename them <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Double click on them while holding <kbd class="__keyboard">Shift</kbd> and <kbd class="__keyboard">Ctrl</kbd> to add a <code>destabilise</code> transition.</div>
+</li>
+<li class="level2"><div class="li"> Double click on them again to add <code>stabilise</code> transitions.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Add a new state and four waveforms. Add a connection between <em>initialisation</em> and the state, and from the state to the new waveforms. </div>
+</li>
+<li class="level1"><div class="li"> Rename each waveform with one of the instructions: <em>arithmetic</em>, <em>branch</em>, <em>load</em> and <em>store</em>.</div>
+</li>
+<li class="level1 node"><div class="li"> Set a guard for each waveform depending on the operation it implements:</div>
+<ul>
+<li class="level2"><div class="li"> Click on the <em>arithmetic</em> waveform and set, in the <em>guard</em> field on the property editor, the guard <code>!op0, !op1</code>.</div>
+</li>
+<li class="level2"><div class="li"> Click on the <em>branch</em> waveform and set, in the <em>guard</em> field on the property editor, the guard <code>!op0, op1</code>.</div>
+</li>
+<li class="level2"><div class="li"> Click on the <em>load</em> waveform and set, in the <em>guard</em> field on the property editor, the guard <code>op0, !op1</code>.</div>
+</li>
+<li class="level2"><div class="li"> Click on the <em>store</em> waveform and set, in the <em>guard</em> field on the property editor the guard,  <code>op0, op1</code>.</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>
+The <abbr title="Waveform Transition Graph">WTG</abbr> should look similar to the following figure.
+</p>
+
+<p>
+<img src="instruction_decoder-wtg_structure.svg" width="305" height="322" class="svgscaleinsert mediacenter" alt="tutorial:model:instruction_decoder:instruction_decoder-wtg_structure.svg">
+</p>
+
+<p>
+You can now implement the arithmetic instruction controller.
+</p>
+<p><a class="folder" href="#folded_b56de2aaff68d5d97076622826a13dd3_2">Detailed instructions </a></p><div class="folded hidden" id="folded_b56de2aaff68d5d97076622826a13dd3_2"><ul>
+<li class="level1"><div class="li"> Double click on the <em>arithmetic</em> waveform to move to the waveform level. </div>
+</li>
+<li class="level1"><div class="li"> Use the property editor to declare the signals <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code> by clicking on their checkbox.</div>
+</li>
+<li class="level1 node"><div class="li"> This instruction requires interactions with the modules <em>INST</em>, <em>REG</em> and <em>ALU</em>. Add all the signals used to interact with them:</div>
+<ul>
+<li class="level2"><div class="li"> Add the input signals <code><span style='color:red; '>dec</span></code>, <code><span style='color:red; '>rgr_ack</span></code>, <code><span style='color:red; '>rgw_ack</span></code> and <code><span style='color:red; '>alu_ack</span></code>. The signal <code><span style='color:red; '>z</span></code> is not needed for this instruction and so it can be ignored.</div>
+</li>
+<li class="level2"><div class="li"> Add the output signals <code><span style='color:blue; '>dec_ack</span></code>, <code><span style='color:blue; '>rgr</span></code>, <code><span style='color:blue; '>rgw</span></code>, <code><span style='color:blue; '>alu</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Remember that signals can be reorganized by holding <kbd class="__keyboard">Shift</kbd> while dragging them vertically.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The signal <code><span style='color:red; '>dec</span></code> indicates the start of this scenario. First, the operands must be loaded from the register into the <em>ALU</em>:</div>
+<ul>
+<li class="level2"><div class="li"> Add a <code>rise</code> transition for signals <code><span style='color:red; '>dec</span></code> and <code><span style='color:blue; '>rgr</span></code> by double clicking on them.</div>
+</li>
+<li class="level2"><div class="li"> Add a connection from the transition of <code><span style='color:red; '>dec</span></code> to the transition of <code><span style='color:blue; '>rgr</span></code></div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> When the register is done loading the values in its output ports, it will <code>rise</code> the <code><span style='color:red; '>rgr_ack</span></code> signal. We can then request <em>ALU</em> to perform the operation.</div>
+<ul>
+<li class="level2"><div class="li"> Add <code>rise</code> transitions to the signals <code><span style='color:red; '>rgr_ack</span></code> and <code><span style='color:blue; '>alu</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the transition of <code><span style='color:blue; '>rgr</span></code> to the transition of <code><span style='color:red; '>rgr_ack</span></code>, and the transition from <code><span style='color:red; '>rgr_ack</span></code> to the transition of <code><span style='color:blue; '>alu</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The <em>ALU</em> will <code>rise</code> the signal <code><span style='color:red; '>alu_ack</span></code> after the operation is performed. The register can then be requested to write the result. </div>
+<ul>
+<li class="level2"><div class="li"> Add new <code>rise</code> transitions for signals <code><span style='color:red; '>alu_ack</span></code> and <code><span style='color:blue; '>rgw</span></code>. </div>
+</li>
+<li class="level2"><div class="li"> Connect the transition of <code><span style='color:blue; '>alu</span></code> to the transition of <code><span style='color:red; '>alu_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the transition of <code><span style='color:red; '>alu_ack</span></code> to the transition of <code><span style='color:blue; '>rgw</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> After the register has finished storing the result of the operation, the <em>ALU</em> can stop holding the value and drop the request to write in the register. This can be done in parallel.</div>
+<ul>
+<li class="level2"><div class="li"> Connect the transition from <code><span style='color:blue; '>rgw</span></code> to a new transition for signal <code><span style='color:red; '>rgw_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add <code>fall</code> transitions for signals <code><span style='color:blue; '>rgw</span></code> and <code><span style='color:blue; '>alu</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the transition for signal <code><span style='color:red; '>rgw_ack</span></code> to the <code>fall</code> transitions of <code><span style='color:blue; '>rgw</span></code> and <code><span style='color:blue; '>alu</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> When the <em>ALU</em> acknowledges the end of the operation, we can drop the request to read from the register.</div>
+<ul>
+<li class="level2"><div class="li"> Add a <code>fall</code> transition for signals <code><span style='color:red; '>alu_ack</span></code> and <code><span style='color:blue; '>rgr</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>fall</code> transition of signal <code><span style='color:blue; '>alu</span></code> to the <code>fall</code> transition of <code><span style='color:red; '>alu_ack</span></code>, and the <code>fall</code> transition of <code><span style='color:red; '>alu_ack</span></code> to the <code>fall</code> transition of <code><span style='color:blue; '>rgr</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> After the register acknowledges the end of the read and write operations, the decoder informs that the operation has been finished.</div>
+<ul>
+<li class="level2"><div class="li"> Add a <code>fall</code> transition for signals <code><span style='color:red; '>rgr_ack</span></code> and <code><span style='color:red; '>rgw_ack</span></code> and a <code>rise</code> transition for signal <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>fall</code> transition of <code><span style='color:blue; '>rgr</span></code> to the <code>fall</code> transition of <code><span style='color:red; '>rgr_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>fall</code> transition of <code><span style='color:blue; '>rgw</span></code> to the <code>fall</code> transition of <code><span style='color:red; '>rgw_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>fall</code> transition of <code><span style='color:red; '>rgr_ack</span></code> and <code><span style='color:red; '>rgw_ack</span></code> to the <code>rise</code> transition of <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Since the operation is finished, the signals <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code> might change value and so they should be considered <code>unstable</code>. In parallel, <code><span style='color:red; '>dec</span></code> acknowledges the finalization of the operation.</div>
+<ul>
+<li class="level2"><div class="li"> Add <code>destabilise</code> transitions to signals <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>fall</code> transition to signal <code><span style='color:red; '>dec</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>rise</code> transition from signal <code><span style='color:blue; '>dec_ack</span></code> to the transitions you just added.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>fall</code> transition for signal <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>fall</code> transition of signal <code><span style='color:red; '>dec</span></code> to the <code>fall</code> transition of <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> At some point before the end of the waveform, the signals op0 and op1 must become <code>stable</code>.</div>
+<ul>
+<li class="level2"><div class="li"> Double click the signals <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code> to add a <code>stabilise</code> transition.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The instruction is now complete and the decoder waits for the next instruction.</div>
+<ul>
+<li class="level2"><div class="li"> At the waveform level, add a connection from <em>arithmetic</em> to the previous nodal state.</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>
+The implementation for the first signal can be seen in the next figure.
+</p>
+
+<p>
+<img src="instruction_decoder-arithmetic.svg" width="637" height="509" class="svgscaleinsert mediacenter" alt="tutorial:model:instruction_decoder:instruction_decoder-arithmetic.svg">
+</p>
+
+</div>
+
+<h2 id="exercise_2branch_instructions">Exercise 2: Branch Instructions</h2>
+<div class="level2">
+
+<p>
+The next instruction we will implement is the branching instruction. This instruction allows the processor to alter the execution flow depending on logic conditions. Any operation performed in the <em>ALU</em> will set the signal <code><span style='color:red; '>z</span></code> to <code>high</code> if the result was <code>zero</code>. It will set <code>low</code> otherwise. By using this signal we can determine whether to branch or not.
+</p>
+
+<p>
+This instruction will need to use <em>guards</em>. Implement structure of the <abbr title="Waveform Transition Graph">WTG</abbr> for the branch instruction and the common waveform before the <em>guard</em>. Keep in mind that <code><span style='color:red; '>z</span></code> has to be initialized in a similar way to <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>. The value of this signal is only relevant to the branch operation, so it should remain <code>unstable</code> in every waveform and become <code>stable</code> when we need it.
+</p>
+<p><a class="folder" href="#folded_b56de2aaff68d5d97076622826a13dd3_3">Detailed instructions </a></p><div class="folded hidden" id="folded_b56de2aaff68d5d97076622826a13dd3_3"><ul>
+<li class="level1 node"><div class="li"> The signal <code><span style='color:red; '>z</span></code> is <code>unstable</code> in most waveforms, but it first needs to be initialised with a known value.</div>
+<ul>
+<li class="level2"><div class="li"> Double click the <em>initialisation</em> waveform and add a new input signal <code><span style='color:red; '>z</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>destabilise</code> transition by double clicking <code><span style='color:red; '>z</span></code> while holding <kbd class="__keyboard">Shift</kbd> and <kbd class="__keyboard">Ctrl</kbd>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> A waveform with a guard must always declare the signals that are guarded.</div>
+<ul>
+<li class="level2"><div class="li"> Double click the <em>branch</em> waveform and declare the signals <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code> in the property editor.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The signal <code><span style='color:red; '>z</span></code> is necessary to determine whether branching occurs. This signal must become <code>stable</code> before taking a decision.</div>
+<ul>
+<li class="level2"><div class="li"> Use the property editor to declare <code><span style='color:red; '>z</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Double click on <code><span style='color:red; '>z</span></code> to add a <code>stabilise</code> transition.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The model must now decide what to do depending on the value of <code><span style='color:red; '>z</span></code>.</div>
+<ul>
+<li class="level2"><div class="li"> Go to the state level by double clicking outside of the waveform.</div>
+</li>
+<li class="level2"><div class="li"> Place a new state and a connection between <em>branch</em> and the state.</div>
+</li>
+<li class="level2"><div class="li"> Place two new waveforms and rename them <em>no_jmp</em> and <em>jmp</em>.</div>
+</li>
+<li class="level2"><div class="li"> Add a connection from the new state to the new waveforms.</div>
+</li>
+<li class="level2"><div class="li"> Click on <em>no_jmp</em> and, in the property editor, set the <em>Guard</em> field to <code>!z</code>.</div>
+</li>
+<li class="level2"><div class="li"> Click on <em>jmp</em> and, in the property editor, set the <em>Guard</em> field to <code>z</code>.</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>
+The resulting <abbr title="Waveform Transition Graph">WTG</abbr> can be seen in the following figure.
+</p>
+
+<p>
+<img src="instruction_decoder-branch_structure.svg" width="656" height="572" class="svgscaleinsert mediacenter" alt="tutorial:model:instruction_decoder:instruction_decoder-branch_structure.svg">
+</p>
+
+<p>
+The simplest scenario occurs when <code><span style='color:red; '>z</span></code> is <code>low</code>. In this case, there is nothing to do and <em>DEC</em> immediately acknowledges the instruction after the decoding request. Implement the waveform for this scenario.
+</p>
+<p><a class="folder" href="#folded_b56de2aaff68d5d97076622826a13dd3_4">Detailed instructions </a></p><div class="folded hidden" id="folded_b56de2aaff68d5d97076622826a13dd3_4"><ul>
+<li class="level1 node"><div class="li"> Declare the signals that are needed to process this scenario.</div>
+<ul>
+<li class="level2"><div class="li"> In the property editor, use the <em>declare</em> button for the signals <code><span style='color:red; '>z</span></code>, <code><span style='color:red; '>dec</span></code>, <code><span style='color:red; '>op0</span></code>, <code><span style='color:red; '>op1</span></code> and <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The first transition must be the request for the operation. This is immediately acknowledged in this scenario, since there is nothing to be done.</div>
+<ul>
+<li class="level2"><div class="li"> Add a <code>rise</code> transition for signals <code><span style='color:red; '>dec</span></code> and <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a connection from the transition of <code><span style='color:red; '>dec</span></code> to the transition of <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Signals <code><span style='color:red; '>z</span></code>, <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code> are no longer needed and can become <code>unstable</code>. </div>
+<ul>
+<li class="level2"><div class="li"> Add an <code>unstable</code> transition to signals <code><span style='color:red; '>z</span></code>, <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the transition from <code><span style='color:blue; '>dec_ack</span></code> to the transitions of <code><span style='color:red; '>z</span></code>, <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>stabilise</code> transition to signals <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Finally, the request for decoding and the acknowledge can be set to <code>low</code>.</div>
+<ul>
+<li class="level2"><div class="li"> Add a <code>fall</code> transition for signal <code><span style='color:red; '>dec</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>rise</code> transition of <code><span style='color:blue; '>dec_ack</span></code> to the <code>fall</code> transition of <code><span style='color:red; '>dec</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>fall</code> transition for signal <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>fall</code> transition of signal <code><span style='color:red; '>dec</span></code> to the <code>fall</code> transition of signal <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The model returns to its waiting state until a new request arrives.</div>
+<ul>
+<li class="level2"><div class="li"> At the state level, add a connection between <em>no_jmp</em> and the state before the guards.</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>
+You can see the implementation of <em>no_jmp</em> in the following figure.
+</p>
+
+<p>
+<img src="instruction_decoder-branch_no_jmp.svg" width="656" height="662" class="svgscaleinsert mediacenter" alt="tutorial:model:instruction_decoder:instruction_decoder-branch_no_jmp.svg">
+</p>
+
+<p>
+Finally, implement the last waveform for the branch instruction.
+</p>
+<p><a class="folder" href="#folded_b56de2aaff68d5d97076622826a13dd3_5">Detailed instructions </a></p><div class="folded hidden" id="folded_b56de2aaff68d5d97076622826a13dd3_5"><ul>
+<li class="level1 node"><div class="li"> Declare the signals that are needed to process this scenario.</div>
+<ul>
+<li class="level2"><div class="li"> In the property editor, use the <em>declare</em> button for the signals <code><span style='color:red; '>z</span></code>, <code><span style='color:red; '>dec</span></code>, <code><span style='color:red; '>op0</span></code>, <code><span style='color:red; '>op1</span></code> and <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Use the signal tool to declare <code><span style='color:blue; '>jmp</span></code> and <code><span style='color:red; '>ipc_ack</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The first transition must be the request for the operation. This follows with a request to the <em>IPC</em> to branch the address.</div>
+<ul>
+<li class="level2"><div class="li"> Add a <code>rise</code> transition for signals <code><span style='color:red; '>dec</span></code> and <code><span style='color:blue; '>jmp</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a connection from the transition of <code><span style='color:red; '>dec</span></code> to the transition of <code><span style='color:blue; '>jmp</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> When the transaction with <em>IPC</em> is over, <em>DEC</em> signals the end of the instruction.</div>
+<ul>
+<li class="level2"><div class="li"> Add a <code>rise</code> transition to signal <code><span style='color:red; '>ipc_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the transition of <code><span style='color:blue; '>jmp</span></code> to the transition of <code><span style='color:red; '>ipc_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add <code>fall</code> transitions to signals <code><span style='color:blue; '>jmp</span></code> and <code><span style='color:red; '>ipc_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>rise</code> transition of <code><span style='color:red; '>ipc_ack</span></code> to the <code>fall</code> transition of <code><span style='color:blue; '>jmp</span></code> and the <code>fall</code> transition of <code><span style='color:blue; '>jmp</span></code> to the <code>fall</code> transition of <code><span style='color:red; '>ipc_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>rise</code> transition to signal <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>fall</code> transition of <code><span style='color:red; '>ipc_ack</span></code> to the <code>rise</code> transition of <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Proceed like in the <em>no_jmp</em> waveform to finish this waveform.</div>
+<ul>
+<li class="level2"><div class="li"> Add an <code>unstable</code> transition to signals <code><span style='color:red; '>z</span></code>, <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>stabilise</code> transition to signals <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>fall</code> transition for signal <code><span style='color:red; '>dec</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the transition from <code><span style='color:blue; '>dec_ack</span></code> to the transitions of <code><span style='color:red; '>z</span></code>, <code><span style='color:red; '>op0</span></code>, <code><span style='color:red; '>op1</span></code> and <code><span style='color:red; '>dec</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>fall</code> transition for signal <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the <code>fall</code> transition of signal <code><span style='color:red; '>dec</span></code> to the <code>fall</code> transition of signal <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The model returns to its waiting state until a new request arrives.</div>
+<ul>
+<li class="level2"><div class="li"> At the state level, add a connection between <em>jmp</em> and the state before the guard</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>
+The next figure shows a complete implementation of the branch instruction.
+</p>
+
+<p>
+<img src="instruction_decoder-branch.svg" width="700" height="772" class="svgscaleinsert mediacenter" alt="tutorial:model:instruction_decoder:instruction_decoder-branch.svg">
+</p>
+
+</div>
+
+<h2 id="exercise_3simplify_the_model">Exercise 3: Simplify the model</h2>
+<div class="level2">
+
+<p>
+By looking at our current design, you can observe that the instructions always finish in the same way. This is due to the protocol between <em>DEC</em> and <em>INST</em>. In this exercise, your task is to identify the common parts and create a new waveform called <em>instruction_finished</em> that produces the necessary transitions between completing instruction and waiting for the next.
+</p>
+<p><a class="folder" href="#folded_b56de2aaff68d5d97076622826a13dd3_6">Detailed instructions </a></p><div class="folded hidden" id="folded_b56de2aaff68d5d97076622826a13dd3_6"><ul>
+<li class="level1 node"><div class="li"> Modify the structure to accommodate for a waveform after the instructions.</div>
+<ul>
+<li class="level2"><div class="li"> Remove the connections that go from the instruction waveforms to the nodal state.</div>
+</li>
+<li class="level2"><div class="li"> Add a new nodal state and connect the waveforms <em>arithmetic</em>, <em>no_jmp</em> and <em>jmp</em> to it.</div>
+</li>
+<li class="level2"><div class="li"> Add a new waveform and a connection from the previous nodal state to this new waveform. Rename the waveform <em>instruction_finished</em>.</div>
+</li>
+<li class="level2"><div class="li"> Add a connection from <em>instruction_finished</em> to the nodal state preceding the instruction waveforms.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Remove the common transitions from the instruction waveforms.</div>
+<ul>
+<li class="level2 node"><div class="li"> Double click on the waveform <em>arithmetic</em>:</div>
+<ul>
+<li class="level3"><div class="li"> Click on the <code>fall</code> transition for signal <code><span style='color:red; '>dec</span></code>.</div>
+</li>
+<li class="level3"><div class="li"> In the property editor, change the <em>Direction</em> to <code>raise</code>. This will remove the transition and the connections to and from it.</div>
+</li>
+<li class="level3"><div class="li"> Follow the same procedure to remove the <code>fall</code> transition for <code><span style='color:blue; '>dec_ack</span></code> and the <code>stabilise</code> transitions for <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>.</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> Repeat the same procedure for the waveforms <em>no_jmp</em> and <em>jmp</em>.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Add the removed transitions to the <em>instruction_finished</em> waveform.</div>
+<ul>
+<li class="level2"><div class="li"> Double click on the <em>instruction_finished</em> waveform.</div>
+</li>
+<li class="level2"><div class="li"> Declare the signals <code><span style='color:red; '>op0</span></code>, <code><span style='color:red; '>op1</span></code>, <code><span style='color:red; '>dec</span></code> and <code><span style='color:blue; '>dec_ack</span></code> by using the <em>declare</em> option in the property panel.</div>
+</li>
+<li class="level2"><div class="li"> Add a <code>fall</code> transition to <code><span style='color:red; '>dec</span></code> and <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Connect the transition of <code><span style='color:red; '>dec</span></code> to the transition of <code><span style='color:blue; '>dec_ack</span></code>.</div>
+</li>
+<li class="level2"><div class="li"> Add <code>stabilise</code> transitions to <code><span style='color:red; '>op0</span></code> and <code><span style='color:red; '>op1</span></code>.</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>
+The simplified <abbr title="Waveform Transition Graph">WTG</abbr> can be seen in the next figure.
+</p>
+
+<p>
+<img src="instruction_decoder-simplified.svg" width="854" height="732" class="svgscaleinsert mediacenter" alt="tutorial:model:instruction_decoder:instruction_decoder-simplified.svg">
+</p>
+
+</div>
+
+<h2 id="exercise_4load_and_store_instructions">Exercise 4: Load and Store Instructions</h2>
+<div class="level2">
+
+<p>
+The remaining instructions have to access the <em>DATA MEM</em> module for read and write operations. This module uses a similar handshake protocol to the <em>REG</em> module. Complete the <em>DEC</em> module by adding the Load and Store operations to the <abbr title="Waveform Transition Graph">WTG</abbr>.
+</p>
+
+<p>
+This exercise intentionally lacks detailed instructions to encourage working on it independnetly. You can compare your solution to the complete <abbr title="Waveform Transition Graph">WTG</abbr> of the decoder: <span class="wrap_download "><a href="instruction_decoder.wtg.work" class="media mediafile mf_work" title="tutorial:model:instruction_decoder:instruction_decoder.wtg.work (21 KB)">instruction_decoder.wtg.work</a> (21 KiB)</span>
+</p>
+
+</div>
+
+<h2 id="solutions">Solutions</h2>
+<div class="level2">
+
+<p>
+Download all the Workcraft models discussed in this tutorial here:
+</p>
+
+<p>
+<span class="wrap_download "><a href="instruction_decoder.zip" class="media mediafile mf_zip" title="tutorial:model:instruction_decoder:instruction_decoder.zip (148.8 KB)">All instruction decoder WTGs</a> (149 KiB)</span>
+</p>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+<!--
+                <div class="docInfo">
+                    workcraft @ <bdi>tutorial/model/instruction_decoder/start.txt</bdi> · Modified 2020/04/01 17:39 by <bdi>danil</bdi>                </div>
+-->
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+<!--
+            <div id="dokuwiki__pagetools">
+                            <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="start.html" title="Edit this page [e]" rel="nofollow" accesskey="e"><span>Edit this page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="start.html" title="Old revisions [o]" rel="nofollow" accesskey="o"><span>Old revisions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="start.html" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="export_pdf"><a href="start.html" title="Export to PDF" rel="nofollow"><span>Export to PDF</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14 9h5.5L14 3.5V9M7 2h8l6 6v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m4.93 10.44c.41.9.93 1.64 1.53 2.15l.41.32c-.87.16-2.07.44-3.34.93l-.11.04.5-1.04c.45-.87.78-1.66 1.01-2.4m6.48 3.81c.18-.18.27-.41.28-.66.03-.2-.02-.39-.12-.55-.29-.47-1.04-.69-2.28-.69l-1.29.07-.87-.58c-.63-.52-1.2-1.43-1.6-2.56l.04-.14c.33-1.33.64-2.94-.02-3.6a.853.853 0 0 0-.61-.24h-.24c-.37 0-.7.39-.79.77-.37 1.33-.15 2.06.22 3.27v.01c-.25.88-.57 1.9-1.08 2.93l-.96 1.8-.89.49c-1.2.75-1.77 1.59-1.88 2.12-.04.19-.02.36.05.54l.03.05.48.31.44.11c.81 0 1.73-.95 2.97-3.07l.18-.07c1.03-.33 2.31-.56 4.03-.75 1.03.51 2.24.74 3 .74.44 0 .74-.11.91-.3m-.41-.71l.09.11c-.01.1-.04.11-.09.13h-.04l-.19.02c-.46 0-1.17-.19-1.9-.51.09-.1.13-.1.23-.1 1.4 0 1.8.25 1.9.35M8.83 17c-.65 1.19-1.24 1.85-1.69 2 .05-.38.5-1.04 1.21-1.69l.48-.31m3.02-6.91c-.23-.9-.24-1.63-.07-2.05l.07-.12.15.05c.17.24.19.56.09 1.1l-.03.16-.16.82-.05.04z"/></svg></a></li><li class="menuitemfolded"><a href="javascript:void(0);" title="Fold/unfold all" rel="nofollow" class="fold_unfold_all_new" onclick="fold_unfold_all();"><span>Fold/unfold all</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M 2,0 L 6.5,3 L 2,6 z M 8,6.6 L 12.5,9.6 L 8,12.6 z M 14,13.2 L 20,13.2 L 17,17.7 z"/></svg></a></li><li class="menuitem"><a href="start.html" title="Rename Page" rel="nofollow" class=" plugin_move_page "><span>Rename Page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18,4V3A1,1 0 0,0 17,2H5A1,1 0 0,0 4,3V7A1,1 0 0,0 5,8H17A1,1 0 0,0 18,7V6H19V10H9V21A1,1 0 0,0 10,22H12A1,1 0 0,0 13,21V12H21V4H18Z" /></svg></a></li><li class="siteexport_addpage"><a href="start.html" title="Export Page to HTML/PDF" rel="nofollow"><span>Export Page to HTML/PDF</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+                        </div>
+-->
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<!--
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="../../check/referer" title="Valid HTML5" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="../../css-validator/check/referer.fe4c581d16fb9f59f07485ddb441e467" title="Valid CSS" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-dw.png" width="80" height="15"
+            alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div>
+-->
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="../../lib/exe/taskrunner.36612f1b4297fbf6d611fa9117872c3a.gif" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

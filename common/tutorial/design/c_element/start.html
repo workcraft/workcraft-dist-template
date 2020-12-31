@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>tutorial:design:c_element:start - Workcraft</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="keywords" content="tutorial,design,c_element,start"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.html" title="Workcraft"/>
+<link rel="start" href="start.html"/>
+<link rel="contents" href="start.html" title="Sitemap"/>
+<link rel="manifest" href="../../lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="edit" title="Edit this page" href="start.html"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="../../_export/xhtml/tutorial/design/c_element/start.xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../_export/raw/tutorial/design/c_element/start.raw"/>
+<link rel="canonical" href="https://workcraft.org/tutorial/design/c_element/start"/>
+<link rel="stylesheet" href="../../lib/exe/css.php.t.dokuwiki-light-export.css"/>
+<!--[if gte IE 9]><!-->
+<script >/*<![CDATA[*/var NS='tutorial:design:c_element';var SIG=" --- \/\/[[support@workcraft.org| ]] 2020\/11\/24 09:02\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"id":"tutorial:design:c_element:start","namespace":"tutorial:design:c_element","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script charset="utf-8" src="../../lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<script charset="utf-8" src="../../lib/exe/js.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../../favicon.ico" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki-light-export loggedIn    ">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <h1><a href="../../start.html"  accesskey="" title=""><img src="../../logo.png" width="381" height="64" alt="" /></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+<!--
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="action profile"><a href="start.html" title="Profile" rel="nofollow"><span>Profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 3h20c1.05 0 2 .95 2 2v14c0 1.05-.95 2-2 2H2c-1.05 0-2-.95-2-2V5c0-1.05.95-2 2-2m12 3v1h8V6h-8m0 2v1h8V8h-8m0 2v1h7v-1h-7m-6 3.91C6 13.91 2 15 2 17v1h12v-1c0-2-4-3.09-6-3.09M8 6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a></li><li class="action admin"><a href="start.html" title="Admin" rel="nofollow"><span>Admin</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></a></li><li class="action logout"><a href="start.html" title="Log Out" rel="nofollow"><span>Log Out</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg></a></li>                </ul>
+            </div>
+        -->
+        <!-- SITE TOOLS -->
+<!--
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="../../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="tutorial:design:c_element:start" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="tutorial:design:c_element:start" /><input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="start.html" title="Changes [r]" rel="nofollow" accesskey="r">Changes</a></li><li class="action media"><a href="start.html" title="Media" rel="nofollow">Media</a></li><li class="action index"><a href="start.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+-->
+    </div>
+
+    <!-- BREADCRUMBS -->
+<!--
+    -->
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>tutorial:design:c_element:start</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_fastwiki_marker" style="display:none"></div><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#modelling">Modelling</a></div></li>
+<li class="level1"><div class="li"><a href="#validation_and_verification_of_specification">Validation and verification of specification</a></div></li>
+<li class="level1"><div class="li"><a href="#synthesis">Synthesis</a></div></li>
+<li class="level1"><div class="li"><a href="#circuit_capturing">Circuit capturing</a></div></li>
+<li class="level1"><div class="li"><a href="#verification_of_implementation">Verification of implementation</a></div></li>
+<li class="level1"><div class="li"><a href="#decomposed_implementation">Decomposed implementation</a></div></li>
+<li class="level1"><div class="li"><a href="#solutions">Solutions</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 id="design_of_c-element">Design of C-element</h1>
+<div class="level1">
+
+<p>
+<a href="https://en.wikipedia.org/wiki/C-element" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/C-element">C-element</a> is a latch that synchronises the phases of its inputs. A symbol for a 2-input C-element and its timing diagram are shown in the figures below. Initially all the signals are in the low state. When both inputs <code>in1</code> and <code>in2</code> go high, the output <code>out</code> also switches to logical 1. It stays in this state until both inputs go low, at which stage the output switches to logical 0.
+</p>
+<div class="group plugin_wrap"><div class="wrap_column wrap_third plugin_wrap">
+<p>
+<img src="celement.schematic.svg" width="137" height="34" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement.schematic.svg">
+</p>
+</div><div class="wrap_column plugin_wrap">
+<p>
+<img src="celement.td.svg" width="196" height="78" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement.td.svg">
+</p>
+</div></div>
+<p>
+Note that the output of C-element is not fully determined by its inputs: When the inputs have different values the output keeps its previous value, i.e. it can be either 0 or 1. That is, C-element is not a combinational gate, but a latch with internal memory.
+</p>
+
+</div>
+
+<h2 id="modelling">Modelling</h2>
+<div class="level2">
+
+<p>
+Let us model the C-element behaviour using the <em>Signal Transition Graph (<abbr title="Signal Transition Graph">STG</abbr>)</em> formalism. Create a new <abbr title="Signal Transition Graph">STG</abbr> work and translate the sequence of events in the timing diagram into a sequence of <abbr title="Signal Transition Graph">STG</abbr> transitions. Basically you need to create a signal transition for each event of the timing diagram and capture the causality between these events by means of directed arcs between signal transitions. Recreate the following <abbr title="Signal Transition Graph">STG</abbr> model in Workcraft. 
+</p>
+<p><a class="folder" href="#folded_b1982e11b9c852caf229ef39e91b2f7b_1">Detailed instructions </a></p><div class="folded hidden" id="folded_b1982e11b9c852caf229ef39e91b2f7b_1">
+<p>
+Start with the set phase of the C-element where <code><span style='color:blue; '>out+</span></code> event is caused by <code><span style='color:red; '>in1+</span></code> and <code><span style='color:red; '>in2+</span></code> events:
+</p>
+<ul>
+<li class="level1"><div class="li"> Activate the <strong>signal transition generator</strong> <img src="../../../help/stg/editor_tools-signal_transition.png" class="media" title="[T] Signal Transition" alt="[T] Signal Transition" />. Pay attention to the hint at the bottom of the screen:<br/>
+<em>Click to create rising (or falling with Ctrl) transition of output (or input with Shift) signal.</em></div>
+</li>
+<li class="level1"><div class="li"> Click the Editor panel in the location where you want the <code><span style='color:blue; '>out+</span></code> transition to appear.</div>
+</li>
+<li class="level1"><div class="li"> Hold <kbd class="__keyboard">Shift</kbd> and click in the desired location of <code><span style='color:red; '>in1+</span></code> transition. The default name for the input signal is <code><span style='color:red; '>in</span></code>, therefore you need to rename it. Activate the <strong>selection tool</strong> <img src="../../../help/core/editor_tools-select.png" class="media" title="[S] Select" alt="[S] Select" />, select the transition, and in the Property editor change its <em>Name</em> from <code><span style='color:red; '>in</span></code> to <code><span style='color:red; '>in1</span></code>. Alternatively, double-click on the transition and change its name directly in the Editor.</div>
+</li>
+<li class="level1"><div class="li"> Create <code><span style='color:red; '>in2+</span></code> transition the same way as <code><span style='color:red; '>in1+</span></code>.</div>
+</li>
+<li class="level1"><div class="li"> Activate <strong>connection tool</strong> <img src="../../../help/core/editor_tools-connect.png" class="media" title="[C] Connect" alt="[C] Connect" />. Pay attention to the hints at the bottom of the screen. Initially the hint says: <em>Click on first component.</em><br/>
+After the first component is chosen, the hint changes to:<br/>
+<em>Click on second component or create polyline. Hold Shift to connect parallel to axes. Hold Ctrl to connect continuously. Hold Alt/AltGr to create a place proxy.</em></div>
+</li>
+<li class="level1"><div class="li"> Click <code><span style='color:red; '>in1+</span></code>, move the mouse pointer to the <code><span style='color:blue; '>out+</span></code> transition and click again. A causality arc from <code><span style='color:red; '>in1+</span></code> to <code><span style='color:blue; '>out+</span></code> will be created.</div>
+</li>
+<li class="level1"><div class="li"> Repeat the connection procedure to capture causality between <code><span style='color:red; '>in2+</span></code> and <code><span style='color:blue; '>out+</span></code> transitions.</div>
+</li>
+</ul>
+
+<p>
+<img src="celement-step1.stg.svg" width="95" height="79" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-step1.stg.svg">
+</p>
+
+<p>
+Capture the reset phase of the C-element as follows:
+</p>
+<ul>
+<li class="level1"><div class="li"> Activate the <strong>selection tool</strong> <img src="../../../help/core/editor_tools-select.png" class="media" title="[S] Select" alt="[S] Select" /> and select the transitions and connection of the set phase. Replicate them via copy-paste – use <img src="../../../help/core/global_tools-copy.png" class="media" title="Copy (Ctrl-C)" alt="Copy (Ctrl-C)" /> and <img src="../../../help/core/global_tools-paste.png" class="media" title="Paste (Ctrl-V)" alt="Paste (Ctrl-V)" /> buttons or the conventional keyboard shortcuts.</div>
+</li>
+<li class="level1"><div class="li"> Note that the pasted transitions and connections are selected. Change the polarity of selected transitions in the <em>Property editor</em> or via <em>Transformations→Mirror transitions sign (selected or all)</em> menu, thus modelling the reset phase of the C-element.</div>
+</li>
+<li class="level1"><div class="li"> Move the reset phase transitions to the right, so the <abbr title="Signal Transition Graph">STG</abbr> looks similar to the following figure.</div>
+</li>
+</ul>
+
+<p>
+<img src="celement-step2.stg.svg" width="239" height="89" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-step2.stg.svg">
+</p>
+
+<p>
+Now connect the set and reset phases of the specification:
+</p>
+<ul>
+<li class="level1"><div class="li"> The same as before, use <strong>connection tool</strong> <img src="../../../help/core/editor_tools-connect.png" class="media" title="[C] Connect" alt="[C] Connect" /> to introduce causality from <code><span style='color:blue; '>out+</span></code> to <code><span style='color:red; '>in1-</span></code> and to <code><span style='color:red; '>in2-</span></code>.</div>
+</li>
+<li class="level1"><div class="li"> Create an arc from <code><span style='color:blue; '>out-</span></code> to <code><span style='color:red; '>in1+</span></code>, but this time instead of a straight line connection use a polyline. After choosing the source of the connection (<code><span style='color:blue; '>out-</span></code> transition) click aside of the existing transitions – this will create a node point of a polyline. Continue forming the shape of the polyline by creating its node points, and finally choose the destination transition <code><span style='color:red; '>in1+</span></code>.</div>
+</li>
+<li class="level1"><div class="li"> Repeat the same procedure for creating a polyline connection from <code><span style='color:blue; '>out-</span></code> to <code><span style='color:red; '>in2+</span></code>.</div>
+</li>
+</ul>
+
+<p>
+<img src="celement-step3.stg.svg" width="239" height="116" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-step3.stg.svg">
+</p>
+
+<p>
+Finally, specify the initial state of the C-element in accordance to the starting point of the timing diagram:
+</p>
+<ul>
+<li class="level1"><div class="li"> Activate the <strong>selection tool</strong> <img src="../../../help/core/editor_tools-select.png" class="media" title="[S] Select" alt="[S] Select" />.</div>
+</li>
+<li class="level1"><div class="li"> Select the arc from <code><span style='color:blue; '>out-</span></code> to <code><span style='color:red; '>in1+</span></code> and in the Property editor set the <em>Tokens</em> value to 1. Alternatively, hold <kbd class="__keyboard">Ctrl</kbd> and double-click this arc.</div>
+</li>
+<li class="level1"><div class="li"> Similarly put a token on the arc from <code><span style='color:blue; '>out-</span></code> to <code><span style='color:red; '>in2+</span></code>.</div>
+</li>
+</ul>
+<div class="wrap_info wrap_center wrap_round plugin_wrap" style="width: 90%;">
+<p>
+Most of the tools can be quickly activated via keyboard shortcuts, e.g. <kbd class="__keyboard">S</kbd> for selection tool, <kbd class="__keyboard">C</kbd> for connection tool, and <kbd class="__keyboard">T</kbd> for transition generator. Hover the mouse over the corresponding tool button to learn its keyboard shortcut.
+</p>
+</div></div>
+<p>
+The resulting <abbr title="Signal Transition Graph">STG</abbr> should look as follows; save it as <em>celement.stg.work</em> – this file will be used later  on to verify C-element circuit implementations.
+</p>
+
+<p>
+<img src="celement.stg.svg" width="239" height="116" class="svgscaleinsert mediacenter" alt="C-element STG model">
+</p>
+
+</div>
+
+<h2 id="validation_and_verification_of_specification">Validation and verification of specification</h2>
+<div class="level2">
+
+<p>
+Activate the <strong>simulation tool</strong> <img src="../../../help/core/editor_tools-simulate.png" class="media" title="[M] Simulate" alt="[M] Simulate" /> and exercise the obtained <abbr title="Signal Transition Graph">STG</abbr> model. Click one of the enabled signal transitions (they are highlighted in orange) to <em>fire</em> (or <em>execute</em>) it, which changes the <em>state</em> (or <em>marking</em>) of the <abbr title="Signal Transition Graph">STG</abbr>. Note that the sequence of fired transitions is recorded in the simulation trace that is somewhat similar to the original timing diagram. Check that the simulation traces correspond to the intended behaviour of C-element.
+</p>
+
+<p>
+For example, simulate the following trace <code><span style='color:red; '>in2+</span>, <span style='color:red; '>in1+</span>, <span style='color:blue; '>out+</span>, <span style='color:red; '>in1-</span>, <span style='color:red; '>in2-</span>, <span style='color:blue; '>out-</span>, <span style='color:red; '>in1+</span>, <span style='color:red; '>in2+</span></code> – you can copy this trace to clipboard and paste it in simulation tool by pressing <img src="../../../help/core/tool_controls-simulate-paste_trace.png" class="media" title="Paste from clipboard" alt="Paste from clipboard" />. Then use the generator of trace diagram <img src="../../../help/core/tool_controls-simulate-generate_trace_diagram.png" class="media" title="Generate trace diagram" alt="Generate trace diagram" /> to convert the <abbr title="Signal Transition Graph">STG</abbr> simulation trace to <em>Digital Timing Diagram</em> model. The produced timing diagram should resemble the initial informal specification and looks as follows (0 or 1 in brackets next to the signal name denotes its initial state).
+</p>
+
+<p>
+<img src="celement.dtd.svg" width="292" height="78" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement.dtd.svg">
+</p>
+<div class="wrap_info wrap_center wrap_round plugin_wrap" style="width: 90%;">
+<p>
+The visibility and color of signals in the generated timing diagram are defined in <strong>Visible</strong> and <strong>Color</strong> columns of the signal state table, at the bottom of <strong>Tool controls</strong> for <abbr title="Signal Transition Graph">STG</abbr> simulation tool. The order of signal waveforms is also defined in this table by rearranging (drag-and-drop) the signal rows.
+</p>
+
+<p>
+The timing diagram is built for the main simulation trace – <strong>Trace</strong> column. If the <strong>Trace</strong> is empty then the timing diagram generator will suggest to use <strong>Branch</strong> simulation results instead.
+</p>
+</div>
+<p>
+Before proceeding to the synthesis of the C-element it is a good idea to verify that its specification meets essential requirements, e.g. that it is consistent, free from deadlocks, input-proper and output-persistent. These properties can be checked via the <em>Verification</em> menu (see <a href="../../../help/verification.html" class="wikilink1" title="help:verification" data-wiki-id="help:verification">standard verification properties</a> for details). Note that it is possible to check these properties either separately or jointly with a single click.
+</p>
+
+<p>
+If the specification violates any of these properties then a trace leading to the problematic state will be reported. This trace can be simulated for better understanding the reported issues and for correcting them in the specification.
+</p>
+
+</div>
+
+<h2 id="synthesis">Synthesis</h2>
+<div class="level2">
+
+<p>
+The <abbr title="Signal Transition Graph">STG</abbr> specification can now be synthesised into an asynchronous circuit implementation either with MPSat or Petrify back-end tools via <em>Synthesis</em> menu.
+</p>
+
+<p>
+A complex-gate implementation obtained with Petrify (<em>Synthesis→Complex gate [Petrify]</em> menu item) is stored in a temporary file in a <a href="https://en.wikipedia.org/wiki/Verilog" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/Verilog">Verilog</a> format. It also appears in the Output panel if the <em>Edit→Preferences…→Common→Debug→Verbose log on file import</em> checkbox is checked (by default it is not checked): (<span class="wrap_important ">Note that you may get a slightly different synthesis results.</span>)
+</p>
+<pre class="code verilog"><span class="kw1">module</span> Untitled_net <span class="br0">&#40;</span>in1<span class="sy0">,</span> in2<span class="sy0">,</span> out<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw1">input</span> in1<span class="sy0">;</span>
+  <span class="kw1">input</span> in2<span class="sy0">;</span>
+  <span class="kw1">output</span> out<span class="sy0">;</span>
+&nbsp;
+  <span class="kw1">assign</span> out <span class="sy0">=</span> <span class="br0">&#40;</span>in1 <span class="sy0">&amp;</span> in2<span class="br0">&#41;</span> <span class="sy0">|</span> out <span class="sy0">&amp;</span> <span class="br0">&#40;</span>in2 <span class="sy0">|</span> in1<span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+  <span class="co1">// Initial state:</span>
+  <span class="co1">//    !in1 !in2 !out</span>
+<span class="kw1">endmodule</span></pre>
+
+<p>
+Workcraft automatically displays a circuit model derived from the synthesis output. This feature is enabled by default and can be disabled by unticking the <em>Edit→Preferences…→Common→Editor→Open non-visual models (imported or converted)</em> checkbox.
+</p>
+
+</div>
+
+<h2 id="circuit_capturing">Circuit capturing</h2>
+<div class="level2">
+
+<p>
+For the purposes of this exercise let us capture (a slightly modified) C-element schematics manually.
+By opening the parenthesis one can re-write the equation for signal <code>out</code> as follows:
+</p>
+<pre class="code verilog">  <span class="kw1">assign</span> out <span class="sy0">=</span> <span class="br0">&#40;</span>in1 <span class="sy0">&amp;</span> in2<span class="br0">&#41;</span> <span class="sy0">|</span> <span class="br0">&#40;</span>in1 <span class="sy0">&amp;</span> out<span class="br0">&#41;</span> <span class="sy0">|</span> <span class="br0">&#40;</span>in2 <span class="sy0">&amp;</span> out<span class="br0">&#41;</span><span class="sy0">;</span></pre>
+
+<p>
+This equation is directly implementable by an AND-OR complex gate computing the function <code>Z = A*B + C*D + E*F</code>, called <code>AO222</code> in the default gate library shipped with Workcraft. Create a new Digital Circuit work and capture this C-element implementation manually.
+</p>
+<ul>
+<li class="level1"><div class="li"> Activate <strong>functional generator</strong> <img src="../../../help/circuit/editor_tools-function.png" class="media" title="[F] Function" alt="[F] Function" /> and click in the desired position of the AND-OR complex gate.</div>
+</li>
+<li class="level1"><div class="li"> Activate <strong>selection tool</strong> <img src="../../../help/core/editor_tools-select.png" class="media" title="[S] Select" alt="[S] Select" />.</div>
+</li>
+<li class="level1"><div class="li"> Select the only pin of the newly created function component.</div>
+</li>
+<li class="level1"><div class="li"> In the Property editor change the <em>Name</em> of the pin to <code>Z</code> and modify its <em>Set function</em> to <code>A*B+C*D+E*F</code>.</div>
+</li>
+</ul>
+
+<p>
+<img src="celement-cg-step2.circuit.svg" width="136" height="80" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-cg-step2.circuit.svg">
+</p>
+<ul>
+<li class="level1"><div class="li"> Activate <strong>port generator</strong> <img src="../../../help/circuit/editor_tools-port.png" class="media" title="[P] Input/output port" alt="[P] Input/output port" />. Pay attention to the hint at the bottom of the screen: <em>Click to create an output port (hold Shift for input port)</em>.</div>
+</li>
+<li class="level1"><div class="li"> Click in intended location of the output port. Note that by default the port will be named <code><span style='color:blue; '>out0</span></code> - you can change this name to <code>out</code> later. </div>
+</li>
+<li class="level1"><div class="li"> Hold <kbd class="__keyboard">Shift</kbd> and click in the desired locations of the input ports – they will be automatically assigned the names <code><span style='color:red; '>in0</span></code> and <code><span style='color:red; '>in1</span></code>.</div>
+</li>
+<li class="level1"><div class="li"> Switch to the selection tool, choose the output port, and change its <em>Name</em> to <code><span style='color:blue; '>out</span></code> in the <em>Property editor</em>..</div>
+</li>
+<li class="level1"><div class="li"> We also need to change the name of an input port. Let us use another Workcraft editor feature for this – double-click on the port <code><span style='color:red; '>in0</span></code> and rename it to <code><span style='color:red; '>in2</span></code> in place.</div>
+</li>
+</ul>
+
+<p>
+<img src="celement-cg-step3.circuit.svg" width="306" height="80" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-cg-step3.circuit.svg">
+</p>
+<ul>
+<li class="level1"><div class="li"> Activate <strong>connection tool</strong> <img src="../../../help/core/editor_tools-connect.png" class="media" title="[C] Connect" alt="[C] Connect" />.</div>
+</li>
+<li class="level1"><div class="li"> Connect input ports <code><span style='color:red; '>in1</span></code> to the 1<sup>st</sup> and 5<sup>th</sup> pins of the complex gate (<code>A</code> and <code>E</code> respectively).</div>
+</li>
+<li class="level1"><div class="li"> Connect input ports <code><span style='color:red; '>in2</span></code> to the 2<sup>nd</sup> and 3<sup>rd</sup> pins of the complex gate (<code>B</code> and <code>C</code> respectively).</div>
+</li>
+<li class="level1"><div class="li"> Connect the output pin of the gate to the output port <code>out</code> and to the 4<sup>th</sup> and 6<sup>th</sup> inputs of the gate (<code>D</code> and <code>F</code> respectively).</div>
+</li>
+</ul>
+
+<p>
+<img src="celement-cg-step4.circuit.svg" width="306" height="115" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-cg-step4.circuit.svg">
+</p>
+<div class="wrap_center wrap_round wrap_box plugin_wrap" style="width: 90%;">
+<h4 id="optional_simplification">Optional simplification</h4>
+
+<p>
+You may wish to make the circuit schematic more readable by adding <em>joints</em>. Use the following editor features to tidy up C-element schematic:
+</p>
+<ul>
+<li class="level1"><div class="li"> If you start a connection from a wire then a joint will be automatically inserted.</div>
+</li>
+<li class="level1"><div class="li"> If a primary input port or a gate output pin has several outgoing wires, then a joint can be detached from them by right-clicking the port or pin and selecting <em>Detach joint</em> in the popup menu. (Several joints can be detached in one go via <em>Transformation→Detach joint (selected or all)</em> menu.)</div>
+</li>
+<li class="level1"><div class="li"> To dissolve a joint, moving all the connections to the driving gate output or input pin, right-click on it and select <em>Dissolve joint</em> in the popup-menu. (Several joints can be dissolved in one go via <em>Transformation→Dissolve joint (selected or all)</em> menu.)</div>
+</li>
+</ul>
+
+<p>
+The improved C-element layout should look as follows:
+</p>
+
+<p>
+<img src="celement-cg.circuit.svg" width="331" height="98" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-cg.circuit.svg">
+</p>
+
+<p>
+A similar result can be achieved by using Workcraft automatic wire routing via <em>Tools→Graph layout→Circuit routing only</em>.
+</p>
+</div>
+</div>
+
+<h2 id="verification_of_implementation">Verification of implementation</h2>
+<div class="level2">
+
+<p>
+Activate the <strong>simulation tool</strong> <img src="../../../help/core/editor_tools-simulate.png" class="media" title="[M] Simulate" alt="[M] Simulate" /> and simulate the captured complex gate implementation of the C-element. Ports, pins and wires are colour-coded: <span style='color:blue; '>blue</span> means low level and <span style='color:red; '>red</span> means high level of the signal. Excited ports and gates are highlighted in <span style='color:orange; '>orange</span>. 
+</p>
+
+<p>
+Click one of the excited ports or gates to toggle its logical value. Similar to the <abbr title="Signal Transition Graph">STG</abbr> simulation, the sequence of signal events is recorded in the simulation trace and can be subsequently replayed for analysing the circuit&#039;s behaviour or converted to a timing diagram for visualisation purpose.
+</p>
+
+<p>
+To conduct formal verification the circuit has to be converted into an <abbr title="Signal Transition Graph">STG</abbr>. Normally this is done silently by the tool, but it is possible to view the intermediate circuit-<abbr title="Signal Transition Graph">STG</abbr> via <em>Conversion→Signal Transition Graph</em>. The resulting <abbr title="Signal Transition Graph">STG</abbr> for this circuit is shown below. <span class="wrap_important ">Note that your layout may be slightly different and that this <abbr title="Signal Transition Graph">STG</abbr> will not be required in the rest of the tutorial.</span>
+</p>
+
+<p>
+<img src="celement-circuit_stg.stg.svg" width="494" height="196" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-circuit_stg.stg.svg">
+</p>
+
+<p>
+Note that if the C-element&#039;s inputs are not restricted in any way then they can change in an unexpected manner and cause malfunction of the circuit. This can be confirmed by checking the circuit for output persistency <em>Verification→Output persistency [MPSat]</em> – the tool will warn you that the circuit is being verified without no environment <abbr title="Signal Transition Graph">STG</abbr> and produce the following violation traces:
+</p>
+
+<p>
+<img src="celement-output_persistency-violation_dialog.png" class="mediacenter" title=" " alt=" " />
+</p>
+
+<p>
+This indicates that output <code><span style='color:blue; '>out</span></code> exhibits non-persistent behaviour. Indeed, after the trace <code><span style='color:red; '>in2+</span>, <span style='color:red; '>in1+</span></code> the output <code><span style='color:blue; '>out</span></code> is excited and ready to switch to logical 1, however either <code><span style='color:red; '>in1-</span></code> or <code><span style='color:red; '>in2-</span></code> would disable it. Play one of the reported traces to simulate this unexpected behaviour.
+</p>
+<div class="wrap_center wrap_round wrap_important plugin_wrap" style="width: 90%;">
+<p>
+The <abbr title="Signal Transition Graph">STG</abbr> specification contains some information that is not available in the circuit, namely the behaviour of the environment. The circuit is guaranteed to work correctly only in an environment that respects its contract specified by the original <abbr title="Signal Transition Graph">STG</abbr>. In other environments the circuit may exhibit non-persistency, deadlocks, etc. Therefore, during formal verification of the circuit one has to restrict its environment in such a way that the circuit only receives those inputs that are allowed by the <abbr title="Signal Transition Graph">STG</abbr> specification. 
+</p>
+</div>
+<p>
+The circuit behaviour can be restricted by an environment <abbr title="Signal Transition Graph">STG</abbr> as follows:
+</p>
+<ul>
+<li class="level1"><div class="li"> In the circuit editor make sure that no components are selected (click on the editor canvas).</div>
+</li>
+<li class="level1"><div class="li"> In the property editor choose the <em>Environment</em> property and select the work file with the original <abbr title="Signal Transition Graph">STG</abbr> specification – the <em>celement.stg.work</em> file.</div>
+</li>
+</ul>
+
+<p>
+Repeat the verification procedure to check that assuming a well behaved environment the circuit is output persistent, deadlock-free and conforms to the environment specification. All these verification steps can be performed simultaneously via <em>Verification→Conformation, deadlock freeness, and output persistency (reuse unfolding) [MPSat]</em>.
+</p>
+
+</div>
+
+<h2 id="decomposed_implementation">Decomposed implementation</h2>
+<div class="level2">
+
+<p>
+Large gates like <code>AO222</code> may not be available in the technology library and thus other implementations of C-element using smaller gates are of interest. However, it is very easy to make a mistake when designing asynchronous circuits, and so any such implementation has to be formally verified against the original <abbr title="Signal Transition Graph">STG</abbr> specification. 
+</p>
+<div class="wrap_important wrap_center wrap_round plugin_wrap" style="width: 90%;">
+<p>
+When verifying the circuits provided in this section make sure their environment <abbr title="Signal Transition Graph">STG</abbr> is specified and points to a correct C-element specification. This <abbr title="Signal Transition Graph">STG</abbr> file is assumed to be called <code>celement.stg.work</code>, but may be saved under a different name on your computer.
+</p>
+</div>
+<p>
+Download the following C-element implementation due to Mayevsky <span class="wrap_download "><a href="celement-decomposed.circuit.work" class="media mediafile mf_work" title="tutorial:design:c_element:celement-decomposed.circuit.work (4 KB)">celement-decomposed.circuit.work</a> (4 KiB)</span> and verify that it conforms to the <abbr title="Signal Transition Graph">STG</abbr> specification, is free from deadlocks, input-proper, and output persistent.
+</p>
+
+<p>
+<img src="celement-decomposed.circuit.svg" width="437" height="141" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-decomposed.circuit.svg">
+</p>
+
+<p>
+Note that the correctness of this implementation depends on the <em>isochronic forks assumption</em>: the difference in arrival times of a signal to the ends of a wire fork is negligible compared to any gate delay. If this assumption is violated, the above implementation can exhibit non-persistent behaviour. Download the following C-element implementation <span class="wrap_download "><a href="celement-decomposed-hazard.circuit.work" class="media mediafile mf_work" title="tutorial:design:c_element:celement-decomposed-hazard.circuit.work (4.1 KB)">celement-decomposed-hazard.circuit.work</a> (4 KiB)</span> where a delay in a wire fork is made explicit (modelled by a buffer). Formally verify this model, inspect the violation trace, and explain what is going wrong in the circuit.
+</p>
+
+<p>
+<img src="celement-decomposed-hazard.circuit.svg" width="437" height="141" class="svgscaleinsert mediacenter" alt="tutorial:design:c_element:celement-decomposed-hazard.circuit.svg">
+</p>
+
+</div>
+
+<h2 id="solutions">Solutions</h2>
+<div class="level2">
+
+<p>
+Download all the Workcraft models discussed in this tutorial here:
+</p>
+
+<p>
+<span class="wrap_download "><a href="celement.zip" class="media mediafile mf_zip" title="tutorial:design:c_element:celement.zip (24.2 KB)">C-element models</a> (24 KiB)</span>
+</p>
+
+</div>
+<div class="level1">
+<div class="plugin_include_content plugin_include__tutorial:feedback" id="plugin_include__tutorial__feedback">
+<div class="wrap_hide plugin_wrap"><pre class="code">===== Feedback =====</pre>
+<form class="bureaucracy__plugin" id="bureaucracy__plugin1" enctype="multipart/form-data" method="post" action="start.html" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><input type="hidden" name="id" value="tutorial:design:c_element:start" /><input type="hidden" name="bureaucracy[$$id]" value="1" /><fieldset ><legend>Comments or suggestions for improving this tutorial</legend>
+<label><span>Name (optional)</span> <input type="text" name="bureaucracy[1]" class="edit" /></label>
+<label><span>Email (optional)</span> <input type="text" name="bureaucracy[2]" class="edit" /></label>
+<label class=" textareafield">
+    <span>Feedback <sup>*</sup></span>
+    <textarea name="bureaucracy[3]" id="" rows="10" cols="10" class="edit required&quot; required=&quot;required"></textarea>
+</label><button type="submit">Submit</button>
+</fieldset>
+</div></form>
+</div><div class="wrap_hide plugin_wrap"><ul>
+<li class="level1"><div class="li"> As discussed in <a href="https://www.dokuwiki.org/plugin:include#controlling_header_size_in_included_pages" class="urlextern" title="https://www.dokuwiki.org/plugin:include#controlling_header_size_in_included_pages" rel="ugc nofollow">https://www.dokuwiki.org/plugin:include#controlling_header_size_in_included_pages</a>, by default, the headers in included pages start one level lower than the last header in the current page. This can be tweaked by adding an empty header above the include:\\<pre class="code">====== ======
+{{page&gt;:tutorial:feedback&amp;inline}}</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> For offline help generation the content of <code>feedback</code> page should be temporary wrapped in <code>&lt;WRAP hide&gt;</code>. Note that the headers still propagate to the table of contents even if inside the hidden wrap. Therefore the <strong>Feedback</strong> title needs to be converted to something else, e.g. to code by adding two spaces in front.</div>
+</li>
+</ul>
+</div></div>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+<!--
+                <div class="docInfo">
+                    workcraft @ <bdi>tutorial/design/c_element/start.txt</bdi> · Modified 2020/11/19 13:59 by <bdi>danil</bdi>                </div>
+-->
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+<!--
+            <div id="dokuwiki__pagetools">
+                            <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="start.html" title="Edit this page [e]" rel="nofollow" accesskey="e"><span>Edit this page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="start.html" title="Old revisions [o]" rel="nofollow" accesskey="o"><span>Old revisions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="start.html" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="export_pdf"><a href="start.html" title="Export to PDF" rel="nofollow"><span>Export to PDF</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14 9h5.5L14 3.5V9M7 2h8l6 6v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m4.93 10.44c.41.9.93 1.64 1.53 2.15l.41.32c-.87.16-2.07.44-3.34.93l-.11.04.5-1.04c.45-.87.78-1.66 1.01-2.4m6.48 3.81c.18-.18.27-.41.28-.66.03-.2-.02-.39-.12-.55-.29-.47-1.04-.69-2.28-.69l-1.29.07-.87-.58c-.63-.52-1.2-1.43-1.6-2.56l.04-.14c.33-1.33.64-2.94-.02-3.6a.853.853 0 0 0-.61-.24h-.24c-.37 0-.7.39-.79.77-.37 1.33-.15 2.06.22 3.27v.01c-.25.88-.57 1.9-1.08 2.93l-.96 1.8-.89.49c-1.2.75-1.77 1.59-1.88 2.12-.04.19-.02.36.05.54l.03.05.48.31.44.11c.81 0 1.73-.95 2.97-3.07l.18-.07c1.03-.33 2.31-.56 4.03-.75 1.03.51 2.24.74 3 .74.44 0 .74-.11.91-.3m-.41-.71l.09.11c-.01.1-.04.11-.09.13h-.04l-.19.02c-.46 0-1.17-.19-1.9-.51.09-.1.13-.1.23-.1 1.4 0 1.8.25 1.9.35M8.83 17c-.65 1.19-1.24 1.85-1.69 2 .05-.38.5-1.04 1.21-1.69l.48-.31m3.02-6.91c-.23-.9-.24-1.63-.07-2.05l.07-.12.15.05c.17.24.19.56.09 1.1l-.03.16-.16.82-.05.04z"/></svg></a></li><li class="menuitemfolded"><a href="javascript:void(0);" title="Fold/unfold all" rel="nofollow" class="fold_unfold_all_new" onclick="fold_unfold_all();"><span>Fold/unfold all</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M 2,0 L 6.5,3 L 2,6 z M 8,6.6 L 12.5,9.6 L 8,12.6 z M 14,13.2 L 20,13.2 L 17,17.7 z"/></svg></a></li><li class="menuitem"><a href="start.html" title="Rename Page" rel="nofollow" class=" plugin_move_page "><span>Rename Page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18,4V3A1,1 0 0,0 17,2H5A1,1 0 0,0 4,3V7A1,1 0 0,0 5,8H17A1,1 0 0,0 18,7V6H19V10H9V21A1,1 0 0,0 10,22H12A1,1 0 0,0 13,21V12H21V4H18Z" /></svg></a></li><li class="siteexport_addpage"><a href="start.html" title="Export Page to HTML/PDF" rel="nofollow"><span>Export Page to HTML/PDF</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+                        </div>
+-->
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<!--
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="../../check/referer" title="Valid HTML5" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="../../css-validator/check/referer.fe4c581d16fb9f59f07485ddb441e467" title="Valid CSS" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-dw.png" width="80" height="15"
+            alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div>
+-->
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="../../lib/exe/taskrunner.fcab3902b42a9c670de53aa9d1961917.gif" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

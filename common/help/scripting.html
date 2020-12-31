@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>help:scripting - Workcraft</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,scripting"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.html" title="Workcraft"/>
+<link rel="start" href="scripting.html"/>
+<link rel="contents" href="scripting.html" title="Sitemap"/>
+<link rel="manifest" href="lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="edit" title="Edit this page" href="scripting.html"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="_export/xhtml/help/scripting.xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="_export/raw/help/scripting.raw"/>
+<link rel="canonical" href="https://workcraft.org/help/scripting"/>
+<link rel="stylesheet" href="lib/exe/css.php.t.dokuwiki-light-export.css"/>
+<!--[if gte IE 9]><!-->
+<script >/*<![CDATA[*/var NS='help';var SIG=" --- \/\/[[support@workcraft.org| ]] 2020\/11\/24 09:00\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"id":"help:scripting","namespace":"help","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script charset="utf-8" src="lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<script charset="utf-8" src="lib/exe/js.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki-light-export loggedIn    ">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <h1><a href="start.html"  accesskey="" title=""><img src="logo.png" width="381" height="64" alt="" /></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+<!--
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="action profile"><a href="scripting.html" title="Profile" rel="nofollow"><span>Profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 3h20c1.05 0 2 .95 2 2v14c0 1.05-.95 2-2 2H2c-1.05 0-2-.95-2-2V5c0-1.05.95-2 2-2m12 3v1h8V6h-8m0 2v1h8V8h-8m0 2v1h7v-1h-7m-6 3.91C6 13.91 2 15 2 17v1h12v-1c0-2-4-3.09-6-3.09M8 6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a></li><li class="action admin"><a href="scripting.html" title="Admin" rel="nofollow"><span>Admin</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></a></li><li class="action logout"><a href="scripting.html" title="Log Out" rel="nofollow"><span>Log Out</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg></a></li>                </ul>
+            </div>
+        -->
+        <!-- SITE TOOLS -->
+<!--
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="help:scripting" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="help:scripting" /><input type="hidden" name="sectok" value="258d0405dbc4857df7e8bcd75c780228" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="scripting.html" title="Changes [r]" rel="nofollow" accesskey="r">Changes</a></li><li class="action media"><a href="scripting.html" title="Media" rel="nofollow">Media</a></li><li class="action index"><a href="scripting.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+-->
+    </div>
+
+    <!-- BREADCRUMBS -->
+<!--
+    -->
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>help:scripting</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_fastwiki_marker" style="display:none"></div><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#modes_of_script_execution">Modes of script execution</a></div></li>
+<li class="level1"><div class="li"><a href="#special_symbols_in_file_names">Special symbols in file names</a></div></li>
+<li class="level1"><div class="li"><a href="#functions_and_variables">Functions and variables</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#help">Help</a></div></li>
+<li class="level2"><div class="li"><a href="#text_output">Text output</a></div></li>
+<li class="level2"><div class="li"><a href="#gui_and_exit">GUI and exit</a></div></li>
+<li class="level2"><div class="li"><a href="#global_variables">Global variables</a></div></li>
+<li class="level2"><div class="li"><a href="#workspace_functions">Workspace functions</a></div></li>
+<li class="level2"><div class="li"><a href="#file_operations">File operations</a></div></li>
+<li class="level2"><div class="li"><a href="#configuration">Configuration</a></div></li>
+<li class="level2"><div class="li"><a href="#command_execution">Command execution</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#model_specific_commands">Model specific commands</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#conversion_commands">Conversion commands</a></div></li>
+<li class="level2"><div class="li"><a href="#statistics_commands">Statistics commands</a></div></li>
+<li class="level2"><div class="li"><a href="#synthesis_commands">Synthesis commands</a></div></li>
+<li class="level2"><div class="li"><a href="#layout_commands">Layout commands</a></div></li>
+<li class="level2"><div class="li"><a href="#verification_commands">Verification commands</a></div></li>
+<li class="level2"><div class="li"><a href="#transformation_commands">Transformation commands</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#script_examples">Script examples</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#basic">Basic</a></div></li>
+<li class="level2"><div class="li"><a href="#advanced">Advanced</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 id="scripting_interface">Scripting interface</h1>
+<div class="level1">
+
+<p>
+Workcraft supports scripting using JavaScript language. Here is the scripting <abbr title="Application Programming Interface">API</abbr> and several example scripts.
+</p>
+
+</div>
+
+<h2 id="modes_of_script_execution">Modes of script execution</h2>
+<div class="level2">
+
+<p>
+Two modes of script execution are supported:
+</p>
+<ul>
+<li class="level1"><div class="li"> Interactively, by entering the script commands in the <em>Javascript</em> tab and pressing <kbd class="__keyboard">Ctrl</kbd>+<kbd class="__keyboard">Enter</kbd> to execute them. The output of the commands is redirected to the <em>Output</em> tab.</div>
+</li>
+<li class="level1"><div class="li"> In batch mode, by passing the script file name or a one-liner script after the <code>-exec:</code> command line parameter.</div>
+</li>
+</ul>
+
+<p>
+For batch mode it is often convenient to start Workcraft without <abbr title="Graphical User Interface">GUI</abbr> and without reading/writing configuration files. This is achieved by using <code>-nogui</code> and <code>-noconfig</code> command line parameter  as follows (We presume that Workcraft home is in the search PATH and the platform-specific <code>.sh</code>/<code>.bat</code> extension of Workcraft runner is omitted):
+</p>
+<pre class="code shell">workcraft -nogui -noconfig -exec:SCRIPT</pre>
+
+<p>
+If a script contains file operation commands, such as loading work files or exporting the models, then all the file names in these commands are relative to the <em>working directory</em>. By default this coincides with Workcraft home, however, an alternative working directory can be passed after the <code>-dir:</code> command line parameter, as follows:
+</p>
+<pre class="code shell">workcraft -nogui -noconfig -exec:SCRIPT -dir:PATH</pre>
+
+<p>
+For a short JavaScript snippet, it may be more convenient to pass it directly in the command line <span class="wrap_info ">since <strong>v3.2.3</strong></span>:
+</p>
+<pre class="code shell">workcraft -nogui -exec:&quot;JAVASCRIPT CODE&quot;</pre>
+
+</div>
+
+<h2 id="special_symbols_in_file_names">Special symbols in file names</h2>
+<div class="level2">
+
+<p>
+If you have to use a backslash symbol <code>\</code> in your script, e.g. in a Windows file path, then do not forget to escape it. Also if the file path contains spaces or other suspicious symbols, then put this path in quotes in the command line.
+</p>
+
+<p>
+For example, if you want to run a script <em>“C:\Workcraft Projects\scripts\test1.js”</em> that loads a model from <em>“C:\Workcraft Projects\models\test1.work”</em> and saves statistics in <em>“C:\Temp\test1.txt”</em>, then the Windows command line would look like this (notice the quotes around the paths with spaces):
+</p>
+<pre class="code shell">workcraft.bat -nogui -dir:&quot;C:\Workcraft Projects&quot; -exec:&quot;scripts\test1.js&quot;</pre>
+
+<p>
+and the script would be as follows (notice the double backslashes):
+</p>
+<dl class="code">
+<dt><a href="_export/code/help/scripting/codeblock.4.code" title="Download Snippet" class="mediafile mf_js">test1.js</a></dt>
+<dd><pre class="code javascript">work <span class="sy0">=</span> load<span class="br0">&#40;</span><span class="st0">&quot;models<span class="es0">\\</span>test1.work&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+stat <span class="sy0">=</span> statModel<span class="br0">&#40;</span>work<span class="br0">&#41;</span><span class="sy0">;</span>
+write<span class="br0">&#40;</span>stat<span class="sy0">,</span> <span class="st0">&quot;C:<span class="es0">\\</span>Temp<span class="es0">\\</span>test1.txt&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre>
+</dd></dl>
+
+<p>
+Notice that <em>“scripts\test1.js”</em> and <em>“models\test1.work”</em> are relative to the working directory <em>“C:\Workcraft Projects”</em>, while the file <em>“C:\Temp\test1.txt”</em> is specified by its absolute path.
+</p>
+
+</div>
+
+<h2 id="functions_and_variables">Functions and variables</h2>
+<div class="level2">
+
+<p>
+Here is a list of predefined wrapper functions, partitioned into categories, and global variables available for scripting.
+</p>
+
+</div>
+
+<h3 id="help">Help</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <code>help(substring)</code> – output all the helper functions whose name contains the given <code>substring</code></div>
+</li>
+<li class="level1"><div class="li"> <code>apropos(substring)</code> – output all the helper functions whose name or description contains the given <code>substring</code></div>
+</li>
+<li class="level1"><div class="li"> <code>getHelp(substring, searchDescription)</code> – return a string with all helper functions whose name contains the <code>substring</code>; if the <code>searchDescription</code> is true, then also search the function descriptions</div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="text_output">Text output</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <code>print(msg)</code> – output <code>msg</code> to <em>stdout</em> and add a newline</div>
+</li>
+<li class="level1"><div class="li"> <code>eprint(msg)</code> – output <code>msg</code> to <em>stderr</em> and add a newline</div>
+</li>
+<li class="level1"><div class="li"> <code>write(text, fileName)</code> – write <code>text</code> to a file <code>fileName</code> (relative to the working directory) or to <em>stdout</em> if <code>fileName</code> is skipped</div>
+</li>
+</ul>
+
+<p>
+Note that conventional Java print functions can be also used, e.g. if you need to output text without adding a newline:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>System.out.print(text)</code> – output <code>text</code> to <em>stdout</em></div>
+</li>
+<li class="level1"><div class="li"> <code>System.err.print(text)</code> – output <code>text</code> to <em>stderr</em></div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="gui_and_exit">GUI and exit</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <code>startGUI()</code> – start <abbr title="Graphical User Interface">GUI</abbr></div>
+</li>
+<li class="level1"><div class="li"> <code>stopGUI()</code> – stop <abbr title="Graphical User Interface">GUI</abbr> and switch to console mode</div>
+</li>
+<li class="level1"><div class="li"> <code>quit()</code> or <code>exit()</code> – exit Workcraft</div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="global_variables">Global variables</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <code>args</code> – command line parameters passed to Workcraft; these can be iterated over as follows: <code>for each (arg in args) {…}</code></div>
+</li>
+<li class="level1"><div class="li"> <code>framework</code> – the Workcraft framework singleton</div>
+</li>
+<li class="level1"><div class="li"> <code>workspaceEntry</code> – the current work </div>
+</li>
+<li class="level1"><div class="li"> <code>modelEntry</code> – the current model entry, a shortcut to <code>workspaceEntry.getModelEntry()</code></div>
+</li>
+<li class="level1"><div class="li"> <code>visualModel</code> – the current visual model, a shortcut to <code>modelEntry.getVisualModel()</code></div>
+</li>
+<li class="level1"><div class="li"> <code>mathModel</code> – the current math model, a shortcut to <code>modelEntry.getMathModel()</code></div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="workspace_functions">Workspace functions</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <code>getWorks()</code> – return an iterable array of loaded works</div>
+</li>
+<li class="level1"><div class="li"> <code>getWorkFile(work)</code> – return a file object for the model <code>work</code></div>
+</li>
+<li class="level1"><div class="li"> <code>getModelDescriptor(work)</code> – return a descriptor string for the model <code>work</code></div>
+</li>
+<li class="level1"><div class="li"> <code>getModelTitle(work)</code> – return a title string for the model <code>work</code></div>
+</li>
+<li class="level1"><div class="li"> <code>setModelTitle(work, title)</code> – set a title of the model <code>work</code> to the string <code>title</code></div>
+</li>
+<li class="level1"><div class="li"> <code>closeWork(work)</code> – close the model <code>work</code></div>
+</li>
+<li class="level1"><div class="li"> <code>closeAllWorks()</code> – close all the open works</div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="file_operations">File operations</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <code>load(fileName)</code>  – load a model from the work file <code>fileName</code> and return its work</div>
+</li>
+<li class="level1 node"><div class="li"> <code>import(fileName)</code> – import a model from the file <code>fileName</code> and return its work; the model type is determined by the <code>fileName</code> extension:</div>
+<ul>
+<li class="level2"><div class="li"> <code>.g</code> – <em>ASTG</em> file for a <em><abbr title="Signal Transition Graph">STG</abbr></em> model</div>
+</li>
+<li class="level2"><div class="li"> <code>.sg</code> – <em>ASTG</em> file for a <em><abbr title="Finite State Transducer">FST</abbr></em> model</div>
+</li>
+<li class="level2"><div class="li"> <code>.v</code> – <em>Verilog netlist</em> file for a <em>circuit</em> model</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <code>save(work, fileName)</code> – save the model <code>work</code> into a file with the given <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportSvg(work, fileName)</code> – export the model <code>work</code> as a <em>Scalable Vector Graphics (*.svg)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportPng(work, fileName)</code> – export the model <code>work</code> as a <em>Portable Network Graphics (*.png)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportPdf(work, fileName)</code> – export the model <code>work</code> as a <em>Portable Document Format (*.pdf)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportPs(work, fileName)</code> – export the model <code>work</code> as a <em>PostScript (*.ps)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportEps(work, fileName)</code> – export the model <code>work</code> as an <em>Encapsulated PostScript (*.eps)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportDot(work, fileName)</code> – export the model <code>work</code> as a <em>GraphViz (*.dot)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportStgG(work, fileName)</code> – export the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> as a <em>Signal Transition Graph (*.g)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportStgLpn(work, fileName)</code> – export the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> as a <em>Labelled Petri Net (*.lpn)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportFstSg(work, fileName)</code> – export the <abbr title="Finite State Transducer">FST</abbr> <code>work</code> as a <em>State Graph (*.sg)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportCircuitVerilog(work, fileName)</code> – export the Circuit <code>work</code> as a <em>Verilog netlist (*.v)</em> file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>exportDfsVerilog(work, fileName)</code> – export the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> as a <em>Verilog netlist (*.v)</em> file <code>fileName</code></div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="configuration">Configuration</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <code>setConfigVar(key, val)</code> – set the config variable <code>key</code> to value <code>val</code></div>
+</li>
+<li class="level1"><div class="li"> <code>getConfigVar(key)</code>  – return the value of config variable <code>key</code></div>
+</li>
+<li class="level1"><div class="li"> <code>saveConfig()</code>  – save settings into the default config file</div>
+</li>
+<li class="level1"><div class="li"> <code>loadConfig()</code>  – load settings from the default config file</div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="command_execution">Command execution</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <code>execFile(fileName)</code> – execute JavaScript file <code>fileName</code></div>
+</li>
+<li class="level1"><div class="li"> <code>runCommand(work, className)</code> – apply the command <code>className</code> to the model <code>work</code> as a background task</div>
+</li>
+<li class="level1"><div class="li"> <code>executeCommand(work, className)</code> – apply the command <code>className</code> to the model <code>work</code> and wait for the result</div>
+</li>
+</ul>
+
+</div>
+
+<h2 id="model_specific_commands">Model specific commands</h2>
+<div class="level2">
+
+<p>
+Commands for conversion, transformation and verification of specific models.
+</p>
+
+</div>
+
+<h3 id="conversion_commands">Conversion commands</h3>
+<div class="level3">
+
+<p>
+These commands are applied to the given <code>work</code> of a specific model type and produce a new model work.
+</p>
+<ul>
+<li class="level1 node"><div class="li"> Conversion between different model types (sorted alphabetically)</div>
+<ul>
+<li class="level2"><div class="li"> <code>convertCircuitToStg(work)</code> – convert the Circuit <code>work</code> into a new <abbr title="Signal Transition Graph">STG</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertCircuitToStgWithEnvironment(work)</code> – convert the Circuit <code>work</code> and its environment into a new <abbr title="Signal Transition Graph">STG</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertDfsToStg(work)</code> – convert the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> into a new <abbr title="Signal Transition Graph">STG</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertFsmToFst(work)</code> – convert the <abbr title="Finite State Machine">FSM</abbr> <code>work</code> into a new <abbr title="Finite State Transducer">FST</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertFsmToGraph(work)</code> – convert the <abbr title="Finite State Machine">FSM</abbr> <code>work</code> into a new Graph work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertFsmToPetri(work)</code> – convert the <abbr title="Finite State Machine">FSM</abbr> <code>work</code> into a new Petri net work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertFstToFsm(work)</code> – convert the <abbr title="Finite State Transducer">FST</abbr> <code>work</code> into a new <abbr title="Finite State Machine">FSM</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertFstToStg(work)</code> – convert the <abbr title="Finite State Transducer">FST</abbr> <code>work</code> into a new <abbr title="Signal Transition Graph">STG</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertGraphToFsm(work)</code> – convert the Graph <code>work</code> into a new <abbr title="Finite State Machine">FSM</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertGraphToPetri(work)</code> – convert the Graph <code>work</code> into a new Petri net work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertPetriToFsm(work)</code> – convert the Petri net <code>work</code> into a new <abbr title="Finite State Machine">FSM</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertPetriToPolicy(work)</code> – convert the Petri net <code>work</code> into a new Policy net work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertPetriToStg(work)</code> – convert the Petri net <code>work</code> into a new <abbr title="Signal Transition Graph">STG</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertPolicyToPetri(work)</code> – convert the Policy net <code>work</code> into a new Petri net work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertStgToBinaryFst(work)</code> – convert the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a new binary <abbr title="Finite State Transducer">FST</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertStgToFst(work)</code> – convert the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a new <abbr title="Finite State Transducer">FST</abbr> work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertStgToPetri(work)</code> – convert the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a new Petri net work</div>
+</li>
+<li class="level2"><div class="li"> <code>convertWtgToStg(work)</code> – convert the <abbr title="Waveform Transition Graph">WTG</abbr> <code>work</code> into a new <abbr title="Signal Transition Graph">STG</abbr> work</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Conversion of <abbr title="Signal Transition Graph">STG</abbr> and Petri net models using net synthesis of Petrify</div>
+<ul>
+<li class="level2"><div class="li"> <code>convertPetriSynthesis(work)</code> – convert the Petri net/<abbr title="Signal Transition Graph">STG</abbr>/<abbr title="Finite State Machine">FSM</abbr>/<abbr title="Finite State Transducer">FST</abbr> <code>work</code> into a new work using net synthesis</div>
+</li>
+<li class="level2"><div class="li"> <code>convertPetriSynthesisEr(work)</code> – convert the Petri net/<abbr title="Finite State Machine">FSM</abbr> or <abbr title="Signal Transition Graph">STG</abbr>/<abbr title="Finite State Transducer">FST</abbr> <code>work</code> into a new Petri net or <abbr title="Signal Transition Graph">STG</abbr> work using net synthesis with a different label for each excitation region</div>
+</li>
+<li class="level2"><div class="li"> <code>convertPetriHideTransition(work)</code> – convert the Petri net/<abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a new work hiding selected transitions</div>
+</li>
+<li class="level2"><div class="li"> <code>convertPetriHideErTransition(work)</code> – convert the Petri net or <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a new Petri net or <abbr title="Signal Transition Graph">STG</abbr> work hiding selected signals and dummies with a different label for each excitation region</div>
+</li>
+<li class="level2"><div class="li"> <code>convertStgUntoggle(work)</code> – convert the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a new work where the selected (or all) transitions are untoggled</div>
+</li>
+<li class="level2"><div class="li"> <code>convertStgHideDummy(work)</code> – convert the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a new work without dummies</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h3 id="statistics_commands">Statistics commands</h3>
+<div class="level3">
+
+<p>
+These commands produce a statistics string for the given <code>work</code> of a specific model type.
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>statModel(work)</code> – node and arc count for the model <code>work</code> (all model types are supported)</div>
+</li>
+<li class="level1"><div class="li"> <code>statPetri(work)</code> – advanced complexity estimates for the Petri net <code>work</code></div>
+</li>
+<li class="level1"><div class="li"> <code>statStg(work)</code> – advanced complexity estimates for the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code></div>
+</li>
+<li class="level1"><div class="li"> <code>statCircuit(work)</code> – advanced complexity estimates for the Circuit <code>work</code></div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="synthesis_commands">Synthesis commands</h3>
+<div class="level3">
+
+<p>
+These commands are applied to the given <code>work</code> of a specific model type and return a new model work.
+</p>
+<ul>
+<li class="level1 node"><div class="li"> Logic synthesis of Circuits from STGs using Petrify backend</div>
+<ul>
+<li class="level2"><div class="li"> <code>resolveCscConflictPetrify(work)</code> – resolve complete state coding conflicts in the <abbr title="Signal Transition Graph">STG</abbr> &#039;work&#039; using Petrify</div>
+</li>
+<li class="level2"><div class="li"> <code>synthComplexGatePetrify(work)</code> – logic synthesis of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a complex gate Circuit work using Petrify</div>
+</li>
+<li class="level2"><div class="li"> <code>synthGeneralisedCelementPetrify(work)</code> – synthesis of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a generalised C-element Circuit using Petrify</div>
+</li>
+<li class="level2"><div class="li"> <code>synthStandardCelementPetrify(work)</code> – synthesis of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a standard C-element Circuit work using Petrify</div>
+</li>
+<li class="level2"><div class="li"> <code>synthTechnologyMappingPetrify(work)</code> – technology mapping of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a Circuit work using Petrify</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Logic synthesis of Circuits from STGs using MPSat backend</div>
+<ul>
+<li class="level2"><div class="li"> <code>resolveCscConflictMpsat(work)</code> – resolve complete state coding conflicts in the <abbr title="Signal Transition Graph">STG</abbr> &#039;work&#039; using MPSat</div>
+</li>
+<li class="level2"><div class="li"> <code>synthComplexGateMpsat(work)</code> – logic synthesis of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a complex gate Circuit work using MPSat</div>
+</li>
+<li class="level2"><div class="li"> <code>synthGeneralisedCelementMpsat(work)</code> – synthesis of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a generalised C-element Circuit work using MPSat</div>
+</li>
+<li class="level2"><div class="li"> <code>synthStandardCelementMpsat(work)</code> – synthesis of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a standard C-element Circuit work using MPSat</div>
+</li>
+<li class="level2"><div class="li"> <code>synthTechnologyMappingMpsat(work)</code> – technology mapping of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a Circuit work using MPSat</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Logic synthesis of Circuits from STGs using ATACS backend</div>
+<ul>
+<li class="level2"><div class="li"> <code>synthComplexGateAtacs(work)</code> – logic synthesis of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a complex gate Circuit work using ATACS</div>
+</li>
+<li class="level2"><div class="li"> <code>synthGeneralisedCelementAtacs(work)</code> – synthesis of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a generalised C-element Circuit work using ATACS</div>
+</li>
+<li class="level2"><div class="li"> <code>synthStandardCelementAtacs(work)</code> – synthesis of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> into a standard C-element Circuit work using ATACS</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h3 id="layout_commands">Layout commands</h3>
+<div class="level3">
+
+<p>
+These commands modify the given <code>work</code> of a specific model type.
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>layoutModelDot(work)</code> – position nodes and shape the arcs using of the model <code>work</code> using <em>Graphviz</em> backend</div>
+</li>
+<li class="level1"><div class="li"> <code>layoutModelRandom(work)</code> – randomly position graph nodes of the model <code>work</code> and connect them by straight arcs</div>
+</li>
+<li class="level1"><div class="li"> <code>layoutCircuit(work)</code> – place components and route wires of the Circuit <code>work</code></div>
+</li>
+<li class="level1"><div class="li"> <code>layoutCircuitPlacement(work)</code> – place components of the Circuit <code>work</code></div>
+</li>
+<li class="level1"><div class="li"> <code>layoutCircuitRouting(work)</code> – route wires of the Circuit <code>work</code></div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="verification_commands">Verification commands</h3>
+<div class="level3">
+
+<p>
+These commands are applied to the given <code>work</code> of a specific model type and return a Boolean outcome of the check.
+</p>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for Circuit models</div>
+<ul>
+<li class="level2"><div class="li"> <code>setCircuitEnvironment(work, env)</code> – set <code>env</code> <abbr title="Signal Transition Graph">STG</abbr> file or work as an environment for the Circuit <code>work</code> <span class="wrap_info ">since <strong>v3.2.3</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>getCircuitEnvironment(work)</code> – get an environment <abbr title="Signal Transition Graph">STG</abbr> file for the Circuit <code>work</code> <span class="wrap_info ">since <strong>v3.2.3</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitBinateImplementation(work)</code> – check the Circuit <code>work</code> for correct implementation of its binate functions <span class="wrap_info ">since <strong>v3.2.5</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitCombined(work)</code> – combined check of the Circuit <code>work</code> for conformation to environment, deadlock freeness, and output persistency</div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitConformation(work)</code> – check the Circuit <code>work</code> for conformation to environment</div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitCycles(work)</code> – check if the Circuit <code>work</code> is free from cyclic paths</div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitDeadlockFreeness(work)</code> – check the Circuit <code>work</code> for deadlock freeness</div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitOutputPersistency(work)</code> – check the Circuit <code>work</code> for output persistency</div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitReachAssertion(work, data)</code> – check the Circuit <code>work</code> for REACH assertion <code>data</code> <span class="wrap_info ">since <strong>v3.3.0</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitReset(work)</code> – check if the Circuit <code>work</code> is correctly initialised via forced input ports</div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitSignalAssertion(work, data)</code> – check the Circuit <code>work</code> for signal assertion <code>data</code> <span class="wrap_info ">since <strong>v3.3.0</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkCircuitStrictImplementation(work)</code> – check the Circuit <code>work</code> for strict implementation of its signals according to the environment</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for <abbr title="Dataflow Structure">DFS</abbr> models</div>
+<ul>
+<li class="level2"><div class="li"> <code>checkDfsCombined(work)</code> – combined check of the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> for deadlock freeness and output persistency</div>
+</li>
+<li class="level2"><div class="li"> <code>checkDfsDeadlockFreeness(work)</code> – check the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> for deadlock freeness</div>
+</li>
+<li class="level2"><div class="li"> <code>checkDfsOutputPersistency(work)</code> – check the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> for output persistency</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for <abbr title="Finite State Machine">FSM</abbr>/<abbr title="Finite State Transducer">FST</abbr> models</div>
+<ul>
+<li class="level2"><div class="li"> <code>checkFsmDeadlockFreeness(work)</code> - check the <abbr title="Finite State Machine">FSM</abbr>/<abbr title="Finite State Transducer">FST</abbr> <code>work</code> for deadlock freeness</div>
+</li>
+<li class="level2"><div class="li"> <code>checkFsmDeterminism(work)</code> - check the <abbr title="Finite State Machine">FSM</abbr>/<abbr title="Finite State Transducer">FST</abbr> <code>work</code> for determinism</div>
+</li>
+<li class="level2"><div class="li"> <code>checkFsmReachability(work)</code> - check the <abbr title="Finite State Machine">FSM</abbr>/<abbr title="Finite State Transducer">FST</abbr> <code>work</code> for reachability of all states</div>
+</li>
+<li class="level2"><div class="li"> <code>checkFsmReversibility(work)</code> - check the <abbr title="Finite State Machine">FSM</abbr>/<abbr title="Finite State Transducer">FST</abbr> <code>work</code> for reversibility of all states</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for Graph models</div>
+<ul>
+<li class="level2"><div class="li"> <code>checkGraphReachability(work)</code> – check the Graph <code>work</code> for reachability of all its nodes </div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for Policy net models</div>
+<ul>
+<li class="level2"><div class="li"> <code>checkPolicyDeadlockFreeness(work)</code> – check the Policy net <code>work</code> for deadlock freeness</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for <abbr title="Signal Transition Graph">STG</abbr> models</div>
+<ul>
+<li class="level2"><div class="li"> <code>checkStgCombined(work)</code> – combined check of the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for consistency, deadlock freeness, input properness, output persistency, and mutex implementability</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgConformation(work, data)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for conformation to the <abbr title="Signal Transition Graph">STG</abbr> specified by file name <code>data</code> <span class="wrap_info ">since <strong>v3.3.0</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgConsistency(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for consistency</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgCsc(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for CSC</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgDeadlockFreeness(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> (or Petri net) <code>work</code> for deadlock freeness</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgDiInterface(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for DI interface</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgHandshakeProtocol(work, data)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for following a handshake protocol as specified by <code>data</code>, e.g. <code>{req1 req2} {ack12}</code> <span class="wrap_info ">since <strong>v3.3.0</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgInputProperness(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for input properness</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgMutexImplementability(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for implementability of its mutex places</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgNormalcy(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for normalcy</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgNwayConformation(work, data)</code> – check the STGs specified by space-separated list of file names <code>data</code> for N-way conformation (<code>work</code> parameter is ignored) <span class="wrap_info ">since <strong>v3.2.3</strong>, changed <strong>v3.3.0</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgOutputDeterminacy(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for output determinacy</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgOutputPersistency(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for output persistency</div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgPlaceRedundancy(work, data)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> (or Petri net) &#039;work&#039; for redundancy of places in space-separated list <code>data</code> <span class="wrap_info ">since <strong>v3.3.0</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgReachAssertion(work, data)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for REACH assertion <code>data</code> <span class="wrap_info ">since <strong>v3.3.0</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgSignalAssertion(work, data)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for signal assertion <code>data</code> <span class="wrap_info ">since <strong>v3.3.0</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgSpotAssertion(work, data)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for SPOT assertion <code>data</code> <span class="wrap_info ">since <strong>v3.3.0</strong></span></div>
+</li>
+<li class="level2"><div class="li"> <code>checkStgUsc(work)</code> – check the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> for USC</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for <abbr title="Waveform Transition Graph">WTG</abbr> models</div>
+<ul>
+<li class="level2"><div class="li"> <code>checkWtgInputProperness(work)</code> – check the <abbr title="Waveform Transition Graph">WTG</abbr> <code>work</code> for input properness</div>
+</li>
+<li class="level2"><div class="li"> <code>checkWtgReachability(work)</code> – check the <abbr title="Waveform Transition Graph">WTG</abbr> <code>work</code> for reachability of nodes and transitions</div>
+</li>
+<li class="level2"><div class="li"> <code>checkWtgSoundness(work)</code> – check the <abbr title="Waveform Transition Graph">WTG</abbr> <code>work</code> for soundness and consistency</div>
+</li>
+<li class="level2"><div class="li"> <code>checkWtgSynthesisGuidelines(work)</code> – check the <abbr title="Waveform Transition Graph">WTG</abbr> <code>work</code> for compliance with the synthesis guidelines</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h3 id="transformation_commands">Transformation commands</h3>
+<div class="level3">
+
+<p>
+These commands modify the given <code>work</code> of a specific model type.
+</p>
+<ul>
+<li class="level1 node"><div class="li"> Generic commands applicable to all models</div>
+<ul>
+<li class="level2"><div class="li"> <code>transformModelCopyLabel(work)</code> – transform the model <code>work</code> by copying unique names of the selected (or all) nodes into their labels</div>
+</li>
+<li class="level2"><div class="li"> <code>transformModelStraightenConnection(work)</code> – transform the model <code>work</code> by straightening selected (or all) arcs</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for <abbr title="Finite State Machine">FSM</abbr> and derived models</div>
+<ul>
+<li class="level2"><div class="li"> <code>transformFsmMergeState(work)</code> – transform the <abbr title="Finite State Machine">FSM</abbr>/<abbr title="Finite State Transducer">FST</abbr> <code>work</code> by merging selected states</div>
+</li>
+<li class="level2"><div class="li"> <code>transformFsmContractState(work)</code> – transform the <abbr title="Finite State Machine">FSM</abbr>/<abbr title="Finite State Transducer">FST</abbr> <code>work</code> by contracting selected states</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for Circuit models</div>
+<ul>
+<li class="level2"><div class="li"> <code>transformCircuitContractComponent(work)</code> – transform the Circuit <code>work</code> by contracting selected single-input/single-output components</div>
+</li>
+<li class="level2"><div class="li"> <code>transformCircuitContractJoint(work)</code> – transform the Circuit <code>work</code> by contracting selected (or all) joints</div>
+</li>
+<li class="level2"><div class="li"> <code>transformCircuitDetachJoint(work)</code> – transform the Circuit <code>work</code> by detaching selected (or all joints)</div>
+</li>
+<li class="level2"><div class="li"> <code>transformCircuitDissolveJoint(work)</code> – transform the Circuit <code>work</code> by dissolving selected (or all) joints</div>
+</li>
+<li class="level2"><div class="li"> <code>transformCircuitInsertBuffer(work)</code> – transform the Circuit <code>work</code> by inserting buffers into selected wires</div>
+</li>
+<li class="level2"><div class="li"> <code>transformCircuitPropagateInversion(work)</code> – transform the Circuit <code>work</code> by propagating inversion through selected (or all) gates</div>
+</li>
+<li class="level2"><div class="li"> <code>transformCircuitSplitGate(work)</code> – transform the Circuit <code>work</code> by splitting selected (or all) complex gates into simple gates</div>
+</li>
+<li class="level2"><div class="li"> <code>transformCircuitToggleBubble(work)</code> – transform the Circuit <code>work</code> by toggling inversion of selected contacts and outputs of selected components</div>
+</li>
+<li class="level2"><div class="li"> <code>transformCircuitToggleZeroDelay(work)</code> – transform the Circuit <code>work</code> by toggling zero delay of selected inverters and buffers</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for reset insertion in Circuit models  <span class="wrap_info ">since <strong>v3.2.2</strong>, change in <strong>v3.2.3</strong></span></div>
+<ul>
+<li class="level2"><div class="li"> <code>insertCircuitResetActiveHigh(work)</code> – insert active-high reset into the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>insertCircuitResetActiveLow(work)</code> – insert active-low reset into the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitForceInitAutoAppend(work)</code> – auto-append force init pins as necessary to complete initialisation of the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitForceInitAutoDiscard(work)</code> – auto-remove force init pins that are redundant for initialisation of the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitForceInitClearAll(work)</code> – clear all force init input ports and output pins in the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitForceInitInputPorts(work)</code> – force init all input ports in the Circuit <code>work</code> (environment must initialise them)</div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitForceInitProblematicPins(work)</code> – force init output pins with problematic initial state in the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitForceInitSequentialPins(work)</code> - force init output pins of sequential gates in the Circuit <code>work</code></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for loop breaking and scan insertion in Circuit models <span class="wrap_info ">since <strong>v3.2.3</strong></span></div>
+<ul>
+<li class="level2"><div class="li"> <code>insertCircuitScan(work)</code> – insert scan for path breaker components into the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>insertCircuitTestableGates(work)</code> – insert testable buffers/inverters for path breaker components in the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitPathBreakerAutoAppend(work)</code> – auto-append path breaker pins as necessary to complete cycle breaking in the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitPathBreakerAutoDiscard(work)</code> – auto-discard path breaker pins that are redundant for cycle breaking in the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitPathBreakerClearAll(work)</code> – clear all path breaker pins in the Circuit <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>tagCircuitPathBreakerSelfloopPins(work)</code> – path breaker output pins within self-loops in the Circuit <code>work</code></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for <abbr title="Dataflow Structure">DFS</abbr> models</div>
+<ul>
+<li class="level2"><div class="li"> <code>transformDfsContractComponent(work)</code> – transform the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> by contracting selected components</div>
+</li>
+<li class="level2"><div class="li"> <code>transformDfsMergeComponent(work)</code> – transform the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> by merging selected components</div>
+</li>
+<li class="level2"><div class="li"> <code>transformDfsWagging2Way(work)</code> – transform the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> by by applying 2-way wagging to the selected pipeline section</div>
+</li>
+<li class="level2"><div class="li"> <code>transformDfsWagging3Way(work)</code> – transform the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> by by applying 3-way wagging to the selected pipeline section</div>
+</li>
+<li class="level2"><div class="li"> <code>transformDfsWagging4Way(work)</code> – transform the <abbr title="Dataflow Structure">DFS</abbr> <code>work</code> by by applying 4-way wagging to the selected pipeline section</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for Petri net and (if explicitly stated) for derived models</div>
+<ul>
+<li class="level2"><div class="li"> <code>transformPetriCollapseProxy(work)</code> – transform the Petri net (or derived model, e.g.<abbr title="Signal Transition Graph">STG</abbr>) <code>work</code> by collapsing selected (or all) proxy places</div>
+</li>
+<li class="level2"><div class="li"> <code>transformPetriContractTransition(work)</code> – transform the Petri net <code>work</code> by contracting a selected transition</div>
+</li>
+<li class="level2"><div class="li"> <code>transformPetriDirectedArcToReadArc(work)</code> – transform the Petri net (or derived model, e.g.<abbr title="Signal Transition Graph">STG</abbr>) <code>work</code> by converting selected arcs to read-arcs</div>
+</li>
+<li class="level2"><div class="li"> <code>transformPetriDualArcToReadArc(work)</code> – transform the Petri net (or derived model, e.g.<abbr title="Signal Transition Graph">STG</abbr>) <code>work</code> by converting selected (or all) dual producing/consuming arcs to read-arcs</div>
+</li>
+<li class="level2"><div class="li"> <code>transformPetriMergePlace(work)</code> – transform the Petri net (or derived model, e.g.<abbr title="Signal Transition Graph">STG</abbr>) <code>work</code> by merging selected places</div>
+</li>
+<li class="level2"><div class="li"> <code>transformPetriMergeTransition(work)</code> – transform the Petri net <code>work</code> by merging selected transitions</div>
+</li>
+<li class="level2"><div class="li"> <code>transformPetriProxyDirectedArcPlace(work)</code> – transform the Petri net (or derived model, e.g.<abbr title="Signal Transition Graph">STG</abbr>) <code>work</code> by creating proxies for selected producing/consuming arc places</div>
+</li>
+<li class="level2"><div class="li"> <code>transformPetriProxyReadArcPlace(work)</code> – transform the Petri net (or derived model, e.g.<abbr title="Signal Transition Graph">STG</abbr>) <code>work</code> by creating selected (or all) proxies for read-arc places</div>
+</li>
+<li class="level2"><div class="li"> <code>transformPetriReadArcToDualArc(work)</code> – transform the Petri net (or derived model, e.g.<abbr title="Signal Transition Graph">STG</abbr>) <code>work</code> by converting selected (or all) read-arcs to dual producing/consuming arcs</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for Policy net models</div>
+<ul>
+<li class="level2"><div class="li"> <code>transformPolicyBundleTransition(work)</code> – transform the Policy net <code>work</code> by bundling selected transitions</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for <abbr title="Signal Transition Graph">STG</abbr> models</div>
+<ul>
+<li class="level2"><div class="li"> <code>transformStgContractNamedTransition(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by contracting a selected transition</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgDummyToSignalTransition(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by converting selected dummies to signal transitions</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgExpandHandshake(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by expanding selected handshake transitions</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgExpandHandshakeReqAck(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by expanding selected handshake transitions by adding _req and _ack suffixes</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgExplicitPlace(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by making selected (or all) places explicit</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgImplicitPlace(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by making selected (or all) places implicit</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgInsertDummy(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by inserting dummies into selected arcs</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgMergeTransition(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by merging selected transitions</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgMirrorSignal(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by mirroring selected (or all) signals</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgMirrorTransition(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by mirroring selected (or all) transition sign</div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgSelectAllSignalTransitions(work)</code> – select all transitions of selected signals in the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code></div>
+</li>
+<li class="level2"><div class="li"> <code>transformStgSignalToDummyTransition(work)</code> – transform the <abbr title="Signal Transition Graph">STG</abbr> <code>work</code> by converting selected signal transitions to dummies</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> Commands specific for <abbr title="Waveform Transition Graph">WTG</abbr> models</div>
+<ul>
+<li class="level2"><div class="li"> <code>transformWtgStructureWaveform(work)</code> – transform the <abbr title="Waveform Transition Graph">WTG</abbr> <code>work</code> by structuring the waveforms</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 id="script_examples">Script examples</h2>
+<div class="level2">
+
+</div>
+
+<h3 id="basic">Basic</h3>
+<div class="level3">
+<dl class="code">
+<dt><a href="_export/code/help/scripting/codeblock.5.code" title="Download Snippet" class="mediafile mf_js">stg-transform.js</a></dt>
+<dd><pre class="code javascript"><span class="co1">// Mirror signals and untoggle transitions of STG model</span>
+inStgWork <span class="sy0">=</span> load<span class="br0">&#40;</span><span class="st0">&quot;in.stg.work&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+transformStgMirrorSignal<span class="br0">&#40;</span>inStg<span class="br0">&#41;</span><span class="sy0">;</span>
+outStgWork <span class="sy0">=</span> convertStgUntoggle<span class="br0">&#40;</span>inStg<span class="br0">&#41;</span><span class="sy0">;</span>
+save<span class="br0">&#40;</span>outStgWork<span class="sy0">,</span> <span class="st0">&quot;out.stg.work&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre>
+</dd></dl>
+<dl class="code">
+<dt><a href="_export/code/help/scripting/codeblock.6.code" title="Download Snippet" class="mediafile mf_js">buck-synth.js</a></dt>
+<dd><pre class="code javascript"><span class="co1">// Complex gate implementation for basic buck controller</span>
+stgWork <span class="sy0">=</span> load<span class="br0">&#40;</span><span class="st0">&quot;buck.stg.work&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+circuitWork <span class="sy0">=</span> synthComplexGatePetrify<span class="br0">&#40;</span>stgWork<span class="br0">&#41;</span><span class="sy0">;</span>
+save<span class="br0">&#40;</span>circuitWork<span class="sy0">,</span> <span class="st0">&quot;buck.circuit.work&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+exportVerilog<span class="br0">&#40;</span>circuitWork<span class="sy0">,</span> <span class="st0">&quot;buck.v&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre>
+</dd></dl>
+<dl class="code">
+<dt><a href="_export/code/help/scripting/codeblock.7.code" title="Download Snippet" class="mediafile mf_js">workspace-info.js</a></dt>
+<dd><pre class="code javascript"><span class="co1">// Print info for each loaded work and convert its title to upper case</span>
+<span class="kw1">for</span> each <span class="br0">&#40;</span>work <span class="kw1">in</span> getWorks<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    title <span class="sy0">=</span> work.<span class="me1">getTitle</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    print<span class="br0">&#40;</span><span class="st0">&quot;Info for &quot;</span> <span class="sy0">+</span> title<span class="br0">&#41;</span><span class="sy0">;</span>
+    print<span class="br0">&#40;</span><span class="st0">&quot;  * Descriptor: &quot;</span> <span class="sy0">+</span> getModelDescriptor<span class="br0">&#40;</span>work<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    print<span class="br0">&#40;</span><span class="st0">&quot;  * File: &quot;</span> <span class="sy0">+</span> getWorkFile<span class="br0">&#40;</span>work<span class="br0">&#41;</span>.<span class="me1">getName</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    setModelTitle<span class="br0">&#40;</span>work<span class="sy0">,</span> title.<span class="me1">toUpperCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    print<span class="br0">&#40;</span><span class="st0">&quot;  * Title: &quot;</span> <span class="sy0">+</span> getModelTitle<span class="br0">&#40;</span>work<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre>
+</dd></dl>
+
+</div>
+
+<h3 id="advanced">Advanced</h3>
+<div class="level3">
+<dl class="code">
+<dt><a href="_export/code/help/scripting/codeblock.8.code" title="Download Snippet" class="mediafile mf_js">synth.js</a></dt>
+<dd><pre class="code javascript"><span class="co1">// Technology mapping of the specified .g files whose names are passed</span>
+<span class="co1">// without extension, as follows:</span>
+<span class="co1">// workcraft -dir:WORKING_DIRECTORY_PATH -exec:synth.js TEST1 TEST2</span>
+setConfigVar<span class="br0">&#40;</span><span class="st0">&quot;CircuitSettings.gateLibrary&quot;</span><span class="sy0">,</span> <span class="st0">&quot;path-to-genlib-file&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw1">for</span> each <span class="br0">&#40;</span>name <span class="kw1">in</span> args<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    stgWork <span class="sy0">=</span> <span class="kw5">import</span><span class="br0">&#40;</span>name <span class="sy0">+</span> <span class="st0">&quot;.g&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>stgWork <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        eprint<span class="br0">&#40;</span><span class="st0">&quot;STG work loading failed!&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>checkStgCsc<span class="br0">&#40;</span>stgWork<span class="br0">&#41;</span> <span class="sy0">==</span> <span class="kw2">true</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        cscStgWork <span class="sy0">=</span> stgWork<span class="sy0">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+        cscStgWork <span class="sy0">=</span> resolveCscConflictPetrify<span class="br0">&#40;</span>stgWork<span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>cscStgWork <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            eprint<span class="br0">&#40;</span><span class="st0">&quot;CSC conflict resolution failed!&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+            exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="br0">&#125;</span>
+        save<span class="br0">&#40;</span>cscStgWork<span class="sy0">,</span> <span class="st0">&quot;vme-csc.stg.work&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    tmCircuitWork <span class="sy0">=</span> synthTechnologyMappingMpsat<span class="br0">&#40;</span>cscStgWork<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>tmCircuitWork <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        eprint<span class="br0">&#40;</span><span class="st0">&quot;Circuit synthesis failed!&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>checkCircuitCombined<span class="br0">&#40;</span>tmCircuitWork<span class="br0">&#41;</span> <span class="sy0">==</span> <span class="kw2">true</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        exportVerilog<span class="br0">&#40;</span>tmCircuitWork<span class="sy0">,</span> name <span class="sy0">+</span> <span class="st0">&quot;.v&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+        eprint<span class="br0">&#40;</span><span class="st0">&quot;Circuit verification failed!&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre>
+</dd></dl>
+<dl class="code">
+<dt><a href="_export/code/help/scripting/codeblock.9.code" title="Download Snippet" class="mediafile mf_js">reset.js</a></dt>
+<dd><pre class="code javascript"><span class="co1">// Define circuit initialisation scheme and insert active-low reset</span>
+<span class="co1">// (requires Workcraft v3.2.3 or newer)</span>
+work <span class="sy0">=</span> load<span class="br0">&#40;</span><span class="st0">&quot;test-tm.circuit.work&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw1">if</span> <span class="br0">&#40;</span>checkCircuitCombined<span class="br0">&#40;</span>work<span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw2">true</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    eprint<span class="br0">&#40;</span><span class="st0">&quot;Circuit verification failed&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+tagCircuitForceInitClearAll<span class="br0">&#40;</span>work<span class="br0">&#41;</span><span class="sy0">;</span>
+tagCircuitForceInitInputPorts<span class="br0">&#40;</span>work<span class="br0">&#41;</span><span class="sy0">;</span>
+tagCircuitForceInitAutoAppend<span class="br0">&#40;</span>work<span class="br0">&#41;</span><span class="sy0">;</span>
+insertCircuitResetActiveLow<span class="br0">&#40;</span>work<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw1">if</span> <span class="br0">&#40;</span>checkCircuitReset<span class="br0">&#40;</span>work<span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw2">true</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    eprint<span class="br0">&#40;</span><span class="st0">&quot;Circuit cannot be reset to the required initial state&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw1">if</span> <span class="br0">&#40;</span>checkCircuitCombined<span class="br0">&#40;</span>work<span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw2">true</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    eprint<span class="br0">&#40;</span><span class="st0">&quot;Circuit verification failed after reset insertion&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+exportVerilog<span class="br0">&#40;</span>work<span class="sy0">,</span> <span class="st0">&quot;test-tm-reset.v&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre>
+</dd></dl>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+<!--
+                <div class="docInfo">
+                    workcraft @ <bdi>help/scripting.txt</bdi> · Modified 2020/06/16 12:22 by <bdi>danil</bdi>                </div>
+-->
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+<!--
+            <div id="dokuwiki__pagetools">
+                            <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="scripting.html" title="Edit this page [e]" rel="nofollow" accesskey="e"><span>Edit this page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="scripting.html" title="Old revisions [o]" rel="nofollow" accesskey="o"><span>Old revisions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="scripting.html" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="export_pdf"><a href="scripting.html" title="Export to PDF" rel="nofollow"><span>Export to PDF</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14 9h5.5L14 3.5V9M7 2h8l6 6v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m4.93 10.44c.41.9.93 1.64 1.53 2.15l.41.32c-.87.16-2.07.44-3.34.93l-.11.04.5-1.04c.45-.87.78-1.66 1.01-2.4m6.48 3.81c.18-.18.27-.41.28-.66.03-.2-.02-.39-.12-.55-.29-.47-1.04-.69-2.28-.69l-1.29.07-.87-.58c-.63-.52-1.2-1.43-1.6-2.56l.04-.14c.33-1.33.64-2.94-.02-3.6a.853.853 0 0 0-.61-.24h-.24c-.37 0-.7.39-.79.77-.37 1.33-.15 2.06.22 3.27v.01c-.25.88-.57 1.9-1.08 2.93l-.96 1.8-.89.49c-1.2.75-1.77 1.59-1.88 2.12-.04.19-.02.36.05.54l.03.05.48.31.44.11c.81 0 1.73-.95 2.97-3.07l.18-.07c1.03-.33 2.31-.56 4.03-.75 1.03.51 2.24.74 3 .74.44 0 .74-.11.91-.3m-.41-.71l.09.11c-.01.1-.04.11-.09.13h-.04l-.19.02c-.46 0-1.17-.19-1.9-.51.09-.1.13-.1.23-.1 1.4 0 1.8.25 1.9.35M8.83 17c-.65 1.19-1.24 1.85-1.69 2 .05-.38.5-1.04 1.21-1.69l.48-.31m3.02-6.91c-.23-.9-.24-1.63-.07-2.05l.07-.12.15.05c.17.24.19.56.09 1.1l-.03.16-.16.82-.05.04z"/></svg></a></li><li class="menuitemfolded"><a href="javascript:void(0);" title="Fold/unfold all" rel="nofollow" class="fold_unfold_all_new" onclick="fold_unfold_all();"><span>Fold/unfold all</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M 2,0 L 6.5,3 L 2,6 z M 8,6.6 L 12.5,9.6 L 8,12.6 z M 14,13.2 L 20,13.2 L 17,17.7 z"/></svg></a></li><li class="menuitem"><a href="scripting.html" title="Rename Page" rel="nofollow" class=" plugin_move_page "><span>Rename Page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18,4V3A1,1 0 0,0 17,2H5A1,1 0 0,0 4,3V7A1,1 0 0,0 5,8H17A1,1 0 0,0 18,7V6H19V10H9V21A1,1 0 0,0 10,22H12A1,1 0 0,0 13,21V12H21V4H18Z" /></svg></a></li><li class="siteexport_addpage"><a href="scripting.html" title="Export Page to HTML/PDF" rel="nofollow"><span>Export Page to HTML/PDF</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+                        </div>
+-->
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<!--
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="lib/tpl/dokuwiki-light-export/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="lib/tpl/dokuwiki-light-export/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="check/referer" title="Valid HTML5" ><img
+            src="lib/tpl/dokuwiki-light-export/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="css-validator/check/referer.fe4c581d16fb9f59f07485ddb441e467" title="Valid CSS" ><img
+            src="lib/tpl/dokuwiki-light-export/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="lib/tpl/dokuwiki-light-export/images/button-dw.png" width="80" height="15"
+            alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div>
+-->
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="lib/exe/taskrunner.8081d0957a26f54aa7428f15fc69276e.gif" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

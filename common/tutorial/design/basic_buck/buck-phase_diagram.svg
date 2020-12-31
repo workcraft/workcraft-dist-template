@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100%" height="100%" id="svg3153" version="1.1" inkscape:version="0.91 r13725" sodipodi:docname="phase_diagram.svg" viewBox="0 0 1200 301" preserveAspectRatio="xMidYMid slice">
+  <defs
+     id="defs3155">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8163"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.661875"
+     inkscape:cx="317.82969"
+     inkscape:cy="87.550172"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="10"
+     fit-margin-left="10"
+     fit-margin-right="10"
+     fit-margin-bottom="10"
+     inkscape:window-width="1920"
+     inkscape:window-height="1176"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3158">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(3358.8105,402.58503)">
+    <rect
+       id="rect6"
+       style="fill:#e5e5e5;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter"
+       rx="0"
+       height="250.22385"
+       width="386.70956"
+       y="-372.27087"
+       x="-2641.199" />
+    <rect
+       id="rect8"
+       style="fill:#e5e5e5;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter"
+       rx="0"
+       height="250.22385"
+       width="295.71909"
+       y="-372.27087"
+       x="-3209.8894" />
+    <polyline
+       id="polyline10"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:40, 40"
+       points="-2400,2400 4200,2400 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline12"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="2100,3225 2100,3375 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline14"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:10, 20"
+       points="2100,3300 2100,2400 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline16"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="300,3225 300,3375 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline18"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="1200,3225 1200,3375 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline20"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:10, 20"
+       points="1200,3300 1200,2400 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline22"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:10, 20"
+       points="300,3300 300,2400 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline24"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="300,3225 300,3375 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline26"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="-1500,3225 -1500,3375 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline28"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:10, 20"
+       points="-1500,3300 -1500,2400 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline32"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="-600,3225 -600,3375 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline34"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:10, 20"
+       points="-600,3300 -600,2400 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline36"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="3000,3225 3000,3375 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline38"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:10, 20"
+       points="3000,3300 3000,2400 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline52"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="-2475,3300 4140,3300 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polygon
+       id="polygon54"
+       style="fill:#000000;stroke:#000000;stroke-width:7;stroke-miterlimit:8"
+       points="4146,3270 4146,3330 4146,3330 4206,3300 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2869.2817,-666.859)" />
+    <polyline
+       id="polyline56"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="750,3225 750,3375 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2928.6751,-666.859)" />
+    <polyline
+       id="polyline62"
+       style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:10, 10"
+       points="-2100,2700 -2250,2550 "
+       transform="matrix(0.14957588,-0.02500048,0.02500048,0.14957588,-2938.8143,-714.92407)" />
+    <polyline
+       id="polyline64"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="-2400,3375 -2400,2234 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polygon
+       id="polygon66"
+       style="fill:#000000;stroke:#000000;stroke-width:7;stroke-miterlimit:8"
+       points="-2429,2229 -2369,2229 -2369,2229 -2399,2169 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.2524)" />
+    <polyline
+       id="polyline68"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="-2475,2400 -2325,2400 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline74"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter"
+       points="3900,3225 3900,3375 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline76"
+       style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:10, 10"
+       points="3975,2475 4136,2636 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <polyline
+       id="polyline86"
+       style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:10, 20"
+       points="3900,3300 3900,2400 "
+       transform="matrix(0.15165081,0,0,0.15165081,-2868.6751,-666.859)" />
+    <text
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:Arial;-inkscape-font-specification:Arial;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text88"
+       font-size="156"
+       font-weight="normal"
+       font-style="normal"
+       y="-333.64468"
+       x="-3073.4036"
+       xml:space="preserve">no ZC</text>
+    <text
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:Arial;-inkscape-font-specification:Arial;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text90"
+       font-size="156"
+       font-weight="normal"
+       font-style="normal"
+       y="-333.64468"
+       x="-2470.4321"
+       xml:space="preserve">early ZC</text>
+    <text
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:Arial;-inkscape-font-specification:Arial;text-anchor:start;fill:#000000;stroke-width:0.025in"
+       id="text92"
+       font-size="120"
+       font-weight="normal"
+       font-style="normal"
+       y="-132.28992"
+       x="-2229.7417"
+       xml:space="preserve">time</text>
+    <text
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:Arial;-inkscape-font-specification:Arial;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text94"
+       font-size="156"
+       font-weight="normal"
+       font-style="normal"
+       y="-333.64468"
+       x="-2786.5918"
+       xml:space="preserve">late ZC</text>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g96"
+       transform="matrix(0.10723312,-0.10723352,0.10723352,0.10723312,-2334.106,-211.90658)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text98"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">NMOS off</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g100"
+       transform="matrix(0.10723312,-0.10723352,0.10723352,0.10723312,-2356.8536,-234.6542)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text102"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">PMOS on</text>
+    </g>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:22.27799416px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text104"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-223.2804"
+       x="-2481.9656"
+       xml:space="preserve">NMOS off</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:22.27799416px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text106"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-257.40182"
+       x="-2481.9656"
+       xml:space="preserve">PMOS off</text>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g108"
+       transform="matrix(0.1072347,0.10723194,-0.10723194,0.1072347,-2607.0774,-234.6542)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text110"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">NMOS on</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g112"
+       transform="matrix(0.1072347,0.10723194,-0.10723194,0.1072347,-2629.825,-211.90658)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text114"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">PMOS off</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g116"
+       transform="matrix(0.10723312,-0.10723352,0.10723352,0.10723312,-2743.5632,-211.90658)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text118"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">NMOS off</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g120"
+       transform="matrix(0.10723312,-0.10723352,0.10723352,0.10723312,-2766.3108,-234.6542)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text122"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">PMOS on</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g124"
+       transform="matrix(0.1072347,0.10723194,-0.10723194,0.1072347,-2880.0489,-234.6542)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text126"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">NMOS on</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g128"
+       transform="matrix(0.1072347,0.10723194,-0.10723194,0.1072347,-2902.7965,-211.90658)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text130"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">PMOS off</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g132"
+       transform="matrix(0.12113202,-0.09124146,0.09124146,0.12113202,-3015.4542,-229.23164)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text134"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">NMOS off</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g136"
+       transform="matrix(0.11988084,-0.09287924,0.09287924,0.11988084,-3035.8822,-253.98757)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text138"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">PMOS on</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g140"
+       transform="matrix(0.12431901,0.08684903,-0.08684903,0.12431901,-3145.96,-241.99132)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text142"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">NMOS on</text>
+    </g>
+    <g
+       style="fill:none;stroke-width:0.025in"
+       id="g144"
+       transform="matrix(0.12396302,0.0873564,-0.0873564,0.12396302,-3164.7941,-214.89907)">
+      <text
+         style="font-style:normal;font-weight:normal;font-size:146.90322876px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+         id="text146"
+         font-size="108"
+         font-weight="normal"
+         font-style="normal"
+         y="0"
+         x="0"
+         xml:space="preserve">PMOS off</text>
+    </g>
+    <text
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:Arial;-inkscape-font-specification:Arial;text-anchor:start;fill:#000000;stroke-width:0.025in"
+       id="text148"
+       font-size="120"
+       font-weight="normal"
+       font-style="normal"
+       y="-333.64468"
+       x="-3351.2632"
+       xml:space="preserve">current</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-align:end;text-anchor:end;fill:#000000;stroke-width:0.025in"
+       id="text150"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-295.52325"
+       x="-3247.002"
+       xml:space="preserve">I_max</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text152"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-132.28992"
+       x="-3096.1514"
+       xml:space="preserve">UV</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text154"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-132.28992"
+       x="-2959.6655"
+       xml:space="preserve">OC</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text156"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-132.28992"
+       x="-2839.1799"
+       xml:space="preserve">UV</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text158"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-132.28992"
+       x="-2799.3691"
+       xml:space="preserve">ZC</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text160"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-132.28992"
+       x="-2686.6941"
+       xml:space="preserve">OC</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text162"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-132.28992"
+       x="-2550.2085"
+       xml:space="preserve">ZC</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text164"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-132.28992"
+       x="-2413.7227"
+       xml:space="preserve">UV</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-anchor:middle;fill:#000000;stroke-width:0.025in"
+       id="text166"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-132.28992"
+       x="-2277.2371"
+       xml:space="preserve">OC</text>
+    <text
+       style="font-style:normal;font-weight:normal;font-size:24.30326653px;font-family:Helvetica;text-align:end;text-anchor:end;fill:#000000;stroke-width:0.025in"
+       id="text150-3"
+       font-size="108"
+       font-weight="normal"
+       font-style="normal"
+       y="-160.11163"
+       x="-3246.4517"
+       xml:space="preserve">I_0</text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -3187.4392,-259.87761 90.7498,62.22849 136.7851,-104.1463 136.3289,131.37126 136.887,-131.37126 136.2269,134.98911 136.1248,-0.86428 137.3192,-133.69268 13.8676,12.69719"
+       id="path8161"
+       inkscape:path-effect="#path-effect8163"
+       inkscape:original-d="m -3187.4392,-259.87761 90.7498,62.22849 136.7851,-104.1463 136.3289,131.37126 136.887,-131.37126 136.2269,134.98911 136.1248,-0.86428 137.3192,-133.69268 13.8676,12.69719"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc" />
+  </g>
+</svg>

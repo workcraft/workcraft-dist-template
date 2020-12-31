@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>tutorial:model:distributed_mutual_exclusion:start - Workcraft</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="tutorial,model,distributed_mutual_exclusion,start"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.html" title="Workcraft"/>
+<link rel="start" href="start.html"/>
+<link rel="contents" href="start.html" title="Sitemap"/>
+<link rel="manifest" href="../../lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="edit" title="Edit this page" href="start.html"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="../../_export/xhtml/tutorial/model/distributed_mutual_exclusion/start.xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../_export/raw/tutorial/model/distributed_mutual_exclusion/start.raw"/>
+<link rel="canonical" href="https://workcraft.org/tutorial/model/distributed_mutual_exclusion/start"/>
+<link rel="stylesheet" href="../../lib/exe/css.php.t.dokuwiki-light-export.css"/>
+<!--[if gte IE 9]><!-->
+<script >/*<![CDATA[*/var NS='tutorial:model:distributed_mutual_exclusion';var SIG=" --- \/\/[[support@workcraft.org| ]] 2020\/11\/24 09:02\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"id":"tutorial:model:distributed_mutual_exclusion:start","namespace":"tutorial:model:distributed_mutual_exclusion","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script charset="utf-8" src="../../lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<script charset="utf-8" src="../../lib/exe/js.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../../favicon.ico" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki-light-export loggedIn    ">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <h1><a href="../../start.html"  accesskey="" title=""><img src="../../logo.png" width="381" height="64" alt="" /></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+<!--
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="action profile"><a href="start.html" title="Profile" rel="nofollow"><span>Profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 3h20c1.05 0 2 .95 2 2v14c0 1.05-.95 2-2 2H2c-1.05 0-2-.95-2-2V5c0-1.05.95-2 2-2m12 3v1h8V6h-8m0 2v1h8V8h-8m0 2v1h7v-1h-7m-6 3.91C6 13.91 2 15 2 17v1h12v-1c0-2-4-3.09-6-3.09M8 6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a></li><li class="action admin"><a href="start.html" title="Admin" rel="nofollow"><span>Admin</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></a></li><li class="action logout"><a href="start.html" title="Log Out" rel="nofollow"><span>Log Out</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg></a></li>                </ul>
+            </div>
+        -->
+        <!-- SITE TOOLS -->
+<!--
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="../../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="tutorial:model:distributed_mutual_exclusion:start" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="tutorial:model:distributed_mutual_exclusion:start" /><input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="start.html" title="Changes [r]" rel="nofollow" accesskey="r">Changes</a></li><li class="action media"><a href="start.html" title="Media" rel="nofollow">Media</a></li><li class="action index"><a href="start.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+-->
+    </div>
+
+    <!-- BREADCRUMBS -->
+<!--
+    -->
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>tutorial:model:distributed_mutual_exclusion:start</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_fastwiki_marker" style="display:none"></div><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#distributed_mutual_exclusiontoken_ring_architecture">Distributed Mutual Exclusion: Token Ring Architecture</a></div></li>
+<li class="level1"><div class="li"><a href="#exercise_1compositional_modelling">Exercise 1: Compositional Modelling</a></div></li>
+<li class="level1"><div class="li"><a href="#exercise_2simulation_and_verification">Exercise 2: Simulation and Verification</a></div></li>
+<li class="level1"><div class="li"><a href="#exercise_3re-synthesis">Exercise 3: Re-synthesis</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 id="modelling_with_signal_transition_graphsdistributed_mutual_exclusion">Modelling with Signal Transition Graphs: Distributed Mutual Exclusion</h1>
+<div class="level1">
+
+<p>
+In the exercises below you will use <em>Signal Transition Graphs</em> (<abbr title="Signal Transition Graph">STG</abbr>). STGs are similar to Petri nets, except for the following:
+</p>
+<ul>
+<li class="level1 node"><div class="li"> Short-hand drawing conventions are used:</div>
+<ul>
+<li class="level2"><div class="li"> Transition boxes are omitted – only labels (actions) are drawn.</div>
+</li>
+<li class="level2"><div class="li"> Places with one incoming and one outgoing arc are normally not shown – transition-to-transition arcs are drawn instead (a token is put directly on such an arc if the original place is marked); this can be overridden for particular places if necessary.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> The actions are partitioned into <code><span style='color:red; '>inputs</span></code>, <code><span style='color:blue; '>outputs</span></code> and <code><span style='color:green; '>internal</span></code>; there are also <code><span style='color:black; '>dummy</span></code> transitions that do not correspond to any actions and serve for the convenience of modelling, e.g. one can “hide” a redundant action by replacing its transitions with dummies without otherwise changing the behaviour of the system.</div>
+</li>
+<li class="level1"><div class="li"> The actions have <em>directions</em>: <code>+</code>, <code>-</code>, or <code>~</code>; e.g. <code>a+</code> means action <code>a</code> is asserted and <code>a-</code> means it is withdrawn. Note that transitions of <code>a+</code> and <code>a-</code> must alternate in every execution (this property is called <a href="../../../help/verification.html" class="wikilink1" title="help:verification" data-wiki-id="help:verification">Consistency</a>) – otherwise the model is ill-formed. The <code>~</code> is used for actions that do not have this assert/withdraw semantics, and by default <code>~</code> is not displayed at the end of the action name.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 id="distributed_mutual_exclusiontoken_ring_architecture">Distributed Mutual Exclusion: Token Ring Architecture</h2>
+<div class="level2">
+
+<p>
+The aim of the exercises below is to model a system that guarantees <em>Distributed Mutual Exclusion</em> (DME). There are N clients that should access a shared resource in a mutually exclusive way. To do that, N almost identical <em>DME elements</em> are connected in a ring. The first DME element is slightly different from the others in that it initially holds a “token” (do not confuse with Petri net tokens). This token is passed around the ring in the clockwise direction.
+</p>
+
+<p>
+<img src="circuit-dme.svg" width="890" height="240" class="svgscaleinsert mediacenter" alt="Distributed Mutual Exclusion (DME)">
+</p>
+
+<p>
+From time to time, a client may wish to use the shared resource. To do that, it requests permission from the corresponding DME element by asserting <code><span style='color:red; '>req</span></code>: action <code><span style='color:red; '>req+</span></code> (note that from the point of view of the DME element this is an input, and so is shown in red). If the DME element does not hold the token, it has to wait for one. After the token has arrived (or if DME element has already been holding it), the DME element can grant the request to the client, by asserting <code><span style='color:blue; '>grant</span></code>: output action <code><span style='color:blue; '>grant+</span></code>. At this point the client knows that it is safe to enter the critical section and use the resource, as the other clients cannot be using it. Note that the DME element is not allowed to pass the token to the next DME element in the ring until the client notifies it (by withdrawing the request: action <code><span style='color:red; '>req-</span></code>) that it has exited its critical section.
+</p>
+<div class="wrap_center wrap_round wrap_tip plugin_wrap" style="width: 90%;">
+<p>
+A request from the client may arrive when the DME element is about to pass the token to the next DME element in the ring. Hence, the DME element has a <em>choice</em>: it can either grant the request holding the token for longer or to pass the token and grant the request on the next round – either behaviour is acceptable. This choice expresses <em>arbitration</em>, as the DME element arbitrates between the client’s request and the decision to pass the token – which of them was first. If these events happened close in time, an arbitrary decision is made. If the system is to be implemented as a circuit, it will inevitably enter a metastable state from time to time, and so one has to use a <em>Synchroniser</em>, a <em>Mutual Exclusion element</em> or similar specialised circuitry that can handle metastability.
+</p>
+</div>
+<p>
+Having finished using the resource, the client withdraws the request: input action <code><span style='color:red; '>req-</span></code>. In response, the DME element withdraws the grant: output action <code><span style='color:blue; '>grant-</span></code>. 
+</p>
+<div class="wrap_center wrap_round wrap_tip plugin_wrap" style="width: 90%;">
+<p>
+The sequence of events <code><span style='color:red; '>req+</span></code>, <code><span style='color:blue; '>grant+</span></code>, <code><span style='color:red; '>req-</span></code>, <code><span style='color:blue; '>grant-</span></code> forms a so called 4-phase <em>handshake</em> – this is a very common mini-protocol in asynchronous systems.
+</p>
+</div>
+<p>
+At this point the client is allowed to send another request, and the DME element is allowed either to pass the token to the next DME element in the ring or hold it for longer (and perhaps process another request from the client).
+</p>
+
+<p>
+The advantage of this <em>Token Ring</em> architecture is that it can be implemented in a distributed way.
+</p>
+
+</div>
+
+<h2 id="exercise_1compositional_modelling">Exercise 1: Compositional Modelling</h2>
+<div class="level2">
+
+<p>
+Model a DME system comprised of two DME elements. Start by creating <abbr title="Signal Transition Graph">STG</abbr> models of two DME elements as shown below. These two models should be saved in separate files, and you could use copy-and-paste to reduce the amount of work. Note that the names of the actions are slightly different in these two STGs (to make them unique), and that the initial markings reflect that the first DME element holds the token while the second does not.
+</p>
+<div class="plugin_wrap"><div class="wrap_column wrap_half plugin_wrap">
+<p>
+<img src="dme1.svg" width="246" height="383" class="svgscaleinsert mediacenter" alt="tutorial:model:distributed_mutual_exclusion:dme1.svg">
+</p>
+</div><div class="wrap_column wrap_half plugin_wrap">
+<p>
+<img src="dme2.svg" width="246" height="384" class="svgscaleinsert mediacenter" alt="tutorial:model:distributed_mutual_exclusion:dme2.svg">
+</p>
+</div></div>
+<p>
+Directional actions (i.e. those with <code>+</code> or <code>-</code>) are used to interface clients, whereas passing of the token between DME elements is modelled abstractly by undirected (i.e. <code>~</code>) actions (these actions could be implemented by handshakes when the model is refined, but this is not required for this exercise). When place <code>CS1</code> or <code>CS2</code> is marked, the corresponding client executes its critical section. Note that short-hand notation is not used for these places, as they have special significance to the designer.
+</p>
+<div class="wrap_center wrap_round wrap_tip plugin_wrap" style="width: 90%;">
+<p>
+Note the choices between outputs, e.g. in the first DME element place <code>token1</code> is in the presets of <code><span style='color:blue; '>grant1+</span></code> and <code><span style='color:blue; '>move1to2</span></code> transitions. Such choices are usually due to <em>arbitration</em>, and lead to violation of <a href="../../../help/verification.html" class="wikilink1" title="help:verification" data-wiki-id="help:verification">Output-persistence</a> – a circuit implementation would have to handle metastability, as explained above.
+</p>
+</div>
+<p>
+These two DME elements communicate by executing shared actions <code>moveXtoY</code>. Hence, the model of the overall system can be constructed compositionally, using the <em>parallel composition</em> operation. This functionality is accessible via the <em>Tools→Composition→Parallel composition [PComp]</em> menu. In the dialog window (see below) tick the names of the files to be composed, and select <em>Outputs / Make dummy</em>. The latter will turn the fused transitions into dummies, as they represent internal workings of the system. <span class="wrap_important ">For this to work files <em>dme1.work</em> and <em>dme2.work</em> must be opened in the same instance of Workcraft.</span>
+</p>
+
+<p>
+<img src="parallel_composition_dialog-dme1_dme2.png" class="mediacenter" alt="" />
+</p>
+
+<p>
+The resulting <abbr title="Signal Transition Graph">STG</abbr> model of the system should appear in a new tab. It is also shown below, after some manual editing to improve visual representation, in particular:
+</p>
+<ul>
+<li class="level1"><div class="li"> The layout was manually modified to resemble the layout of the original STGs.</div>
+</li>
+<li class="level1"><div class="li"> Places <code>CS1</code>, <code>CS2</code>, <code>notoken1</code> and <code>notoken2</code> have one incoming and one outgoing arc, and so were not shown in the resulting composition. They can be made explicit by selecting the corresponding transition-to-transition arcs, clicking <em>Transformations→Make places explicit</em> and renaming.</div>
+</li>
+<li class="level1"><div class="li"> The dummy transitions were renamed to correspond to the <code>moveXtoY</code> transitions in the original STGs.</div>
+</li>
+</ul>
+
+<p>
+<img src="dme_composed.svg" width="582" height="284" class="svgscaleinsert mediacenter" alt="tutorial:model:distributed_mutual_exclusion:dme_composed.svg">
+</p>
+
+</div>
+
+<h2 id="exercise_2simulation_and_verification">Exercise 2: Simulation and Verification</h2>
+<div class="level2">
+
+<p>
+Simulate your model. Try to re-create the following scenarios:
+</p>
+<ul>
+<li class="level1"><div class="li"> First client sends a request that is immediately granted, and then the handshake is completed. Check that the token cannot be passed to the next stage while the client is in its critical section.</div>
+</li>
+<li class="level1"><div class="li"> Second client sends a request that cannot be immediately granted, as the corresponding DME element has no token yet. When the token arrives, the request is granted, and the handshake is completed.</div>
+</li>
+<li class="level1"><div class="li"> First client sends a request, after which the system arbitrates between issuing a grant and passing the token to the next stage of the ring; the latter is chosen, and the request is granted after token arrives back to the first stage.</div>
+</li>
+<li class="level1"><div class="li"> First client sends a request, but it is not granted even after several rounds, as the corresponding DME element keeps choosing to pass the token to the next stage.</div>
+</li>
+</ul>
+
+<p>
+Verify the following standard properties of the model:
+</p>
+<ul>
+<li class="level1"><div class="li"> Deadlock-freeness.</div>
+</li>
+<li class="level1"><div class="li"> Consistency (i.e. for every <code>a</code>, transitions of <code>a+</code> and <code>a-</code>  alternate in every execution).</div>
+</li>
+</ul>
+
+<p>
+Verify the following custom properties of the model. Note that the tool checks if there is a reachable marking satisfying the provided Boolean expression. Hence, to check an <em>invariant</em> (i.e. a property that must hold in every reachable state of the system) you have to express its <em>negation</em> as a Boolean expression, and let the tool check that no reachable marking satisfies this expression. Do not forget to save the properties with appropriate names.
+</p>
+<ul>
+<li class="level1"><div class="li"> Mutual exclusion of places <code>CS1</code> and <code>CS2</code>. Hint: <code><span class="wrap_spoiler ">$P&quot;CS1&quot; &amp; $P&quot;CS2&quot;</span></code>.</div>
+</li>
+<li class="level1"><div class="li"> At most one of the DME elements can hold the token. Hint: <code><span class="wrap_spoiler ">$P&quot;token1&quot; &amp; $P&quot;token2&quot;</span></code>.</div>
+</li>
+<li class="level1 node"><div class="li"> Places <code>notoken1</code> and <code>notoken2</code> are redundant and can be removed (together with their arcs) without affecting the behaviour of the system. A place is redundant if the absence of a token in it is never the sole reason of some transition being disabled. E.g. whenever there is a token on place <code>token1</code>, there is always a token on <code>notoken2</code>, and so transition <code>move1to2</code> is enabled, and also whenever there is no token on <code>notoken2</code> there is no token on <code>token1</code>, and so <code>notoken2</code> is never the sole reason for <code>move1to2</code> being disabled. Hints:</div>
+<ul>
+<li class="level2"><div class="li">* The redundancy of <code>notoken1</code>: <code><span class="wrap_spoiler ">$P&quot;token2&quot; &amp; ~$P&quot;notoken1&quot;</span></code>.</div>
+</li>
+<li class="level2"><div class="li">* The redundancy of <code>notoken2</code>: <code><span class="wrap_spoiler ">$P&quot;token1&quot; &amp; ~$P&quot;notoken2&quot;</span></code>.</div>
+</li>
+<li class="level2"><div class="li">* Since checking place redundancy is a common task, Worckraft supports it directly, either via a the pop-up menu accessible by right-clicking a place, or via selecting a place (or several places) and using the <em>Verification→Redundancy of selected places [MPSat]</em> menu. Note that if several places are selected, the property checks whether they all can be removed without changing the behaviour of the <abbr title="Signal Transition Graph">STG</abbr>, i.e. it is different from each of the selected places being redundant in isolation: For example, two places may be duplicates of each other (i.e. have exactly the same connections and initial marking), so either of them is redundant and can be removed, but not both.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> It is impossible for both grants to be asserted simultaneously (this property is violated). To check if an action is asserted use the construction <code>$S&quot;action&quot;</code>, e.g. <code>$S&quot;grant1&quot;</code>.  Hint: <code><span class="wrap_spoiler ">$S&quot;grant1&quot; &amp; $S&quot;grant2&quot;</span></code>. Play the reported violation trace in the simulator and explain why mutual exclusion of places <code>CS1</code> and <code>CS2</code> holds in spite of this property being violated.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 id="exercise_3re-synthesis">Exercise 3: Re-synthesis</h2>
+<div class="level2">
+
+<p>
+As noted in the previous exercise, the <abbr title="Signal Transition Graph">STG</abbr> has redundant places and can be simplified. Use <em>Conversion→Net synthesis [Petrify]</em> to obtain the following simplified <abbr title="Signal Transition Graph">STG</abbr> (manual layout was used to make it look similar to the previous <abbr title="Signal Transition Graph">STG</abbr>):
+</p>
+
+<p>
+<img src="dme_composed_simplified.svg" width="582" height="284" class="svgscaleinsert mediacenter" alt="tutorial:model:distributed_mutual_exclusion:dme_composed_simplified.svg">
+</p>
+
+<p>
+One can also contract the dummy transitions without changing the behaviour of the system, as they correspond to hidden internal actions – use the <em>Conversion→Dummy contraction [Petrify]</em> menu item. This completely hides the internal implementation of the system, as well as its distributed nature, leaving only its visible behaviour: The whole DME system is now abstracted to a single place controlling handshakes with the clients.
+</p>
+
+<p>
+<img src="dme_composed_resyn.svg" width="582" height="210" class="svgscaleinsert mediacenter" alt="tutorial:model:distributed_mutual_exclusion:dme_composed_resyn.svg">
+</p>
+
+</div>
+<div class="level1">
+<div class="plugin_include_content plugin_include__tutorial:feedback" id="plugin_include__tutorial__feedback">
+<div class="wrap_hide plugin_wrap"><pre class="code">===== Feedback =====</pre>
+<form class="bureaucracy__plugin" id="bureaucracy__plugin1" enctype="multipart/form-data" method="post" action="start.html" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><input type="hidden" name="id" value="tutorial:model:distributed_mutual_exclusion:start" /><input type="hidden" name="bureaucracy[$$id]" value="1" /><fieldset ><legend>Comments or suggestions for improving this tutorial</legend>
+<label><span>Name (optional)</span> <input type="text" name="bureaucracy[1]" class="edit" /></label>
+<label><span>Email (optional)</span> <input type="text" name="bureaucracy[2]" class="edit" /></label>
+<label class=" textareafield">
+    <span>Feedback <sup>*</sup></span>
+    <textarea name="bureaucracy[3]" id="" rows="10" cols="10" class="edit required&quot; required=&quot;required"></textarea>
+</label><button type="submit">Submit</button>
+</fieldset>
+</div></form>
+</div><div class="wrap_hide plugin_wrap"><ul>
+<li class="level1"><div class="li"> As discussed in <a href="https://www.dokuwiki.org/plugin:include#controlling_header_size_in_included_pages" class="urlextern" title="https://www.dokuwiki.org/plugin:include#controlling_header_size_in_included_pages" rel="ugc nofollow">https://www.dokuwiki.org/plugin:include#controlling_header_size_in_included_pages</a>, by default, the headers in included pages start one level lower than the last header in the current page. This can be tweaked by adding an empty header above the include:\\<pre class="code">====== ======
+{{page&gt;:tutorial:feedback&amp;inline}}</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> For offline help generation the content of <code>feedback</code> page should be temporary wrapped in <code>&lt;WRAP hide&gt;</code>. Note that the headers still propagate to the table of contents even if inside the hidden wrap. Therefore the <strong>Feedback</strong> title needs to be converted to something else, e.g. to code by adding two spaces in front.</div>
+</li>
+</ul>
+</div></div>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+<!--
+                <div class="docInfo">
+                    workcraft @ <bdi>tutorial/model/distributed_mutual_exclusion/start.txt</bdi> · Modified 2020/09/24 10:29 by <bdi>danil</bdi>                </div>
+-->
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+<!--
+            <div id="dokuwiki__pagetools">
+                            <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="start.html" title="Edit this page [e]" rel="nofollow" accesskey="e"><span>Edit this page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="start.html" title="Old revisions [o]" rel="nofollow" accesskey="o"><span>Old revisions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="start.html" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="export_pdf"><a href="start.html" title="Export to PDF" rel="nofollow"><span>Export to PDF</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14 9h5.5L14 3.5V9M7 2h8l6 6v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m4.93 10.44c.41.9.93 1.64 1.53 2.15l.41.32c-.87.16-2.07.44-3.34.93l-.11.04.5-1.04c.45-.87.78-1.66 1.01-2.4m6.48 3.81c.18-.18.27-.41.28-.66.03-.2-.02-.39-.12-.55-.29-.47-1.04-.69-2.28-.69l-1.29.07-.87-.58c-.63-.52-1.2-1.43-1.6-2.56l.04-.14c.33-1.33.64-2.94-.02-3.6a.853.853 0 0 0-.61-.24h-.24c-.37 0-.7.39-.79.77-.37 1.33-.15 2.06.22 3.27v.01c-.25.88-.57 1.9-1.08 2.93l-.96 1.8-.89.49c-1.2.75-1.77 1.59-1.88 2.12-.04.19-.02.36.05.54l.03.05.48.31.44.11c.81 0 1.73-.95 2.97-3.07l.18-.07c1.03-.33 2.31-.56 4.03-.75 1.03.51 2.24.74 3 .74.44 0 .74-.11.91-.3m-.41-.71l.09.11c-.01.1-.04.11-.09.13h-.04l-.19.02c-.46 0-1.17-.19-1.9-.51.09-.1.13-.1.23-.1 1.4 0 1.8.25 1.9.35M8.83 17c-.65 1.19-1.24 1.85-1.69 2 .05-.38.5-1.04 1.21-1.69l.48-.31m3.02-6.91c-.23-.9-.24-1.63-.07-2.05l.07-.12.15.05c.17.24.19.56.09 1.1l-.03.16-.16.82-.05.04z"/></svg></a></li><li class="menuitemfolded"><a href="javascript:void(0);" title="Fold/unfold all" rel="nofollow" class="fold_unfold_all_new" onclick="fold_unfold_all();"><span>Fold/unfold all</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M 2,0 L 6.5,3 L 2,6 z M 8,6.6 L 12.5,9.6 L 8,12.6 z M 14,13.2 L 20,13.2 L 17,17.7 z"/></svg></a></li><li class="menuitem"><a href="start.html" title="Rename Page" rel="nofollow" class=" plugin_move_page "><span>Rename Page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18,4V3A1,1 0 0,0 17,2H5A1,1 0 0,0 4,3V7A1,1 0 0,0 5,8H17A1,1 0 0,0 18,7V6H19V10H9V21A1,1 0 0,0 10,22H12A1,1 0 0,0 13,21V12H21V4H18Z" /></svg></a></li><li class="siteexport_addpage"><a href="start.html" title="Export Page to HTML/PDF" rel="nofollow"><span>Export Page to HTML/PDF</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+                        </div>
+-->
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<!--
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="../../check/referer" title="Valid HTML5" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="../../css-validator/check/referer.fe4c581d16fb9f59f07485ddb441e467" title="Valid CSS" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-dw.png" width="80" height="15"
+            alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div>
+-->
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="../../lib/exe/taskrunner.36612f1b4297fbf6d611fa9117872c3a.gif" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

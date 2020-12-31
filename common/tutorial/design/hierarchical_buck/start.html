@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>tutorial:design:hierarchical_buck:start - Workcraft</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="tutorial,design,hierarchical_buck,start"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.html" title="Workcraft"/>
+<link rel="start" href="start.html"/>
+<link rel="contents" href="start.html" title="Sitemap"/>
+<link rel="manifest" href="../../lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="edit" title="Edit this page" href="start.html"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="../../_export/xhtml/tutorial/design/hierarchical_buck/start.xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../_export/raw/tutorial/design/hierarchical_buck/start.raw"/>
+<link rel="canonical" href="https://workcraft.org/tutorial/design/hierarchical_buck/start"/>
+<link rel="stylesheet" href="../../lib/exe/css.php.t.dokuwiki-light-export.css"/>
+<!--[if gte IE 9]><!-->
+<script >/*<![CDATA[*/var NS='tutorial:design:hierarchical_buck';var SIG=" --- \/\/[[support@workcraft.org| ]] 2020\/11\/24 09:02\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"id":"tutorial:design:hierarchical_buck:start","namespace":"tutorial:design:hierarchical_buck","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script charset="utf-8" src="../../lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<script charset="utf-8" src="../../lib/exe/js.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../../favicon.ico" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki-light-export loggedIn    ">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <h1><a href="../../start.html"  accesskey="" title=""><img src="../../logo.png" width="381" height="64" alt="" /></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+<!--
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="action profile"><a href="start.html" title="Profile" rel="nofollow"><span>Profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 3h20c1.05 0 2 .95 2 2v14c0 1.05-.95 2-2 2H2c-1.05 0-2-.95-2-2V5c0-1.05.95-2 2-2m12 3v1h8V6h-8m0 2v1h8V8h-8m0 2v1h7v-1h-7m-6 3.91C6 13.91 2 15 2 17v1h12v-1c0-2-4-3.09-6-3.09M8 6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a></li><li class="action admin"><a href="start.html" title="Admin" rel="nofollow"><span>Admin</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></a></li><li class="action logout"><a href="start.html" title="Log Out" rel="nofollow"><span>Log Out</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg></a></li>                </ul>
+            </div>
+        -->
+        <!-- SITE TOOLS -->
+<!--
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="../../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="tutorial:design:hierarchical_buck:start" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="tutorial:design:hierarchical_buck:start" /><input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="start.html" title="Changes [r]" rel="nofollow" accesskey="r">Changes</a></li><li class="action media"><a href="start.html" title="Media" rel="nofollow">Media</a></li><li class="action index"><a href="start.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+-->
+    </div>
+
+    <!-- BREADCRUMBS -->
+<!--
+    -->
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>tutorial:design:hierarchical_buck:start</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_fastwiki_marker" style="display:none"></div><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#informal_specification">Informal specification</a></div></li>
+<li class="level1"><div class="li"><a href="#decomposition_of_controller">Decomposition of controller</a></div></li>
+<li class="level1"><div class="li"><a href="#design_of_controller_modules">Design of controller modules</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#cycle_module">CYCLE module</a></div></li>
+<li class="level2"><div class="li"><a href="#charge_module">CHARGE module</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#verification_of_stg_specifications">Verification of STG specifications</a></div></li>
+<li class="level1"><div class="li"><a href="#circuit_synthesis_and_verification">Circuit synthesis and verification</a></div></li>
+<li class="level1"><div class="li"><a href="#solutions">Solutions</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 id="hierarchical_design_of_a_realistic_buck_controller">Hierarchical design of a realistic buck controller</h1>
+<div class="level1">
+
+<p>
+In this tutorial we revisit the <a href="../basic_buck/start.html" class="wikilink1" title="tutorial:design:basic_buck:start" data-wiki-id="tutorial:design:basic_buck:start">basic buck converter</a> and design its controller with a more realistic interpretation of the UV, OC and ZC conditions. 
+</p>
+
+<p>
+A common mistake of novice designers is to attempt creating a single monolithic <abbr title="Signal Transition Graph">STG</abbr> capturing the behaviour of the whole circuit. This is infeasible for all but tiny circuits with a handful of signals. The main learning objective of this tutorial is the use of <em>hierarchical decomposition</em> of the system into modules of manageable size, so that:
+</p>
+<ul>
+<li class="level1"><div class="li"> the overall controller can be specified as several small STGs rather than a big monolithic one which is very challenging for the human designer to create and comprehend;</div>
+</li>
+<li class="level1"><div class="li"> circuit synthesis tools have to deal with smaller STGs, which reduces the risk of memory overflow or timeout due to state space explosion, as well as the risk of logic decomposition failure due to large complex-gates which cannot be decomposed into library gates in a speed-independent way.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 id="informal_specification">Informal specification</h2>
+<div class="level2">
+
+<p>
+The system comprises an analog buck and its digital control logic as shown in the following diagram.
+</p>
+
+<p>
+<img src="schematic_diagram.svg" width="417" height="311" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:schematic_diagram.svg">
+</p>
+
+<p>
+The controller switches the power regulating PMOS and NMOS transistors ON and OFF by means of <code><span style='color:blue; '>gp</span></code> and <code><span style='color:blue; '>gn</span></code> outputs, as a reaction to <code><span style='color:red; '>uv</span></code> (under-voltage), <code><span style='color:red; '>oc</span></code> (over-current) and <code><span style='color:red; '>zc</span></code> (zero-crossing) inputs. These inputs are produced in the analog part by comparators of measured current and voltage levels against reference values (<code>V_ref</code>, <code>I_max</code> and <code>I_0</code> respectively). These signals may be non-persistent, and so have to be sanitised before letting them into the digital controller.
+</p>
+
+<p>
+To prevent a short circuit, PMOS and NMOS must not be ON at the same time. This should be guaranteed by observing the <code><span style='color:red; '>gp_ack</span></code> and <code><span style='color:red; '>gn_ack</span></code> signals, which indicate when the power transistor threshold levels (<code>V_pmos</code> and <code>V_nmos</code>) are crossed.
+</p>
+
+<p>
+The expected behaviour of a buck can be informally specified as follows:
+</p>
+<ul>
+<li class="level1"><div class="li"> While <code><span style='color:red; '>uv</span></code> is low – wait in <a href="https://en.wikipedia.org/wiki/Three-state_logic" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/Three-state_logic">tri-state</a> (i.e. both PMOS and NMOS power regulating transistors are OFF).</div>
+</li>
+<li class="level1 node"><div class="li"> While <code><span style='color:red; '>uv</span></code> is high – keep performing cycles of charging:</div>
+<ol>
+<li class="level2"><div class="li"> A cycle of charging starts at tri-state; both <code><span style='color:red; '>oc</span></code> and <code><span style='color:red; '>zc</span></code> are low.</div>
+</li>
+<li class="level2"><div class="li"> Switch PMOS transistor ON and wait for <code><span style='color:red; '>oc</span></code> to rise.</div>
+</li>
+<li class="level2"><div class="li"> When <code><span style='color:red; '>oc</span></code> is high, switch PMOS transistor OFF.</div>
+</li>
+<li class="level2"><div class="li"> When PMOS is OFF, switch NMOS transistor ON and wait for <code><span style='color:red; '>zc</span></code> to rise.</div>
+</li>
+<li class="level2"><div class="li"> When <code><span style='color:red; '>zc</span></code> is high, switch NMOS transistor OFF and enter tri-state.</div>
+</li>
+</ol>
+</li>
+</ul>
+
+</div>
+
+<h2 id="decomposition_of_controller">Decomposition of controller</h2>
+<div class="level2">
+
+<p>
+One can notice two distinctive tasks for the controller: selecting the mode of operation (waiting or charging) as a reaction to <code><span style='color:red; '>uv</span></code> and performing a cycle of charging. This observation helps to decompose the controller into two modules, <code>CYCLE_CTRL</code> and <code>CHARGE_CTRL</code>, communicating by a handshake:
+</p>
+
+<p>
+<img src="ctrl-top.circuit.svg" width="555" height="299" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:ctrl-top.circuit.svg">
+</p>
+
+<p>
+<code>CYCLE_CTRL</code> is the master deciding whether to perform a charging cycle and delegating this job to slave <code>CHARGE_CTRL</code>.
+</p>
+
+<p>
+Note that signals <code><span style='color:red; '>uv</span></code>, <code><span style='color:red; '>oc</span></code>, and <code><span style='color:red; '>zc</span></code> are produced by the analogue part of the buck and thus may be non-persistent. In order to prevent unexpected changes, they have to be sanitised using special <a href="../../../help/a2a/start.html" class="wikilink1" title="a2a:start" data-wiki-id="a2a:start">analog-to-asynchronous (A2A) components</a>:
+</p>
+
+<p>
+<img src="ctrl-decomposed.circuit.svg" width="768" height="549" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:ctrl-decomposed.circuit.svg">
+</p>
+
+<p>
+For <code><span style='color:red; '>oc</span></code> and <code><span style='color:red; '>zc</span></code> we are only interested in catching their rising edges, therefore a basic <code>WAIT</code> element is used: 
+</p>
+<div class="wrap_tip wrap_round wrap_center plugin_wrap" style="width: 90%;">
+<p>
+<code>WAIT</code> element works as follows:
+</p>
+<ul>
+<li class="level1"><div class="li"> Upon activation by <code><span style='color:red; '>ctrl+</span></code> it waits for (non-persistent) <code><span style='color:red; '>sig</span>=1</code> (may miss short spikes) and latches it as ‘clean’ <code><span style='color:blue; '>san</span></code>;</div>
+</li>
+<li class="level1"><div class="li"> ‘Clean’ <code><span style='color:red; '>ctrl</span></code> / <code><span style='color:blue; '>san</span></code> handshake controlled by ‘dirty’ <code><span style='color:red; '>sig</span></code>.</div>
+</li>
+</ul>
+</div>
+<p>
+For <code><span style='color:red; '>uv</span></code>, however, both rising and falling edges are meaningful. Therefore we use a <code>WAIT2</code> element:
+</p>
+<div class="wrap_tip wrap_round wrap_center plugin_wrap" style="width: 90%;">
+<p>
+<code>WAIT2</code> element is similar to <code>WAIT</code> but works with both phases of its (non-persistent) input <code><span style='color:red; '>sig</span></code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> after <code><span style='color:red; '>ctrl+</span></code> it waits for <code><span style='color:red; '>sig</span>=1</code> (may miss short spikes) and latches it as stable <code><span style='color:blue; '>san</span>=1</code>;</div>
+</li>
+<li class="level1"><div class="li"> after <code><span style='color:red; '>ctrl-</span></code> it waits for <code><span style='color:red; '>sig</span>=0</code> (may miss short spikes) and latches it as stable <code><span style='color:blue; '>san</span>=0</code>.</div>
+</li>
+</ul>
+</div>
+</div>
+
+<h2 id="design_of_controller_modules">Design of controller modules</h2>
+<div class="level2">
+
+</div>
+
+<h3 id="cycle_module">CYCLE module</h3>
+<div class="level3">
+
+<p>
+<code>CYCLE</code> should capture the following behaviour:
+</p>
+<ul>
+<li class="level1"><div class="li"> initially <code><span style='color:red; '>uv_san</span></code> is low and controller waits for it to get high;</div>
+</li>
+<li class="level1"><div class="li"> when <code><span style='color:red; '>uv_san</span></code> gets high the controller repeatedly initiates handshakes <code><span style='color:blue; '>chrg_req</span></code>/<code><span style='color:red; '>chrg_ack</span></code> on its interface to <code>CHARGE</code>, thus instructing  it to perform charging cycles of the buck;</div>
+</li>
+<li class="level1"><div class="li"> when <code><span style='color:red; '>uv_san</span></code> gets low, <code>CYCLE</code> stops initiating handshakes until <code><span style='color:red; '>uv_san</span></code> goes high again.</div>
+</li>
+</ul>
+
+<p>
+Note that there is a race between <code><span style='color:red; '>uv_san</span></code> going low and the decision to start another cycle of charging. When these happen close in time, there is a choice whether to squeeze in another cycle of charging or not. This behaviour is captured by the following <abbr title="Signal Transition Graph">STG</abbr> where this choice is represented using place <code>me</code> (for <em>mutual exclusion</em>).
+</p>
+
+<p>
+<img src="cycle.stg.svg" width="558" height="150" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:cycle.stg.svg">
+</p>
+
+<p>
+It is always a good idea to formally verify <abbr title="Signal Transition Graph">STG</abbr> models using <em>Verification</em> menu. The above <abbr title="Signal Transition Graph">STG</abbr> is consistent, deadlock-free, and input-proper. However, the output persistency property is violated. Indeed, outputs <code><span style='color:blue; '>uv_ctrl+</span></code> and <code><span style='color:blue; '>chrg_req+</span></code> disable each other. In fact, the choice at place <code>me</code> is an <em>arbitrating choice</em> and has to be implemented using a special component called <code>MUTEX</code> that can correctly handle the metastable behaviour associated with arbitration.
+</p>
+<div class="wrap_tip wrap_center wrap_round plugin_wrap" style="width: 90%;">
+<p>
+The protocol and circuit notation for <code>MUTEX</code> are as follows.
+</p>
+<div class="plugin_wrap"><div class="wrap_column wrap_half plugin_wrap"><div class="table sectionedit11"><table class="inline">
+	<tr class="row0">
+		<td class="col0"><img src="mutex.stg.svg" width="224" height="109" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:mutex.stg.svg"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  MUTEX specification  </td>
+	</tr>
+</table></div>
+</div><div class="wrap_column wrap_half plugin_wrap"><div class="table sectionedit14"><table class="inline">
+	<tr class="row0">
+		<td class="col0"><img src="mutex-box.circuit.svg" width="115" height="111" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:mutex-box.circuit.svg"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  MUTEX component  </td>
+	</tr>
+</table></div>
+</div></div>
+<p>
+By tagging the choice place as a <em>Mutex</em> in the <em>Property editor</em>, the designer can prompt Workcraft to implement the associated choice by a <code>MUTEX</code>. Note that the surrounding signals must follow the <code>MUTEX</code> protocol – this can be verified via <em>Verification</em>→<em>Mutex place implementability [MPSat]</em>.
+</p>
+</div>
+<p>
+Tag place <code>me</code> as a <em>Mutex</em> in the <code>CYCLE</code> <abbr title="Signal Transition Graph">STG</abbr> and verify whether the surrounding signals follow the <code>MUTEX</code> protocol. In this case the property is violated: <code><span style='color:blue; '>uv_ctrl+</span></code> and <code><span style='color:blue; '>chrg_req+</span></code> (to be implemented by mutex grants) are triggered by <code><span style='color:red; '>uv_san-</span></code> and <code><span style='color:red; '>chrg_ack-</span></code>, respectively, i.e. the phases of the signals do not match those in the <code>MUTEX</code> protocol. Hence we introduce a pair of internal signals which explicitly implement <code>MUTEX</code> requests with the correct polarity, which satisfies this property:
+</p>
+
+<p>
+<img src="cycle-mutex.stg.svg" width="593" height="150" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:cycle-mutex.stg.svg">
+</p>
+<div class="wrap_tip wrap_round wrap_center plugin_wrap" style="width: 90%;">
+<p>
+<code>CYCLE_CTRL</code> module can be simplified by replacing <code>WAIT2</code> with <code>WAIT</code> and altering the logic of its operation. However, this is left as a take-home exercise – this tutorial focuses on modular design, and this change would make <code>CYCLE_CTRL</code> too simple to justify a separate module.
+</p>
+</div><div class="wrap_hide plugin_wrap"><p><a class="folder" href="#folded_f3a9df83889fef74b258067d74e58700_1">Optional optimisation of CYCLE module </a></p><div class="folded hidden" id="folded_f3a9df83889fef74b258067d74e58700_1">
+<p>
+<img src="cycle-opt.stg.svg" width="928" height="221" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:cycle-opt.stg.svg">
+</p>
+</div></div>
+</div>
+
+<h3 id="charge_module">CHARGE module</h3>
+<div class="level3">
+
+<p>
+<code>CHARGE</code> should capture the following behaviour:
+</p>
+<ul>
+<li class="level1"><div class="li"> Initially the buck is in the tri-state, i.e. both PMOS and NMOS power regulating transistors are OFF.</div>
+</li>
+<li class="level1"><div class="li"> Upon receiving a request from <code>CYCLE</code>, the PMOS transistor is switched ON and remains ON until OC condition.</div>
+</li>
+<li class="level1"><div class="li"> After that the PMOS is switched OFF, and then NMOS is switched ON and remains ON until ZC condition.</div>
+</li>
+<li class="level1"><div class="li"> Finally NMOS is switched OFF returning the buck to tri-state, and the handshake with <code>CYCLE</code> is completed.</div>
+</li>
+</ul>
+
+<p>
+The idea of the approach below is to start with a small yet meaningful <abbr title="Signal Transition Graph">STG</abbr> capturing the core behaviour but is not necessarily synthesisable. Then we augment and refine it into a synthesisable <abbr title="Signal Transition Graph">STG</abbr> using standard transformations. This way the initial specification is comprehensible for the human designer, and the subsequent design steps can be documented and easily checked.
+</p>
+
+</div>
+
+<h4 id="step_1initial_design">Step 1: Initial design</h4>
+<div class="level4">
+
+<p>
+The following <abbr title="Signal Transition Graph">STG</abbr> captures the core behaviour of <code>CHARGE</code>. Note that there are several problems with it:
+</p>
+<ul>
+<li class="level1"><div class="li"> The interface to the two <code>WAIT</code> elements is not modelled yet, and non-sanitized signals <code><span style='color:red; '>oc</span></code> and <code><span style='color:red; '>zc</span></code> are used instead.</div>
+</li>
+<li class="level1"><div class="li"> The falling edges <code><span style='color:red; '>oc-</span></code> and <code><span style='color:red; '>zc-</span></code> are missing, and so the <abbr title="Signal Transition Graph">STG</abbr> is not consistent.</div>
+</li>
+</ul>
+
+<p>
+<img src="charge-compr-fr.stg.svg" width="809" height="126" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:charge-compr-fr.stg.svg">
+</p>
+
+</div>
+
+<h4 id="step_2inserting_the_falling_edges">Step 2: Inserting the falling edges</h4>
+<div class="level4">
+
+<p>
+As signals <code><span style='color:red; '>oc</span></code> and <code><span style='color:red; '>zc</span></code> will eventually be sanitized with the help of <code>WAIT</code> elements, the designer will ultimately have control of when to start waiting for them and when to reset the <code>WAIT</code> elements after the rising phases of these signals have been registered. The precise positions of the falling edges of these signals do not matter from the correctness point of view (as long as the consistency property is satisfied and no inputs are delayed), but it makes sense to remove them from critical paths and try to optimise the size of the circuit.
+</p>
+<div class="wrap_center wrap_round wrap_tip plugin_wrap" style="width: 90%;">
+<p>
+It is possible to insert such reset transitions automatically, with the view to satisfy the consistency property and heuristically optimise the quality of the resulting circuit. This functionality is not currently implemented in Workcraft, but accessible by running <em>Petrify</em> from the command line. Hopefully one day it will be available from Workcraft <abbr title="Graphical User Interface">GUI</abbr>…
+</p>
+</div>
+<p>
+The <abbr title="Signal Transition Graph">STG</abbr> below shows one possible way of inserting <code><span style='color:red; '>oc-</span></code> and <code><span style='color:red; '>zc-</span></code>. <span class="wrap_tip ">Note that this exercise is not about circuit optimisation; in practice, one would try to use the flexibility in inserting these signals to simplify the resulting circuit.</span>
+</p>
+
+<p>
+<img src="charge-compr.stg.svg" width="809" height="195" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:charge-compr.stg.svg">
+</p>
+
+</div>
+
+<h4 id="step_3sanitizing_analogue_inputs">Step 3: Sanitizing analogue inputs</h4>
+<div class="level4">
+
+<p>
+Signals <code><span style='color:red; '>oc</span></code> and <code><span style='color:red; '>zc</span></code> are generated by the analogue part of the buck and thus there is no guarantee that they are persistent. Hence they have to be sanitised with the help of <code>WAIT</code> elements before letting them into the digital controller. This is actually a simple transformation: One can view the transitions of these signals as &#039;collapsed&#039; handshakes with <code>WAIT</code> elements. Expanding them into proper handshakes can be done by selecting transitions <code><span style='color:red; '>oc+</span></code>, <code><span style='color:red; '>oc-</span></code>, <code><span style='color:red; '>zc+</span></code>, <code><span style='color:red; '>zc-</span></code>, and using <em>Transformations</em>→<em>Expand selected handshake transitions…</em> menu. Note that default suffixes for handshake expansion are <code>_req</code> and <code>_ack</code>, but these can be changed by the designer, e.g. to <code>_ctrl</code> and <code>_san</code> in this case. (Alternatively one can expand handshakes by right-clicking a transition and choosing <em>Expand handshake transition…</em> in the popup menu.) The resulting <abbr title="Signal Transition Graph">STG</abbr> is as follows:
+</p>
+
+<p>
+<img src="charge.stg.svg" width="809" height="164" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:charge.stg.svg">
+</p>
+
+</div>
+
+<h2 id="verification_of_stg_specifications">Verification of STG specifications</h2>
+<div class="level2">
+
+<p>
+As usual, before proceeding to the synthesis step, one should validate the <abbr title="Signal Transition Graph">STG</abbr> by simulation and formally verify the standard correctness properties (consistency, deadlock freeness, input properness, output persistency, mutex implementability) using <em>Verification</em> menu.
+</p>
+
+<p>
+For <code>CYCLE</code> we also need to verify the implementability of the choice place <code>me</code> by a <code>MUTEX</code> using <em>Verification</em>→<em>Mutex place implementability [MPSat]</em> menu. Moreover, pairs of signals <code><span style='color:blue; '>uv_ctrl</span></code> / <code><span style='color:red; '>uv_san</span></code> and <code><span style='color:blue; '>chrg_req</span></code> / <code><span style='color:red; '>chrg_ack</span></code> are expected to form active handshakes, which must be verified as described in the <a href="../../method/handshake_verification/start.html" class="wikilink1" title="tutorial:method:handshake_verification:start" data-wiki-id="tutorial:method:handshake_verification:start">Handshakes Verification tutorial</a>.
+</p>
+
+<p>
+For <code>CHARGE</code> module we also need to verify the custom property that the power regulating PMOS and NMOS transistors are never ON at the same time, as explained in the <a href="../basic_buck/start.html" class="wikilink1" title="tutorial:design:basic_buck:start" data-wiki-id="tutorial:design:basic_buck:start">basic buck tutorial</a>. Moreover, pairs of signals <code><span style='color:blue; '>oc_ctrl</span></code> / <code><span style='color:red; '>oc_san</span></code>, <code><span style='color:blue; '>zc_ctrl</span></code> / <code><span style='color:red; '>zc_san</span></code>, <code><span style='color:blue; '>gp</span></code> / <code><span style='color:red; '>gp_ack</span></code> and <code><span style='color:blue; '>gn</span></code> / <code><span style='color:red; '>gn_ack</span></code> are expected to form active handshakes, and <code><span style='color:red; '>chrg_req</span></code> / <code><span style='color:blue; '>chrg_ack</span></code> a passive handshake, which must be verified as described in the <a href="../../method/handshake_verification/start.html" class="wikilink1" title="tutorial:method:handshake_verification:start" data-wiki-id="tutorial:method:handshake_verification:start">Handshakes Verification tutorial</a>.
+</p>
+
+<p>
+When decomposing a system into smaller modules, there is a new type of problem: One module might produce an output unexpected by another module at that moment. For example, <code>CYCLE</code> could potentially fire <code><span style='color:blue; '>chrg_req+</span></code> output transition at a moment when <code>CHARGE</code> is not in a state that enables its <code><span style='color:red; '>chrg_req+</span></code> input transition. Similarly, <code>CHARGE</code> could potentially fire its <code><span style='color:blue; '>chrg_ack+</span></code> output at a moment when <code>CYCLE</code> is not enabling its <code><span style='color:red; '>chrg_ack+</span></code> input. Hence, one should verify that the modules <em>conform</em> to each other using the <em>Verification→N-way conformation [MPSat]…</em> menu. In general, there can be more than two modules interacting in complicated ways, and this check should include them all – see the <a href="../../method/hierarchical_design/start.html" class="wikilink1" title="tutorial:method:hierarchical_design:start" data-wiki-id="tutorial:method:hierarchical_design:start">Verification and synthesis of hierarchical designs</a> tutorial for more detail.
+</p>
+
+</div>
+
+<h2 id="circuit_synthesis_and_verification">Circuit synthesis and verification</h2>
+<div class="level2">
+
+<p>
+Synthesise the STGs for the <code>CYCLE</code> and <code>CHARGE</code> modules using either <em>Technology mapping [Petrify]</em> or <em>Technology mapping [MPSat]</em> command in the <em>Synthesis</em> menu.
+</p>
+
+<p>
+For <code>CYCLE</code> the result is the following circuit – note that a <code>MUTEX</code> has been inserted automatically. (The name of <code>MUTEX</code> component and its ports can be adjusted in the <em>Digital Circuit</em>→<em>Mutex name and request-grant pairs</em> property of global preferences accessible via <em>Edit</em>→<em>Preferences…</em> menu.)
+</p>
+
+<p>
+<img src="cycle-tm.circuit.svg" width="369" height="196" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:cycle-tm.circuit.svg">
+</p>
+
+<p>
+Technology mapping of <code>CHARGE</code> module using Petrify backend yields the following circuit. (If you decide to use MPSat for this task, you will need to explicitly resolve CSC conflicts first, either manually or using <em>Tools</em>→<em>Encoding conflicts</em> menu – see <a href="../../method/csc_resolution/start.html" class="wikilink1" title="tutorial:method:csc_resolution:start" data-wiki-id="tutorial:method:csc_resolution:start">Resolution of encoding (CSC) conflicts</a> tutorial for more details.)
+</p>
+
+<p>
+<img src="charge-tm.circuit.svg" width="621" height="579" class="svgscaleinsert mediacenter" alt="tutorial:design:hierarchical_buck:charge-tm.circuit.svg">
+</p>
+
+<p>
+Note that automatic circuit layout (accessible via <em>Tools</em>→<em>Graph layout</em>→<em>Circuit placement and routing</em>) will not be as good as the above diagram. You may want to tidy it up manually (make use of <em>Dissolve joint</em> and <em>Straighten connection</em> commands in the popup menu) or download <span class="wrap_download "><a href="charge-tm.circuit.work" class="media mediafile mf_work" title="tutorial:design:hierarchical_buck:charge-tm.circuit.work (7 KB)">charge-tm.circuit.work</a> (7 KiB)</span>.
+</p>
+
+<p>
+Verify these circuits for deadlocks, output persistency and conformation to the initial STGs. Note that in <code>CYCLE</code>, whenever both <code>MUTEX</code> grants are enabled, firing one of them disables the other. This non-persistency, however, is not reported as a violation of output persistency check as it is correctly handled by <code>MUTEX</code>.
+</p>
+
+<p>
+Strategies for initialisation of the <code>CYCLE</code> and <code>CHARGE</code> modules are discussed in the <a href="../../method/initialisation/start.html" class="wikilink1" title="tutorial:method:initialisation:start" data-wiki-id="tutorial:method:initialisation:start">Initialisation of speed-independent circuits</a> tutorial.
+</p>
+
+</div>
+
+<h2 id="solutions">Solutions</h2>
+<div class="level2">
+
+<p>
+Download all the Workcraft models discussed in this tutorial here:
+</p>
+
+<p>
+<span class="wrap_download "><a href="decomposition.zip" class="media mediafile mf_zip" title="tutorial:design:hierarchical_buck:decomposition.zip (38.9 KB)">Decomposed buck controller models</a> (39 KiB)</span>
+</p>
+
+</div>
+<div class="level1">
+<div class="plugin_include_content plugin_include__tutorial:feedback" id="plugin_include__tutorial__feedback">
+<div class="wrap_hide plugin_wrap"><pre class="code">===== Feedback =====</pre>
+<form class="bureaucracy__plugin" id="bureaucracy__plugin1" enctype="multipart/form-data" method="post" action="start.html" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><input type="hidden" name="id" value="tutorial:design:hierarchical_buck:start" /><input type="hidden" name="bureaucracy[$$id]" value="1" /><fieldset ><legend>Comments or suggestions for improving this tutorial</legend>
+<label><span>Name (optional)</span> <input type="text" name="bureaucracy[1]" class="edit" /></label>
+<label><span>Email (optional)</span> <input type="text" name="bureaucracy[2]" class="edit" /></label>
+<label class=" textareafield">
+    <span>Feedback <sup>*</sup></span>
+    <textarea name="bureaucracy[3]" id="" rows="10" cols="10" class="edit required&quot; required=&quot;required"></textarea>
+</label><button type="submit">Submit</button>
+</fieldset>
+</div></form>
+</div><div class="wrap_hide plugin_wrap"><ul>
+<li class="level1"><div class="li"> As discussed in <a href="https://www.dokuwiki.org/plugin:include#controlling_header_size_in_included_pages" class="urlextern" title="https://www.dokuwiki.org/plugin:include#controlling_header_size_in_included_pages" rel="ugc nofollow">https://www.dokuwiki.org/plugin:include#controlling_header_size_in_included_pages</a>, by default, the headers in included pages start one level lower than the last header in the current page. This can be tweaked by adding an empty header above the include:\\<pre class="code">====== ======
+{{page&gt;:tutorial:feedback&amp;inline}}</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> For offline help generation the content of <code>feedback</code> page should be temporary wrapped in <code>&lt;WRAP hide&gt;</code>. Note that the headers still propagate to the table of contents even if inside the hidden wrap. Therefore the <strong>Feedback</strong> title needs to be converted to something else, e.g. to code by adding two spaces in front.</div>
+</li>
+</ul>
+</div></div>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+<!--
+                <div class="docInfo">
+                    workcraft @ <bdi>tutorial/design/hierarchical_buck/start.txt</bdi> · Modified 2020/06/07 15:40 by <bdi>victor</bdi>                </div>
+-->
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+<!--
+            <div id="dokuwiki__pagetools">
+                            <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="start.html" title="Edit this page [e]" rel="nofollow" accesskey="e"><span>Edit this page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="start.html" title="Old revisions [o]" rel="nofollow" accesskey="o"><span>Old revisions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="start.html" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="export_pdf"><a href="start.html" title="Export to PDF" rel="nofollow"><span>Export to PDF</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14 9h5.5L14 3.5V9M7 2h8l6 6v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m4.93 10.44c.41.9.93 1.64 1.53 2.15l.41.32c-.87.16-2.07.44-3.34.93l-.11.04.5-1.04c.45-.87.78-1.66 1.01-2.4m6.48 3.81c.18-.18.27-.41.28-.66.03-.2-.02-.39-.12-.55-.29-.47-1.04-.69-2.28-.69l-1.29.07-.87-.58c-.63-.52-1.2-1.43-1.6-2.56l.04-.14c.33-1.33.64-2.94-.02-3.6a.853.853 0 0 0-.61-.24h-.24c-.37 0-.7.39-.79.77-.37 1.33-.15 2.06.22 3.27v.01c-.25.88-.57 1.9-1.08 2.93l-.96 1.8-.89.49c-1.2.75-1.77 1.59-1.88 2.12-.04.19-.02.36.05.54l.03.05.48.31.44.11c.81 0 1.73-.95 2.97-3.07l.18-.07c1.03-.33 2.31-.56 4.03-.75 1.03.51 2.24.74 3 .74.44 0 .74-.11.91-.3m-.41-.71l.09.11c-.01.1-.04.11-.09.13h-.04l-.19.02c-.46 0-1.17-.19-1.9-.51.09-.1.13-.1.23-.1 1.4 0 1.8.25 1.9.35M8.83 17c-.65 1.19-1.24 1.85-1.69 2 .05-.38.5-1.04 1.21-1.69l.48-.31m3.02-6.91c-.23-.9-.24-1.63-.07-2.05l.07-.12.15.05c.17.24.19.56.09 1.1l-.03.16-.16.82-.05.04z"/></svg></a></li><li class="menuitemfolded"><a href="javascript:void(0);" title="Fold/unfold all" rel="nofollow" class="fold_unfold_all_new" onclick="fold_unfold_all();"><span>Fold/unfold all</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M 2,0 L 6.5,3 L 2,6 z M 8,6.6 L 12.5,9.6 L 8,12.6 z M 14,13.2 L 20,13.2 L 17,17.7 z"/></svg></a></li><li class="menuitem"><a href="start.html" title="Rename Page" rel="nofollow" class=" plugin_move_page "><span>Rename Page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18,4V3A1,1 0 0,0 17,2H5A1,1 0 0,0 4,3V7A1,1 0 0,0 5,8H17A1,1 0 0,0 18,7V6H19V10H9V21A1,1 0 0,0 10,22H12A1,1 0 0,0 13,21V12H21V4H18Z" /></svg></a></li><li class="siteexport_addpage"><a href="start.html" title="Export Page to HTML/PDF" rel="nofollow"><span>Export Page to HTML/PDF</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+                        </div>
+-->
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<!--
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="../../check/referer" title="Valid HTML5" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="../../css-validator/check/referer.fe4c581d16fb9f59f07485ddb441e467" title="Valid CSS" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="../../lib/tpl/dokuwiki-light-export/images/button-dw.png" width="80" height="15"
+            alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div>
+-->
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="../../lib/exe/taskrunner.e39ff9487f5307936cc97c673a58d32b.gif" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>
