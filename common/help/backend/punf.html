@@ -85,7 +85,18 @@
 <h1 id="punf_command_line_options">Punf command line options</h1>
 <div class="level1">
 <pre class="code">Usage:
-     punf [options] [-f=]filename
+     punf [-h]
+or
+     punf [&lt;options&gt;] &lt;net_file&gt;
+
+       The input net file must be in either FORMAT_N or FORMAT_N2
+       format (produced by the PEP tool). Alternatively, it must
+       have the suffix `.g&#039; and be in the STG format; then an STG
+       unfolding prefix (which may differ from the underlying
+       Petri net&#039;s unfolding prefix) is produced.
+       As an experimental feature, high-level nets are supported.
+       For now, only strictly safe nets are allowed, and there are
+       some further restrictions, described in the manual.
 
 Options (may be given in any order):
 
@@ -94,21 +105,23 @@ Options (may be given in any order):
 -#     Using non-local configuration as cut-off correspondents.
          The current implementation is VERY INEFFICIENT.
          This option is not currently supported in the LTL mode.
--$n    Switch to SAT solver n (0-1).
-         If n=0 then zChaff is used.
-         If n=1 then MiniSAT is used (default).
--@[n]  Using adequate order n (0-4).
+-$N    Switch to SAT solver N (0-1).
+         If N=0 then zChaff is used.
+         If N=1 then MiniSAT is used (default).
+-@[N]  Using adequate order N (0-4).
          Specifies the adequate order on configurations of the unfolding.
-         If n is not specified or -@ is not used then the default
-         value n=3 (for prefixes) or n=4 (for merged processes) is used.
-         If n=0 then the set inclusion is used.
-         If n=1 then the McMillan&#039;s order is used.
-         If n=2 then the size-lexicographical order is used.
-         If n=3 then the total Esparza/Roemer/Vogler (ERV) order is used.
-         If n=4 then the total order with an efficient SAT encoding is used.
+         If N is not specified or -@ is not used then the default
+         value N=3 (for prefixes) or N=4 (for merged processes) is used.
+         If N=0 then the set inclusion is used.
+         If N=1 then the McMillan&#039;s order is used.
+         If N=2 then the size-lexicographical order is used.
+         If N=3 then the total Esparza/Roemer/Vogler (ERV) order is used.
+         If N=4 then the total order with an efficient SAT encoding is used.
        Only the ERV order is currently supported in the LTL mode.
--!     Do not optimize preset trees (cheap optimization is performed anyway).
-       (Ignored if -M is specified.)
+-B=filename
+       Switches on the LTL-X verification mode. The file must be in
+       the HOA format (http://adl.github.io/hoaf/) and specify a Buechi
+       automaton for an LTL-X property. The adequate order must be -@3.
 -c     Do not store cut-off events (except the successful terminals in
        the LTL mode).
 -d     When unfolding an STG, allow dummy cut-off events.
@@ -118,19 +131,13 @@ Options (may be given in any order):
        This option has effect only when unfolding an STG.
        It is automatically specified if the STG contains only dummy signals.
        (Currently ignored if -M is specified.)
-[-f=]filename
-       Specifies the input file. It must be in either FORMAT_N or
-       FORMAT_N2 format (produced by the PEP tool). Alternatively,
-       it must have the suffix `.g&#039; and be in the STG format;
-       then an STG unfolding prefix (which may differ
-       from the underlying Petri net&#039;s unfolding prefix) is produced.
-       Aa an experimental feature, high-level nets are supported.
-       For now, only strictly safe nets are allowed, and there are
-       some further restrictions, described in the manual.
--L=filename
-       Switches on the LTL-X verification mode. The file must be in
-       the HOA format (http://adl.github.io/hoaf/) and specify a Buechi
-       automaton for an LTL-X property. The adequate order must be -@3.
+-jN    Specifies the number of working threads. By default, it is equal
+       to the number of processors. (Currently ignored if -M is specified.)
+-l     Replicate places with multiple self-loops, so that each transition
+       reading a particular place gets its own copy of that place. This
+       transformation can significantly reduce the prefix size for nets
+       with many self-loops.
+-M     Generate a complete merged process.
 -m[=filename]
        Specifies the name of the resulting file, whose extension also
        specifies the format. It can be either the legacy *.mci format
@@ -142,22 +149,11 @@ Options (may be given in any order):
        and the resulting prefix or merged process is stored in the new
        PNML-based format. If the filename is not specified (i.e. just -m
        is given) then no output file is created.
--N=n   Specifies the number of working threads (by default, it is equal
-       to the number of processors). (Currently ignored if -M is specified.)
--n=n   Abandon the concurrency relation and switch to a slower algorithm
+-nN    Abandon the concurrency relation and switch to a slower algorithm
        after the specified number of non-cut-off events is generated. The
-       default value is 50000. If your computer has a lot of
-       memory, increase it to improve the performance. If the value is 0, the
+       default value of N is 50000. If N is 0, the
        concurrency relation is not created. (Ignored if -M is specified.)
--p     Print running statistics as multiple lines (to estimate progress).
--q     Print running statistics (to estimate progress).
--r     Replicate places with multiple self-loops, so that each transition
-       reading a particular place gets its own copy of that place. This
-       transformation can significantly reduce the prefix size for nets
-       with many self-loops.
--s     Print final statistics.
--t     Print the running time.
--vN    Verbosity level (0&lt;=N&lt;=9). The default is 0.
+-vN    Verbosity level (0-9). The default is 0.
 -w[N]  Wait for user input before exiting (prevents the window from closing).
        The possible values of N:
          0 - do not wait for user input, exit immediately;

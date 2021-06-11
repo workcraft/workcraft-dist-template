@@ -209,90 +209,135 @@ Advanced options:
 
 <h2 id="mpsat_command_line_options">MPSat command line options</h2>
 <pre class="code">Usage:
-    mpsat &lt;mode&gt; [&lt;options&gt;] [&lt;in_file&gt;] [&lt;out_file&gt;]
+        mpsat [-h]
+or
+        mpsat &lt;mode&gt; [&lt;options&gt;] [&lt;in_file&gt;] [&lt;out_file&gt;]
 
 The &lt;mode&gt; is one of the following:
-    -D    Deadlock checking.
-  Reachability-like properties checking modes:
-    -F    Find a configuration satisfying a given REACH predicate.
-    -Fa   Check an SVA-like assertion (a global invariant).
-    -Fe   Like -F but assumes an STG unfolding and enabledness via dummies.
-    -Fs   Like -Fe, but considers only configurations without maximal dummies.
+  Unfolding/unravelling modes:
+    -U[m|p] - Build a complete merged process (-Um) or unfolding prefix (-Up).
+  Reachability-based formal verification modes:
+    -D - Deadlock checking.
+    -F[a|e|s]=&lt;property_file&gt; - Check a reachability-like property.
+  Temporal property formal verification mode:
+    -B=&lt;property_file&gt; - Check a stutter-invariant temporal property.
   Encoding conflicts detection and resolution modes:
-    -C    CSC conflict detection.
-    -N    Normalcy property checking mode.
-    -R    Resolve encoding conflicts.
-    -U    USC conflict detection.
+    -C[c|n|u] - Check the CSC/normalcy/USC property.
+    -R - Resolve CSC conflicts.
   Synthesis modes:
-    -E    Derive complex-gate implementation.
-    -G    Derive gC-elements implementation.
-    -S    Derive standard-C implementation.
-    -T    Logic decomposition and technology mapping (experimental).
+    -I[e|g|s] - Derive a complex-gate/gC/standard-C implementation.
+    -T[=&lt;gate_library&gt;] - Logic decomposition and technology mapping.
 
 The &lt;options&gt; are as follows:
+  -# - Allow non-local configurations as cut-off correspondents.
   -! - Disable branching on auxiliary variables.
   -$N - Switch to SAT solver N (0-1).
-  -@ - Output configurations rather than traces.
+  -@N - Use adequate order N (0-4).
   -a[N] - Compute all solutions (might be slow).
   -b - Generate backward conflict constraints.
-  -c(s|l|COEFF=EXPR) - Specifies the coefficients for the cost function.
-  -d string - Specifies additional mode-dependent data.
-  -f - Looking for a solution minimising the cost function (might be slow).
-  -g[[!][N]] - Specifies gates/latches used for logic decomposition.
-  -l[+|-] - Specifies whether to generate inclusion constraints.
-  -mN - Using method N (1-9).
+  -c - Do not store cut-off events.
+  -d - Allow dummy cut-off events when unfolding an STG.
+  -e - Print out configurations rather than traces.
+  -f[s|l|&lt;COEFF&gt;=&lt;EXPR&gt;] - Minimise (and perhaps specify) the cost function.
+  -g[!][N] - Filter gates/latches used for logic decomposition.
+  -i[+|-] - Specify whether to generate inclusion constraints.
+  -jN - The number of working threads.
+  -l - Replicate places with multiple self-loops.
+  -mN - Use method N (1-9).
+  -nN - Switch to memory efficient unfolding algorithm after N events.
   -pN - Controls the use of parallel (concurrent) inserions.
-  -q - Quit early, after checking the predicate syntax.
+  -q - Quit early, after checking the property syntax.
   -r - Allows to use concurrency reduction for encoding conflict resolution.
-  -s - Store the CNF formula for an external SAT solver.
   -t - Perform logic decomposition down to the gate/latch level.
   -vN - The verbosity level (0&lt;=N&lt;=9, the default is 0).
-  -w[N] - Wait for user input before exiting (prevents the window from closing).
-  -x - Saves the results in mpsat.xml.</pre>
+  -w[N] - Wait for user before exiting (prevents the window from closing).</pre>
 <p><a class="folder" href="#folded_26c648968f4cbc3008bb77720b850a64_1">Detailed help </a></p><div class="folded hidden" id="folded_26c648968f4cbc3008bb77720b850a64_1"><pre class="code">Usage:
-    mpsat &lt;mode&gt; [&lt;options&gt;] [&lt;in_file&gt;] [&lt;out_file&gt;]
+        mpsat [-h]
+or
+        mpsat &lt;mode&gt; [&lt;options&gt;] [&lt;in_file&gt;] [&lt;out_file&gt;]
 
-&lt;in_file&gt; is compulsory unless option -q is given.
-If &lt;out_file&gt; is omitted then stdout is used.
+Here &lt;in_file&gt; is compulsory unless option -q is given.
+If &lt;out_file&gt; is omitted then stdout is used in all modes except -U[m|p],
+where the name of output file may be generated automatically.
 
-If -h is specified then full help is printed. If no
-command-line parameters are given then brief help is printed.
+If -h is specified then full help is printed. If no command-line parameters
+are given then brief help is printed.
 
 The &lt;mode&gt; is one of the following:
-    -D    Deadlock checking.
-  Reachability-like properties checking modes:
-    -F    Find a configuration satisfying a given REACH predicate.
-    -Fa   Check an SVA-like assertion (a global invariant).
-    -Fe   Like -F but assumes an STG unfolding and enabledness via dummies.
-    -Fs   Like -Fe, but considers only configurations without maximal dummies.
-    The -Fe mode differs from -F in the following ways:
-    * REACH operators referring to STG signals become available;
-    * the semantics of REACH operator &#039;@&#039; checking the enabledness status
-      of an event/transition/signal changes: in addition to the usual Petri
-      net enabledness, an entity can be enabled via a sequence of dummies.
-    The -Fs mode differs from -Fe in the following way:
-    * only configurations without maximal dummy events are explored.
-    The -Fa mode differs from -Fs in the following ways:
-    * the syntax is SVA-like, i.e. a Boolean formula that can refer only to
-      values of STG signals;
-    * a global invariant rather than a reachability predicate is checked,
-      i.e. to check the same property using -Fs one has to invert it.
+  Unfolding/unravelling modes:
+    -U[m|p] - Build a complete merged process (-Um) or unfolding prefix (-Up).
+    (-U is equivalent to -Up.) The format of &lt;out_file&gt; is specified by its
+    extension. It is either a legacy format (*.mci for -Up and *.mp for -Um),
+    or the new PNML-based *.pnml format, or its zipped version *.pnml.gz.
+    If &lt;out_file&gt; is not specified then the file name for the result
+    is obtained by removing from &lt;in_file&gt; the suffix `.ll_net&#039;,
+    `.g&#039; or `.hl_net&#039; (if present), and appending the suffix `bp.pnml.gz&#039;,
+    (for prefix) or `mp.pnml.gz&#039; (for merged process), and the result is
+    stored in the new PNML-based format.
+  Reachability-based formal verification modes:
+    -D - Deadlock checking.
+    -F[a|e|s]=&lt;property_file&gt; - Check a reachability-like property.
+    The difference between -Fe and -F is the semantics of REACH operator &#039;@&#039;
+    (checking the enabledness status of an event/transition/signal): In
+    addition to the usual Petri net enabledness, an entity can be enabled
+    in an STG via a sequence of dummy transitions.
+    The difference between -Fs and -Fe is that only configurations without
+    causally maximal dummy events are explored.
+    The difference between -Fa and -Fs is that the syntax is SVA-like, i.e.
+    the property can refer only to values of STG signals, and the property
+    is interpreted as a global invariant to be verified rather than a
+    predicate whose reachability is to be checked; hence, to check the same
+    property using -Fs one has to invert it.
+  Temporal property formal verification mode:
+    -B=&lt;property_file&gt; - Check a stutter-invariant temporal property.
+    The property file must be in the HOA format (http://adl.github.io/hoaf/)
+    and specify a stutter-invariant Buechi automaton (such automata are
+    generated, e.g., for LTL-X properties). The adequate order must be -@3.
+    The input file must be a Petri net or STGs, not unfolding prefix; for
+    STGs, the initial values of signals mentioned in the property must be
+    specified. If &lt;out_file&gt; is specified, an unfolding prefix of a special
+    product of Buechi automaton and the input net is stored; this prefix can
+    be viewed as a tableaux proving or refuting the property. If &lt;out_file&gt;
+    is not specified, no prefix is stored. It is recommended that option -c
+    is used in this mode to avoid adding cut-off events corresponding to
+    unsuccessful terminals to the prefix (unless you need a complete
+    tableaux stored in &lt;out_file&gt;).
   Encoding conflicts detection and resolution modes:
-    -C    CSC conflict detection.
-    -N    Normalcy property checking mode.
-    -R    Resolve encoding conflicts.
-    -U    USC conflict detection.
+    -C[c|n|u] - Check the CSC/normalcy/USC property.
+    -R - Resolve CSC conflicts.
+    (-C is equivalent to -Cc.)
+    Normalcy property is required to avoid inverters (bubbles) on
+    gates&#039; inputs (which often require timing assumptions). This
+    property is mostly of theoretical interest. A normalcy violation
+    can be caused by the following factors:
+    * An event have triggers with different signs. If this is
+      the case, a trace leading to that event is printed out.
+    * An instance of a signal transition has triggers with the
+      same sign (which means that the signal cannot be n-normal),
+      while another instance of this signal has triggers with
+      the opposite sign (i.e. the signal cannot be p-normal).
+      If this is the case, two traces leading to these instances
+      are printed out.
+    * There is a CSC conflict. If this is the case, two traces are
+      printed similarly to the -Cc mode.
+    * None of the above. Then a hypothesis is made about the normalcy
+      type of each signal, based on the signs of its triggers.
+      Then this hypothesis is verified, and if it is possible to
+      disprove it, three traces are printed out: one to show the
+      event for which a hypothesis was made, and the other two to
+      show a violation of normalcy by definition.
   Synthesis modes:
-    -E    Derive complex-gate implementation.
-    -G    Derive gC-elements implementation.
-    -S    Derive standard-C implementation.
-    -T    Logic decomposition and technology mapping (experimental).
-At most one the listed modes may be specified.
+    -I[e|g|s] - Derive a complex-gate/gC/standard-C implementation.
+    (-I is equivalent to -Ie.)
+    -T[=&lt;gate_library&gt;] - Logic decomposition and technology mapping.
+    The gate library must be in the GENLIB format. The in-built
+    gate library is used if no file is specified.
+Exactly one of the above modes must be specified.
 
-For the modes -C, -E, -Fa, -Fe, -Fs, -G, -N, -R, -S, -T, -U
-the file &lt;in_file&gt; must be an STG unfolding. If the
-legacy *.mci format is used then transition names must
-carry information about the corresponding signal; the
+For the modes -C[c|n|u], -I[e|g|s], -Fa, -Fe, -Fs, -R, -T,
+the file &lt;in_file&gt; must be an STG or STG unfolding. If the
+legacy *.mci format is used then each transition&#039;s name must
+carry information about the corresponding signal: The
 format is [prefix:]identifier[+|-][/number], where prefix is
 either of O,I,i (for outputs, internal signals, and inputs,
 respectively; dummies have no prefix),
@@ -300,31 +345,21 @@ e.g. O:x-/1, I:csc+/1, i:a-, dum/1, t1. This format is
 produced by the PUNF tool. Alternatively, PUNF can produce new
 PNML-based format *.pnml or *.pnml.gz, which stores this
 information in a more elegant way, and also fixes other issues.
-The original STG must be consistent. Moreover, it should
-satisfy the CSC property for any of the synthesis modes (-E, -G, -S, -T).
-
-The normalcy property should hold to avoid inverters on gates&#039; inputs.
-Normalcy violation can be caused by the following factors:
-  - An event have triggers with different signs. If this is
-    the case, mpsat prints a trace leading to that event.
-  - An instance of a signal transition has triggers with the
-    same sign (which means that the signal cannot be n-normal),
-    while another instance of this signal has triggers with
-    the opposite sign (i.e. the signal cannot be p-normal).
-    If this is the case, mpsat prints two traces
-    leading to these instances.
-  - There is a CSC conflict. If this is the case, mpsat prints
-    results similar to the -C mode.
-  - Nothing above. Then mpsat makes hypothesis about the
-    normalcy type of each signal, based on the signs of the triggers.
-    Then it tries to disprove the made hypothesis, and if it is
-    possible, mpsat prints three traces: one to show the
-    event for which a hypothesis was made, and the other two to
-    show the violation of normalcy by definition.
+The original STG must be consistent. Ideally, it should also
+satisfy the CSC property in the synthesis modes (-I[e|g|s] and -T),
+but if not then CSC resolution will be attempted.
 
 The &lt;options&gt; are as follows:
+  -# - Allow non-local configurations as cut-off correspondents.
+  This option is currently supported only when building an unfolding
+  prefix (perhaps as an intermediate step before solving another
+  problem on the built prefix), i.e. in the -C[c|n|u], -I[e|g|s], -D,
+  -F[a|e|s], -Up, -R, -T modes. It is not supported in the temporal
+  verification (-B) or merged process construction (-Um) modes.
+  The current implementation is INEFFICIENT.
+
   -! - Disable branching on auxiliary variables.
-  Some of the variables in the formula might be functions of
+  Some of the variables in the SAT instances may be functions of
   other variables, so it is possible not to branch on them
   without affecting the correctness. This, however, has mixed
   effect on performance. You can try this option if you feel lucky.
@@ -335,10 +370,15 @@ The &lt;options&gt; are as follows:
   supported. The default is chosen heuristically, depending on the mode.
   This option is available in all modes.
 
-  -@ - Output configurations rather than traces.
-  The numbering of events starts from 0.
-  This option is available in the following modes:
-  -C, -D, -F, -Fa, -Fe, -Fs, -N, -U; it is silently ignored in any other mode.
+  -@N - Use adequate order N (0-4).
+  Specifies the adequate order on configurations of the unfolding.
+  The default value N=3 (for prefixes) or N=4 (for merged processes).
+  If N=0 then the set inclusion is used.
+  If N=1 then the McMillan&#039;s order is used.
+  If N=2 then the size-lexicographical order is used.
+  If N=3 then the total Esparza/Roemer/Vogler (ERV) order is used.
+  If N=4 then the total order with an efficient SAT encoding is used.
+  Only -@3 is supported in the temporal verification (-B) mode.
 
   -a[N] - Compute all solutions (might be slow).
   The search does not stop after the first encountered solution,
@@ -349,43 +389,75 @@ The &lt;options&gt; are as follows:
   is just an approximate value, the actual number of computed
   solutions can slightly differ from N.
   This option is available in the following modes:
-  -C, -D, -F, -Fa, -Fe, -Fs, -N, -R, -T, -U. It is an error to specify this
-  option in any other mode. This option must not be specified
-  together with the -f option.
+  -C[c|n|u], -D, -F[a|e|s], -R, -T. It is an error to specify this
+  option in any other mode. This option conflicts with -f.
 
   -b - Generate backward conflict constraints.
   Additional constraints are genereted, conveying that no two
   mp-events in the preset of any mp-conditon can belong to the
   same mp-configuration. These constraints are redundant, but
-  can in certain cases improve the performance.
-  This option is silently ignored if the input file is not a merged process.
+  can in certain cases improve the performance. This option
+  is silently ignored unless a merged process is involved.
 
-  -c(s|l|COEFF=EXPR) - Specifies the coefficients for the cost function.
-  This option is valid only in the encoding conflict resolution (-R) and
-  logic decomposition and technology mapping (-T) modes and it is silently
-  ignored unless also the -f option is specified.
-  This option specifies the coefficiens for the function computing the
-  cost of the transformation (signal insertion or concurrency reduction)
-  on each step of the encoding conflict resolution or logic decomposition.
-  This function is a weighted sum of the following components (with the
-  corresponding COEFF):
-    csc:  the number of unresolved CSC cores
-    usc:  the number of unresolved USC cores
-    del:  the number of delayed transitions
-    trig: the number of triggers of output and internal transitions
-    seq:  the number of sequential insertions (or |U| if a concurrency
-          reduction U-n-&gt;t was applied)
-    conc: the number of concurrent insertions
-    lock: the number computed by adding up the following numbers for each
-          pair (a,b) of non-locked signals in the modified STG:
-                  1 if both a and b are inputs;
-                  2 if one of a, b is an input;
-                  4 if both a and b are output or internal signals;
-          if the option -r is not used (i.e. concurrency reductions are not
-          allowed) then the difference between the values for the modified
-          and the original STGs is used instead, which coincides with 2*I+4*O,
-          where I is the numbers of inputs and O is the numbers of output or
-          intermal signals which are not locked with the newly inserted signal.
+  -c - Do not store cut-off events.
+  Successful terminals in the -B mode are still stored.
+  This option is available in the -B and -U[m|p] modes.
+  For safety reasons, it is not available in modes which
+  can indirectly trigger unfolding.
+
+  -d - Allow dummy cut-off events when unfolding an STG.
+  If this option is not specified, a dummy event e can only be
+  declared cut-off if its corresponding configuration C is a
+  subset of [e], and [e]\C contains only dummies.
+  This option has effect only when unfolding an STG.
+  It is specified by default if the STG contains only dummy signals.
+  This option is available in the -B and -U[m|p] modes.
+  For safety reasons, it is not available in modes which
+  can indirectly trigger unfolding. (Currently ignored in -Um mode.)
+
+  -e - Print out configurations rather than traces.
+  The numbering of events starts from 0.
+  This option is available in all modes, but in modes other than
+  -C[c|n|u], -D, -F[a|e|s] it does not affect anything other than
+  verbosity output.
+
+  -f[s|l|&lt;COEFF&gt;=&lt;EXPR&gt;] - Minimise (and perhaps specify) the cost function.
+  Usually the total lengths of violation traces is minimised, though the
+  cost functon is different in the -N, -R and -T modes. It often slows down
+  the computation considerably. This option conflicts with -a.
+  Option -f (without the extra parts) is available in the -C[c|n|u], -I[e|g|s],
+  -D, -F[a|e|s], -R, -T modes. It is an error to specify this
+  option in any other mode. This option is assumed by default in the synthesis
+  modes -I[e|g|s]. For the -I[e|g|s], -R and -T modes, the user can also specify
+  the coefficients of the cost function used for evaluating transformations
+  (signal insertions or concurrency reduction) on each step of the encoding
+  conflict resolution or logic decomposition. This function is a weighted
+  sum of the following components (with the corresponding &lt;COEFF&gt;):
+    csc:      the number of unresolved CSC cores
+    comp_csc: the number of unresolved composite CSC complementary sets
+    usc:      the number of unresolved USC cores
+    comp_usc: the number of unresolved composite USC complementary sets
+    del:      the number of delayed transitions
+    trig:     the number of triggers of output and internal transitions,
+              with the triggers having the same sign as the triggered
+              transition and those having the opposite sign counted separately
+    seq:      the number of sequential insertions (or |U| if a concurrency
+              reduction U-n-&gt;t was applied)
+    fseq_inc: the total incompleteness of used sequential insertions, where
+              the incompleteness of a pre-insertion S|t is |*t|-|S|, and
+              the incompleteness of a post-insertion t|S is |t*|-|S|
+    conc:     the number of concurrent insertions
+    lock:     the number computed by adding up the following numbers for each
+              pair (a,b) of non-locked signals in the modified STG:
+                      1 if both a and b are inputs;
+                      2 if one of a, b is an input;
+                      4 if both a and b are output or internal signals;
+              if -r is not used (i.e. concurrency reductions are not allowed)
+              then the difference between the values for the modified and the
+              original STGs is used instead, which coincides with 2*I+4*L,
+              where I is the number of inputs and L is the number of local
+              (i.e. output or internal) signals which are not locked with
+              the newly inserted signal.
   The defining expressions EXPR for coefficients can use integer constants,
   the operations +, -, *, /, %%, and the following macros referring to the STG:
     #i - the number of input signals
@@ -400,58 +472,55 @@ The &lt;options&gt; are as follows:
   used, which heuristically minimise the number of signals/literals.
   If several -c options are specified, they are processed from left to right.
 
-  -d string - Specifies additional mode-dependent data.
-  This option is available in the following modes:
-    -F, -Fa, -Fe, -Fs (extended reachability analysis) - the string must
-       either contain a proterty the target state should satisfy or be
-       of the form @filename to name the file containing a proterty.
-    -T (logic decomposition and technology mapping) - the string must
-       name the file containing a gate library in the GENLIB format.
-  It is an error to specify this option in any other mode.
+  -g[!][N] - Filter gates/latches used for logic decomposition.
+  This option restricts the class of gates/latches which can be used
+  by the decomposition algorithm as follows: `!&#039; disables using
+  latches, and N&gt;1 is the maximal allowed number of gate/latch
+  inputs (not counting the feedback for latches). For example,
+  -g! disables the use of latches but allows all combinational gates
+  from the library, -g2 allows to use only combinational gates and
+  latches with up to two inputs (plus the feedback input for latches),
+  and -g!2 combines the effect of -g! and -g2, i.e. it allows only
+  combinational gates with up to two inputs. This option is
+  available only in the logic decomposition (-T) mode.
 
-  -f - Looking for a solution minimising the cost function (might be slow).
-  Usually this means that the sum of the lengths of the traces
-  is minimised, though the criterion is different in the
-  normalcy (-N) and encoding conflict resolution (-R) modes.
-  This option is available in the following modes:
-  -C, -D, -F, -Fa, -Fe, -Fs, -N, -R, -T, -U. It is an error to specify this
-  option in any other mode. This option must not be specified
-  together with the -a option.
-
-  -g[[!][N]] - Specifies gates/latches used for logic decomposition.
-  This option restricts the class of gates/latches which can be used in
-  the main loop of the decomposition algorithm as follows: `!&#039; disables
-  using latches, and N&gt;1 is the maximal allowed number of gate/latch
-  inputs (not counting the feedback for latches). The other
-  gates/latches in the library still may be used during the technology
-  mapping phase. For example, -g! disables the use of latches but allows
-  all the combinational gates from the library, -g2 allows to use only
-  combinational gates and latches with up to two inputs (plus the feedback
-  input for latches), and -g!2 combines the effect of -g! and -g2, i.e.
-  it allows to use only combinational gates with up to two inputs.
-  This option is available only in the logic decomposition (-T) mode.
-
-  -l[+|-] - Specifies whether to generate inclusion constraints.
+  -i[+|-] - Specify whether to generate inclusion constraints.
   Inclusion constraints usually speed up the computation,
   but might lead to incorrect results for non-conflict-free
   prefixes. If this option is not specified, inclusion
   constraints are generated iff the prefix is conflict-free.
-  This option is available in the following modes:
-  -C, -E, -Fa, -Fe, -Fs, -G, -N, -R, -S, -T, -U. It is an error to specify
-  this option in any other mode.
+  This option is available in the following modes: -C[c|n|u],
+  -I[e|g|s], -F[a|e|s], -R, -T.
 
-  -mN - Using method N (1-9).
+  -jN - The number of working threads.
+  By default, N is equal to the number of processors. Currently, only
+  unfolding prefix constructon (including when called indirectly or in the
+  -B mode) is parallelised, though the option is available in all modes.
+
+  -l - Replicate places with multiple self-loops.
+  Each transition reading a particular place gets its own copy of that place.
+  This transformation may significantly reduce the size of unfolding prefix
+  for nets with many self-loops. This option is available in all modes.
+
+  -mN - Use method N (1-9).
   For some of the modes several solving methods are implemented,
-  and this option allows one to specify which one is to be used.
+  and this option allows one to specify which of them to use.
   This option is available in the following modes:
     -D (deadlock detection):
        -m1 - use cut-offs
        -m2 (default) - ignore cut-offs
-    -C, -N, -U (CSC/normalcy/USC checking):
+    -C[c|n|u] (CSC/normalcy/USC checking):
        -m1 (default) - process all signals/places together
        -m2 - process each signal/place in turn
   It is an error to specify this option in any other mode, or
   to specify the method which is not defined for the current mode.
+
+  -nN - Switch to memory efficient unfolding algorithm after N events.
+  Initially a fast algorithm based on concurrency relation is used, which
+  takes much memory. After N non-cut-off events are generated, the
+  concurrency relation is deleted and a slower but more memory efficient
+  algorithm is used. By default, N=50000.
+  If N=0, the concurrency relation is not created. Ignored in the -M mode.
 
   -pN - Controls the use of parallel (concurrent) inserions.
   The possible values of N:
@@ -459,29 +528,23 @@ The &lt;options&gt; are as follows:
     1 - only valid concurrent insertions of the form
         u-||n-&gt;t, where u is in ****t, are allowed
     2 - all valid concurrent insertions are allowed
-  This option is valid only in the encoding conflict resolution (-R)
-  and logic decomposition and technology mapping (-T) modes.
-  It is an error to specify this option in any other mode.
-  The default is -p0.
+  This option is valid only in the -R, -T, and -I[e|g|s] modes
+  (the latter may trigger encoding conflict resolution). The default
+  is -p0 for the -I[e|g|s] and -R modes, and -p2 for the -T mode.
 
-  -q - Quit early, after checking the predicate syntax.
-  This option is valid only in the reachability-like properties checking modes
-  (-F, -Fa, -Fe, -Fs). In other modes a warning is issued and this option is
-  ignored. The &lt;in_file&gt; does not have to be supplied if this option is given,
-  but if it is, in addition to checking the predicate syntax, the predicate is
+  -q - Quit early, after checking the property syntax.
+  This option is valid only in the -F[a|e|s]modes. The &lt;in_file&gt;
+  does not have to be supplied if this option is given, but if
+  it is, in addition to checking the predicate syntax, the predicate is
   also expanded using the unfolding prefix to check the correctness of
   references in the predicate. The actual verification is not performed.
 
   -r - Allows to use concurrency reduction for encoding conflict resolution.
-  This option is valid only in the encoding conflict resolution (-R) mode.
-  One should be careful when using this option: the resulting STG is guaranteed
-  to be correct only if all the transitions of the STG are weakly fair. Note
-  that this assumption is not compositional: if concurrency reductions are
-  performed both in the STG and in its environment, a deadlock can be
-  introduced, even if the STG and the environment were initially weakly fair.
-
-  -s - Store the CNF formula for an external SAT solver.
-  This option is available in all modes.
+  This option is valid only in the -R mode. For safety reasons, it is
+  disabled in the -I[e|g|s] and -T modes which may trigger conflict
+  resolution. One should be careful when using this option: concurrency
+  reduction changes the contract between the circuit and its environment
+  in a potentially breaking way.
 
   -t - Perform logic decomposition down to the gate/latch level.
   New signals are inserted until each local signal can be mapped to a single
@@ -489,108 +552,21 @@ The &lt;options&gt; are as follows:
   (If the option is not given, some of the local signals can be implemented
   by several gates.) This option requires more time, but produces solutions
   consistent with Petrify, so Petrify&#039;s technology mapping can be used.
-  This option is valid only in the logic decomposition (-T) mode.
+  This option is valid only in the -T mode.
 
   -vN - The verbosity level (0&lt;=N&lt;=9, the default is 0).
   This option is available in all modes.
 
-  -w[N] - Wait for user input before exiting (prevents the window from closing).
+  -w[N] - Wait for user before exiting (prevents the window from closing).
   The possible values of N:
     0 - do not wait for user input, exit immediately
     1 - wait for user input only if there are errors
     2 - wait for user input only if there are errors or warnings
     3 - always wait for user input
   The default is -w0, and -w is equivalent to -w3.
-  This option is available in all modes.
-
-  -x - Saves the results in mpsat.xml.
+  If memory is exhausted, the program exits immediately, regardless of -w.
   This option is available in all modes.</pre>
 </div></div>
-<div class="plugin_include_content plugin_include__help:backend:punf" id="plugin_include__help__backend__punf">
-
-<h2 id="punf_command_line_options">Punf command line options</h2>
-<pre class="code">Usage:
-     punf [options] [-f=]filename
-
-Options (may be given in any order):
-
--h     Help.
-
--#     Using non-local configuration as cut-off correspondents.
-         The current implementation is VERY INEFFICIENT.
-         This option is not currently supported in the LTL mode.
--$n    Switch to SAT solver n (0-1).
-         If n=0 then zChaff is used.
-         If n=1 then MiniSAT is used (default).
--@[n]  Using adequate order n (0-4).
-         Specifies the adequate order on configurations of the unfolding.
-         If n is not specified or -@ is not used then the default
-         value n=3 (for prefixes) or n=4 (for merged processes) is used.
-         If n=0 then the set inclusion is used.
-         If n=1 then the McMillan&#039;s order is used.
-         If n=2 then the size-lexicographical order is used.
-         If n=3 then the total Esparza/Roemer/Vogler (ERV) order is used.
-         If n=4 then the total order with an efficient SAT encoding is used.
-       Only the ERV order is currently supported in the LTL mode.
--!     Do not optimize preset trees (cheap optimization is performed anyway).
-       (Ignored if -M is specified.)
--c     Do not store cut-off events (except the successful terminals in
-       the LTL mode).
--d     When unfolding an STG, allow dummy cut-off events.
-       If this option is not specified, a dummy event e can only be
-       declared cut-off if its corresponding configuration C is a
-       subset of [e], and [e]\C contains only dummies.
-       This option has effect only when unfolding an STG.
-       It is automatically specified if the STG contains only dummy signals.
-       (Currently ignored if -M is specified.)
-[-f=]filename
-       Specifies the input file. It must be in either FORMAT_N or
-       FORMAT_N2 format (produced by the PEP tool). Alternatively,
-       it must have the suffix `.g&#039; and be in the STG format;
-       then an STG unfolding prefix (which may differ
-       from the underlying Petri net&#039;s unfolding prefix) is produced.
-       Aa an experimental feature, high-level nets are supported.
-       For now, only strictly safe nets are allowed, and there are
-       some further restrictions, described in the manual.
--L=filename
-       Switches on the LTL-X verification mode. The file must be in
-       the HOA format (http://adl.github.io/hoaf/) and specify a Buechi
-       automaton for an LTL-X property. The adequate order must be -@3.
--m[=filename]
-       Specifies the name of the resulting file, whose extension also
-       specifies the format. It can be either the legacy *.mci format
-       for prefixes, the legacy *.mp format for merged processes (if -M
-       is specified), or the new PNML-based *.pnml or *.pnml.gz format.
-       If this option is not specified then the filename for the result
-       is obtained by removing from the input filename the suffix `.ll_net&#039;,
-       `.g&#039; or `.hl_net&#039; (if present), and appending the suffix `.pnml.gz&#039;,
-       and the resulting prefix or merged process is stored in the new
-       PNML-based format. If the filename is not specified (i.e. just -m
-       is given) then no output file is created.
--N=n   Specifies the number of working threads (by default, it is equal
-       to the number of processors). (Currently ignored if -M is specified.)
--n=n   Abandon the concurrency relation and switch to a slower algorithm
-       after the specified number of non-cut-off events is generated. The
-       default value is 50000. If your computer has a lot of
-       memory, increase it to improve the performance. If the value is 0, the
-       concurrency relation is not created. (Ignored if -M is specified.)
--p     Print running statistics as multiple lines (to estimate progress).
--q     Print running statistics (to estimate progress).
--r     Replicate places with multiple self-loops, so that each transition
-       reading a particular place gets its own copy of that place. This
-       transformation can significantly reduce the prefix size for nets
-       with many self-loops.
--s     Print final statistics.
--t     Print the running time.
--vN    Verbosity level (0&lt;=N&lt;=9). The default is 0.
--w[N]  Wait for user input before exiting (prevents the window from closing).
-       The possible values of N:
-         0 - do not wait for user input, exit immediately;
-         1 - wait for user input only if there are errors;
-         2 - wait for user input only if there are errors or warnings;
-         3 - always wait for user input.
-       The default is -w0, and -w is equivalent to -w3.</pre>
-</div>
 <div class="plugin_include_content plugin_include__help:backend:pcomp" id="plugin_include__help__backend__pcomp">
 
 <h2 id="pcomp_command_line_options">PComp command line options</h2>
@@ -651,6 +627,87 @@ Options:
       while the other has x- but no x+, the composed STG will have
       no transitions labelled by either x+ or x-. However, if this
       option is specified, both labels will occur in the composed STG.</pre>
+</div>
+<div class="plugin_include_content plugin_include__help:backend:punf" id="plugin_include__help__backend__punf">
+
+<h2 id="punf_command_line_options">Punf command line options</h2>
+<pre class="code">Usage:
+     punf [-h]
+or
+     punf [&lt;options&gt;] &lt;net_file&gt;
+
+       The input net file must be in either FORMAT_N or FORMAT_N2
+       format (produced by the PEP tool). Alternatively, it must
+       have the suffix `.g&#039; and be in the STG format; then an STG
+       unfolding prefix (which may differ from the underlying
+       Petri net&#039;s unfolding prefix) is produced.
+       As an experimental feature, high-level nets are supported.
+       For now, only strictly safe nets are allowed, and there are
+       some further restrictions, described in the manual.
+
+Options (may be given in any order):
+
+-h     Help.
+
+-#     Using non-local configuration as cut-off correspondents.
+         The current implementation is VERY INEFFICIENT.
+         This option is not currently supported in the LTL mode.
+-$N    Switch to SAT solver N (0-1).
+         If N=0 then zChaff is used.
+         If N=1 then MiniSAT is used (default).
+-@[N]  Using adequate order N (0-4).
+         Specifies the adequate order on configurations of the unfolding.
+         If N is not specified or -@ is not used then the default
+         value N=3 (for prefixes) or N=4 (for merged processes) is used.
+         If N=0 then the set inclusion is used.
+         If N=1 then the McMillan&#039;s order is used.
+         If N=2 then the size-lexicographical order is used.
+         If N=3 then the total Esparza/Roemer/Vogler (ERV) order is used.
+         If N=4 then the total order with an efficient SAT encoding is used.
+       Only the ERV order is currently supported in the LTL mode.
+-B=filename
+       Switches on the LTL-X verification mode. The file must be in
+       the HOA format (http://adl.github.io/hoaf/) and specify a Buechi
+       automaton for an LTL-X property. The adequate order must be -@3.
+-c     Do not store cut-off events (except the successful terminals in
+       the LTL mode).
+-d     When unfolding an STG, allow dummy cut-off events.
+       If this option is not specified, a dummy event e can only be
+       declared cut-off if its corresponding configuration C is a
+       subset of [e], and [e]\C contains only dummies.
+       This option has effect only when unfolding an STG.
+       It is automatically specified if the STG contains only dummy signals.
+       (Currently ignored if -M is specified.)
+-jN    Specifies the number of working threads. By default, it is equal
+       to the number of processors. (Currently ignored if -M is specified.)
+-l     Replicate places with multiple self-loops, so that each transition
+       reading a particular place gets its own copy of that place. This
+       transformation can significantly reduce the prefix size for nets
+       with many self-loops.
+-M     Generate a complete merged process.
+-m[=filename]
+       Specifies the name of the resulting file, whose extension also
+       specifies the format. It can be either the legacy *.mci format
+       for prefixes, the legacy *.mp format for merged processes (if -M
+       is specified), or the new PNML-based *.pnml or *.pnml.gz format.
+       If this option is not specified then the filename for the result
+       is obtained by removing from the input filename the suffix `.ll_net&#039;,
+       `.g&#039; or `.hl_net&#039; (if present), and appending the suffix `.pnml.gz&#039;,
+       and the resulting prefix or merged process is stored in the new
+       PNML-based format. If the filename is not specified (i.e. just -m
+       is given) then no output file is created.
+-nN    Abandon the concurrency relation and switch to a slower algorithm
+       after the specified number of non-cut-off events is generated. The
+       default value of N is 50000. If N is 0, the
+       concurrency relation is not created. (Ignored if -M is specified.)
+-vN    Verbosity level (0-9). The default is 0.
+-w[N]  Wait for user input before exiting (prevents the window from closing).
+       The possible values of N:
+         0 - do not wait for user input, exit immediately;
+         1 - wait for user input only if there are errors;
+         2 - wait for user input only if there are errors or warnings;
+         3 - always wait for user input.
+       The default is -w0, and -w is equivalent to -w3.</pre>
 </div>
 
 </div>
