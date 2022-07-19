@@ -20,7 +20,7 @@
 <link rel="canonical" href="https://workcraft.org/tutorial/model/dining_philosophers/start"/>
 <link rel="stylesheet" href="../../lib/exe/css.php.t.dokuwiki-light-export.css"/>
 <!--[if gte IE 9]><!-->
-<script >/*<![CDATA[*/var NS='tutorial:model:dining_philosophers';var SIG=" --- \/\/[[support@workcraft.org| ]] 2020\/11\/24 09:02\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"id":"tutorial:model:dining_philosophers:start","namespace":"tutorial:model:dining_philosophers","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+<script >/*<![CDATA[*/var NS='tutorial:model:dining_philosophers';var SIG=" --- \/\/[[support@workcraft.org| ]] 2022\/07\/19 19:43\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"plugins":{"vshare":{"youtube":"youtube\\.com\/.*[&?]v=([a-z0-9_\\-]+)","vimeo":"vimeo\\.com\\\/(\\d+)","slideshare":"slideshare.*id=(\\d+)","dailymotion":"dailymotion\\.com\/video\/([a-z0-9]+)","archiveorg":"archive\\.org\/(?:embed|details)\/([a-zA-Z0-9_\\-]+)","soundcloud":"soundcloud\\.com\/([\\w-]+\/[\\w-]+)","niconico":"nicovideo\\.jp\/watch\/(sm[0-9]+)","bitchute":"bitchute\\.com\\\/video\\\/([a-zA-Z0-9_\\-]+)","coub":"coub\\.com\\\/view\\\/([a-zA-Z0-9_\\-]+)","odysee":"odysee\\.com\/\\$\/(?:embed|download)\/([-%_?=\/a-zA-Z0-9]+)","youku":"v\\.youku\\.com\/v_show\/id_([0-9A-Za-z=]+)\\.html","bilibili":"bilibili\\.com\\\/video\\\/(BV[0-9A-Za-z]+)","msoffice":"(?:office\\.com.*[&?]videoid=([a-z0-9\\-]+))","msstream":"microsoftstream\\.com\\\/video\\\/([a-f0-9\\-]{36})"}},"id":"tutorial:model:dining_philosophers:start","namespace":"tutorial:model:dining_philosophers","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
 <script charset="utf-8" src="../../lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer"></script>
 <script charset="utf-8" src="../../lib/exe/js.php.t.dokuwiki-light-export.js" defer="defer"></script>
@@ -56,7 +56,7 @@
         <div id="dokuwiki__sitetools">
             <h3 class="a11y">Site Tools</h3>
             <form action="../../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="tutorial:model:dining_philosophers:start" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
-                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="tutorial:model:dining_philosophers:start" /><input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="tutorial:model:dining_philosophers:start" /><input type="hidden" name="sectok" value="67d4ac1b8238e325cb88c963d781560b" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
             <ul>
                 <li class="action recent"><a href="start.html" title="Changes [r]" rel="nofollow" accesskey="r">Changes</a></li><li class="action media"><a href="start.html" title="Media" rel="nofollow">Media</a></li><li class="action index"><a href="start.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
         </div>
@@ -187,7 +187,7 @@ Simulate the above distinctive scenarios for dining philosophers. Explore the na
 <div class="level2">
 
 <p>
-Various properties of a Petri net model can be verified using <em>Punf</em> and <em>MPSat</em> as the backend tools (see overview of <a href="../../../overview/backend_tools.html" class="wikilink1" title="overview:backend_tools" data-wiki-id="overview:backend_tools">third-party tools</a> for more details). The tool interfaces available for Petri net verification are collected under <em>Verification</em> menu.
+Various properties of a Petri net model can be verified using <em>Punf</em> and <em>MPSat</em> as the backend tools (see overview of <a href="../../../overview/backend_tools.html" class="wikilink1" title="overview:backend_tools" data-wiki-id="overview:backend_tools">backend tools</a> for more details). The tool interfaces available for Petri net verification are collected under <em>Verification</em> menu.
 </p>
 
 <p>
@@ -199,7 +199,7 @@ The easiest and most obvious property to check is that the model does not have a
 </p>
 
 <p>
-Verification of custom properties is based on reachability analysis on the Petri net. For this a custom property should  be expressed in <a href="../../../help/reach.html" class="wikilink1" title="help:reach" data-wiki-id="help:reach">Reach language</a>. For example, you can try and verify that both philosophers cannot be eating at the same time:
+Verification of custom properties is based on reachability analysis on the Petri net. For this a custom property should  be expressed in <a href="../../../help/reach.html" class="wikilink1" title="help:reach" data-wiki-id="help:reach">REACH language</a>. For example, you can try and verify that both philosophers cannot be eating at the same time:
 </p>
 <ol>
 <li class="level1"><div class="li"> Open <em>REACH assertion</em> window via <em>Verification→REACH assertion [MPSat]…</em> menu.</div>
@@ -269,7 +269,7 @@ Download all the Workcraft models discussed in this section here:
 <div class="plugin_include_content plugin_include__tutorial:feedback" id="plugin_include__tutorial__feedback">
 <div class="wrap_hide plugin_wrap"><pre class="code">===== Feedback =====</pre>
 <form class="bureaucracy__plugin" id="bureaucracy__plugin1" enctype="multipart/form-data" method="post" action="start.html" accept-charset="utf-8"><div class="no">
-<input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><input type="hidden" name="id" value="tutorial:model:dining_philosophers:start" /><input type="hidden" name="bureaucracy[$$id]" value="1" /><fieldset ><legend>Comments or suggestions for improving this tutorial</legend>
+<input type="hidden" name="sectok" value="67d4ac1b8238e325cb88c963d781560b" /><input type="hidden" name="id" value="tutorial:model:dining_philosophers:start" /><input type="hidden" name="bureaucracy[$$id]" value="1" /><fieldset ><legend>Comments or suggestions for improving this tutorial</legend>
 <label><span>Name (optional)</span> <input type="text" name="bureaucracy[1]" class="edit" /></label>
 <label><span>Email (optional)</span> <input type="text" name="bureaucracy[2]" class="edit" /></label>
 <label class=" textareafield">
@@ -294,7 +294,7 @@ Download all the Workcraft models discussed in this section here:
                                     </div>
 <!--
                 <div class="docInfo">
-                    workcraft @ <bdi>tutorial/model/dining_philosophers/start.txt</bdi> · Modified 2020/10/26 10:19 by <bdi>victor</bdi>                </div>
+                    workcraft @ <bdi>tutorial/model/dining_philosophers/start.txt</bdi> · Modified 2021/10/04 12:03 by <bdi>victor</bdi>                </div>
 -->
                             </div></div><!-- /content -->
 
@@ -334,6 +334,6 @@ Download all the Workcraft models discussed in this section here:
 -->
     </div></div><!-- /site -->
 
-    <div class="no"><img src="../../lib/exe/taskrunner.324dac580c6f8e151eaead5d0aabbc78.gif" width="2" height="1" alt="" /></div>
+    <div class="no"><img src="../../lib/exe/taskrunner.c34a589b96377a43654c5c72ad363ad8.gif" width="2" height="1" alt="" /></div>
     <div id="screen__mode" class="no"></div></body>
 </html>

@@ -20,7 +20,7 @@
 <link rel="canonical" href="https://workcraft.org/tutorial/model/distributed_mutual_exclusion/start"/>
 <link rel="stylesheet" href="../../lib/exe/css.php.t.dokuwiki-light-export.css"/>
 <!--[if gte IE 9]><!-->
-<script >/*<![CDATA[*/var NS='tutorial:model:distributed_mutual_exclusion';var SIG=" --- \/\/[[support@workcraft.org| ]] 2020\/11\/24 09:02\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"id":"tutorial:model:distributed_mutual_exclusion:start","namespace":"tutorial:model:distributed_mutual_exclusion","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+<script >/*<![CDATA[*/var NS='tutorial:model:distributed_mutual_exclusion';var SIG=" --- \/\/[[support@workcraft.org| ]] 2022\/07\/19 19:43\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"plugins":{"vshare":{"youtube":"youtube\\.com\/.*[&?]v=([a-z0-9_\\-]+)","vimeo":"vimeo\\.com\\\/(\\d+)","slideshare":"slideshare.*id=(\\d+)","dailymotion":"dailymotion\\.com\/video\/([a-z0-9]+)","archiveorg":"archive\\.org\/(?:embed|details)\/([a-zA-Z0-9_\\-]+)","soundcloud":"soundcloud\\.com\/([\\w-]+\/[\\w-]+)","niconico":"nicovideo\\.jp\/watch\/(sm[0-9]+)","bitchute":"bitchute\\.com\\\/video\\\/([a-zA-Z0-9_\\-]+)","coub":"coub\\.com\\\/view\\\/([a-zA-Z0-9_\\-]+)","odysee":"odysee\\.com\/\\$\/(?:embed|download)\/([-%_?=\/a-zA-Z0-9]+)","youku":"v\\.youku\\.com\/v_show\/id_([0-9A-Za-z=]+)\\.html","bilibili":"bilibili\\.com\\\/video\\\/(BV[0-9A-Za-z]+)","msoffice":"(?:office\\.com.*[&?]videoid=([a-z0-9\\-]+))","msstream":"microsoftstream\\.com\\\/video\\\/([a-f0-9\\-]{36})"}},"id":"tutorial:model:distributed_mutual_exclusion:start","namespace":"tutorial:model:distributed_mutual_exclusion","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
 <script charset="utf-8" src="../../lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer"></script>
 <script charset="utf-8" src="../../lib/exe/js.php.t.dokuwiki-light-export.js" defer="defer"></script>
@@ -56,7 +56,7 @@
         <div id="dokuwiki__sitetools">
             <h3 class="a11y">Site Tools</h3>
             <form action="../../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="tutorial:model:distributed_mutual_exclusion:start" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
-                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="tutorial:model:distributed_mutual_exclusion:start" /><input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="tutorial:model:distributed_mutual_exclusion:start" /><input type="hidden" name="sectok" value="a566853a9426531337141bba9a108033" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
             <ul>
                 <li class="action recent"><a href="start.html" title="Changes [r]" rel="nofollow" accesskey="r">Changes</a></li><li class="action media"><a href="start.html" title="Media" rel="nofollow">Media</a></li><li class="action index"><a href="start.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
         </div>
@@ -100,9 +100,13 @@
 <div class="level1">
 
 <p>
-In the exercises below you will use <em>Signal Transition Graphs</em> (<abbr title="Signal Transition Graph">STG</abbr>). STGs are similar to Petri nets, except for the following:
+In the exercises below you will use <em>Signal Transition Graphs</em> (<abbr title="Signal Transition Graph">STG</abbr>). STGs are Petri nets where actions (i.e. transition labels) have some extra semantics and short-hand drawing conventions are used:
 </p>
 <ul>
+<li class="level1"><div class="li"> The actions are partitioned into <code><span style='color:red; '>inputs</span></code>, <code><span style='color:blue; '>outputs</span></code> and <code><span style='color:green; '>internal</span></code>; there are also <code><span style='color:black; '>dummy</span></code> transitions that do not correspond to any actions and serve for the convenience of modelling, e.g. one can “hide” a redundant action by replacing its transitions with dummies without otherwise changing the behaviour of the system. Dummies are similar to <code>ε</code> in FSMs.</div>
+</li>
+<li class="level1"><div class="li"> The actions have <em>directions</em>: <code>+</code>, <code>-</code>, or <code>~</code>; e.g. <code>a+</code> means action <code>a</code> is asserted and <code>a-</code> means it is withdrawn. It is normally expected that transitions of <code>a+</code> and <code>a-</code> must alternate in every execution (this property is called <a href="../../../help/verification.html" class="wikilink1" title="help:verification" data-wiki-id="help:verification">Consistency</a>) – otherwise the model is ill-formed. The <code>~</code> is used for actions that do not have this assert/withdraw semantics, and by default <code>~</code> is not displayed at the end of the action name.</div>
+</li>
 <li class="level1 node"><div class="li"> Short-hand drawing conventions are used:</div>
 <ul>
 <li class="level2"><div class="li"> Transition boxes are omitted – only labels (actions) are drawn.</div>
@@ -110,10 +114,6 @@ In the exercises below you will use <em>Signal Transition Graphs</em> (<abbr tit
 <li class="level2"><div class="li"> Places with one incoming and one outgoing arc are normally not shown – transition-to-transition arcs are drawn instead (a token is put directly on such an arc if the original place is marked); this can be overridden for particular places if necessary.</div>
 </li>
 </ul>
-</li>
-<li class="level1"><div class="li"> The actions are partitioned into <code><span style='color:red; '>inputs</span></code>, <code><span style='color:blue; '>outputs</span></code> and <code><span style='color:green; '>internal</span></code>; there are also <code><span style='color:black; '>dummy</span></code> transitions that do not correspond to any actions and serve for the convenience of modelling, e.g. one can “hide” a redundant action by replacing its transitions with dummies without otherwise changing the behaviour of the system.</div>
-</li>
-<li class="level1"><div class="li"> The actions have <em>directions</em>: <code>+</code>, <code>-</code>, or <code>~</code>; e.g. <code>a+</code> means action <code>a</code> is asserted and <code>a-</code> means it is withdrawn. Note that transitions of <code>a+</code> and <code>a-</code> must alternate in every execution (this property is called <a href="../../../help/verification.html" class="wikilink1" title="help:verification" data-wiki-id="help:verification">Consistency</a>) – otherwise the model is ill-formed. The <code>~</code> is used for actions that do not have this assert/withdraw semantics, and by default <code>~</code> is not displayed at the end of the action name.</div>
 </li>
 </ul>
 
@@ -280,7 +280,7 @@ One can also contract the dummy transitions without changing the behaviour of th
 <div class="plugin_include_content plugin_include__tutorial:feedback" id="plugin_include__tutorial__feedback">
 <div class="wrap_hide plugin_wrap"><pre class="code">===== Feedback =====</pre>
 <form class="bureaucracy__plugin" id="bureaucracy__plugin1" enctype="multipart/form-data" method="post" action="start.html" accept-charset="utf-8"><div class="no">
-<input type="hidden" name="sectok" value="76e97b919f59bf5330d969a72ba5bf17" /><input type="hidden" name="id" value="tutorial:model:distributed_mutual_exclusion:start" /><input type="hidden" name="bureaucracy[$$id]" value="1" /><fieldset ><legend>Comments or suggestions for improving this tutorial</legend>
+<input type="hidden" name="sectok" value="a566853a9426531337141bba9a108033" /><input type="hidden" name="id" value="tutorial:model:distributed_mutual_exclusion:start" /><input type="hidden" name="bureaucracy[$$id]" value="1" /><fieldset ><legend>Comments or suggestions for improving this tutorial</legend>
 <label><span>Name (optional)</span> <input type="text" name="bureaucracy[1]" class="edit" /></label>
 <label><span>Email (optional)</span> <input type="text" name="bureaucracy[2]" class="edit" /></label>
 <label class=" textareafield">
@@ -305,7 +305,7 @@ One can also contract the dummy transitions without changing the behaviour of th
                                     </div>
 <!--
                 <div class="docInfo">
-                    workcraft @ <bdi>tutorial/model/distributed_mutual_exclusion/start.txt</bdi> · Modified 2020/09/24 10:29 by <bdi>danil</bdi>                </div>
+                    workcraft @ <bdi>tutorial/model/distributed_mutual_exclusion/start.txt</bdi> · Modified 2021/10/11 10:21 by <bdi>victor</bdi>                </div>
 -->
                             </div></div><!-- /content -->
 
@@ -345,6 +345,6 @@ One can also contract the dummy transitions without changing the behaviour of th
 -->
     </div></div><!-- /site -->
 
-    <div class="no"><img src="../../lib/exe/taskrunner.36612f1b4297fbf6d611fa9117872c3a.gif" width="2" height="1" alt="" /></div>
+    <div class="no"><img src="../../lib/exe/taskrunner.c34a589b96377a43654c5c72ad363ad8.gif" width="2" height="1" alt="" /></div>
     <div id="screen__mode" class="no"></div></body>
 </html>
