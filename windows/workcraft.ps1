@@ -7,6 +7,13 @@ $CURRENT_DIR=Get-Location
 $WORKCRAFT_HOME=$PSScriptRoot
 Push-Location $WORKCRAFT_HOME
 
+# Use bundled JRE as the first priority (if present and not overridden)
+if (!  (Get-Variable 'WORKCRAFT_USE_NATIVE_JAVA' -Scope Global -ErrorAction 'Ignore')) {
+    if (Test-Path $WORKCRAFT_HOME\jre\bin\javaw.exe) {
+        $JAVA_BIN="$WORKCRAFT_HOME\jre\bin\javaw.exe"
+    }
+}
+
 # SET the JVM executable in JAVA_BIN variable (if not defined yet)
 if (! (Get-Variable 'JAVA_BIN' -Scope Global -ErrorAction 'Ignore')) {
     if (! (Get-Variable 'JAVA_HOME' -Scope Global -ErrorAction 'Ignore')) {

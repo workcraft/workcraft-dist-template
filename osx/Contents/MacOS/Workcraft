@@ -11,6 +11,13 @@ cd "$(dirname "$0")"/../Resources
 
 WORKCRAFT_HOME="$PWD"
 
+# Use bundled JRE as the first priority (if present and not overridden)
+if [ -z "$WORKCRAFT_USE_NATIVE_JAVA" ]; then
+    if [ -e "$WORKCRAFT_HOME/jre/bin/java" ]; then
+        JAVA_BIN="$WORKCRAFT_HOME/jre/bin/java"
+    fi
+fi
+
 # Set the JVM executable in JAVA_BIN variable (if not defined yet)
 if [ -z "$JAVA_BIN" ]; then
     if [ -z "$JAVA_HOME" ]; then

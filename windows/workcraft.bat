@@ -1,4 +1,4 @@
-@ECHO OFF
+@ECHO ON
 
 :: Enable command line extensions
 VERIFY OTHER 2>NUL
@@ -18,7 +18,14 @@ SET "CURRENT_DIR=%cd%"
 SET "WORKCRAFT_HOME=%~dp0"
 PUSHD "%WORKCRAFT_HOME%"
 
-:: SET the JVM executable in JAVA_BIN variable (if not defined yet)
+:: Use bundled JRE as the first priority (if present and not overridden)
+IF NOT DEFINED WORKCRAFT_USE_NATIVE_JAVA (
+    IF EXIST "%WORKCRAFT_HOME%\jre\bin\javaw.exe" (
+        SET "JAVA_BIN=%WORKCRAFT_HOME%\jre\bin\javaw.exe"
+    )
+)
+
+:: Set the JVM executable in JAVA_BIN variable (if not defined yet)
 IF NOT DEFINED JAVA_BIN (
     IF NOT DEFINED JAVA_HOME (
         SET "JAVA_BIN=javaw.exe"

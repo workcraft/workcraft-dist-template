@@ -3,7 +3,7 @@ verify graph models. It supports a wide range of popular graph formalisms
 and provides a plugin-based framework to model and analyze new model types.
 
 To start Workcraft execute the 'workcraft' shell script -- it sets the path
-to JVM (Java 8 or newer is required) and the classpath for plugins.
+to JVM (Java 11 or newer is required) and the classpath for plugins.
 
 If you happen to find a bug in Workcraft, please help the developers by
 filing a report at https://github.com/workcraft/workcraft/issues/new
