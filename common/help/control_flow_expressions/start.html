@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>help:control_flow_expressions:start - Workcraft</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,control_flow_expressions,start"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.html" title="Workcraft"/>
+<link rel="start" href="start.html"/>
+<link rel="contents" href="start.html" title="Sitemap"/>
+<link rel="manifest" href="../lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="edit" title="Edit this page" href="start.html"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="../_export/xhtml/help/control_flow_expressions/start.xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../_export/raw/help/control_flow_expressions/start.raw"/>
+<link rel="canonical" href="https://workcraft.org/help/control_flow_expressions/start"/>
+<link rel="stylesheet" href="../lib/exe/css.php.t.dokuwiki-light-export.css"/>
+<!--[if gte IE 9]><!-->
+<script >/*<![CDATA[*/var NS='help:control_flow_expressions';var SIG=" --- \/\/[[support@workcraft.org| ]] 2023\/04\/06 12:20\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":false,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":false,"preload_per_page":false,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"plugins":{"vshare":{"youtube":"youtube\\.com\/.*[&?]v=([a-z0-9_\\-]+)","vimeo":"vimeo\\.com\\\/(\\d+)","slideshare":"slideshare.*id=(\\d+)","dailymotion":"dailymotion\\.com\/video\/([a-z0-9]+)","archiveorg":"archive\\.org\/(?:embed|details)\/([a-zA-Z0-9_\\-]+)","soundcloud":"soundcloud\\.com\/([\\w-]+\/[\\w-]+)","niconico":"nicovideo\\.jp\/watch\/(sm[0-9]+)","bitchute":"bitchute\\.com\\\/video\\\/([a-zA-Z0-9_\\-]+)","coub":"coub\\.com\\\/view\\\/([a-zA-Z0-9_\\-]+)","odysee":"odysee\\.com\/\\$\/(?:embed|download)\/([-%_?=\/a-zA-Z0-9]+)","youku":"v\\.youku\\.com\/v_show\/id_([0-9A-Za-z=]+)\\.html","bilibili":"bilibili\\.com\\\/video\\\/(BV[0-9A-Za-z]+)","msoffice":"(?:office\\.com.*[&?]videoid=([a-z0-9\\-]+))","msstream":"microsoftstream\\.com\\\/video\\\/([a-f0-9\\-]{36})"}},"id":"help:control_flow_expressions:start","namespace":"help:control_flow_expressions","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script charset="utf-8" src="../lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<script charset="utf-8" src="../lib/exe/js.php.t.dokuwiki-light-export.js" defer="defer"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki-light-export loggedIn    ">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <h1><a href="../start.html"  accesskey="" title=""><img src="../logo.png" width="381" height="64" alt="" /></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+<!--
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="action profile"><a href="start.html" title="Profile" rel="nofollow"><span>Profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 3h20c1.05 0 2 .95 2 2v14c0 1.05-.95 2-2 2H2c-1.05 0-2-.95-2-2V5c0-1.05.95-2 2-2m12 3v1h8V6h-8m0 2v1h8V8h-8m0 2v1h7v-1h-7m-6 3.91C6 13.91 2 15 2 17v1h12v-1c0-2-4-3.09-6-3.09M8 6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a></li><li class="action admin"><a href="start.html" title="Admin" rel="nofollow"><span>Admin</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></a></li><li class="action logout"><a href="start.html" title="Log Out" rel="nofollow"><span>Log Out</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg></a></li>                </ul>
+            </div>
+        -->
+        <!-- SITE TOOLS -->
+<!--
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="help:control_flow_expressions:start" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="help:control_flow_expressions:start" /><input type="hidden" name="sectok" value="e219d4f4870a13d95e6f941da7fffc76" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="export_pdf">Export to PDF</option><option value="menuitemfolded">Fold/unfold all</option><option value="menuitem">Rename Page</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Changes</option><option value="media">Media</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="start.html" title="Changes [r]" rel="nofollow" accesskey="r">Changes</a></li><li class="action media"><a href="start.html" title="Media" rel="nofollow">Media</a></li><li class="action index"><a href="start.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+-->
+    </div>
+
+    <!-- BREADCRUMBS -->
+<!--
+    -->
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>help:control_flow_expressions:start</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_fastwiki_marker" style="display:none"></div><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#examples">Examples</a></div></li>
+<li class="level1"><div class="li"><a href="#syntax">Syntax</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#comments">Comments</a></div></li>
+<li class="level2"><div class="li"><a href="#actions_identifiers">Actions (identifiers)</a></div></li>
+<li class="level2"><div class="li"><a href="#operators">Operators</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#translation">Translation</a></div></li>
+<li class="level1"><div class="li"><a href="#pitfalls_with_the_iteration_operator">Pitfalls with the iteration operator</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#pitfall_1bad_interaction_with_choice_or_outer_iteration">Pitfall 1: Bad interaction with choice or outer iteration</a></div></li>
+<li class="level2"><div class="li"><a href="#pitfall_2concurrency_in_the_body">Pitfall 2: Concurrency in the body</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#references">References</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 id="proflo_a_language_for_specifying_control_flows_of_processes">ProFlo – a language for specifying control flows of processes</h1>
+<div class="level1">
+
+<p>
+ProFlo expressions <a href="#refnotes:1:note1" name="refnotes:1:ref1" class="refnotes-ref note-popup">[1]</a><a href="#refnotes:1:note2" name="refnotes:1:ref2" class="refnotes-ref note-popup">[2]</a> can be used for writing behavioural specifications which can be translated to Petri nets or STGs. In some situations this may be faster than drawing a Petri net or <abbr title="Signal Transition Graph">STG</abbr> in the visual editor. Moreover, there are situations when control flow expressions are straightforward to write but the equivalent Petri net is difficult to design manually (e.g. see Example 3 below).
+</p>
+
+</div>
+
+<h2 id="examples">Examples</h2>
+<div class="level2">
+
+<p>
+<strong>Example 1:</strong> Specification of an inverter with input <code><span style='color:red; '>in</span></code> and output <code><span style='color:blue; '>out</span></code>. It is assumed that the intial state of the signals is <code><span style='color:red; '>in</span>=0, <span style='color:blue; '>out</span>=1</code>, and that the environment is well-behaved, i.e. does not change the value of the input until the output changes:
+</p>
+<pre class="code">{ in+; out-; in1+; out+ }</pre>
+
+<p>
+Here the interpretation of actions (like <code>in+</code>) is as in STGs, operator <code>{…}</code> denotes iteration, i.e. the behavior in braces is repeated, and operator <code>;</code> denotes sequential composition, i.e. the four actions inside <code>{…}</code> are executed sequentially, one after another.
+</p>
+
+<p>
+The tool can automatically generate an <abbr title="Signal Transition Graph">STG</abbr> from this expression:
+</p>
+<ul>
+<li class="level1"><div class="li"> open Workcraft and create a new Signal Transition Graph (<abbr title="Signal Transition Graph">STG</abbr>) model;</div>
+</li>
+<li class="level1"><div class="li"> click the <em>Conversion→Translate ProFlo expression…</em> menu item;</div>
+</li>
+<li class="level1"><div class="li"> copy and paste the above expression to the text box in the Control Flow Logic Translator dialog and click <kbd class="__keyboard">   OK   </kbd>.</div>
+</li>
+</ul>
+
+<p>
+<img src="inverter-proflo.svg" width="193" height="48" class="svgscaleinsert mediacenter" alt="help:control_flow_expressions:inverter-proflo.svg">
+</p>
+<div class="wrap_center wrap_round wrap_tip plugin_wrap" style="width: 90%;">
+<p>
+Note that the above expression does not specify the types of signals, so the automatic translator uses the current types for the signals already existing in the <abbr title="Signal Transition Graph">STG</abbr> model, and makes the new signals internal, so one may have to amend the signal types in the generated <abbr title="Signal Transition Graph">STG</abbr> manually. The layout can also be improved manually (though we hope the tool will eventually generate better layout taking the syntax structure of the expression into account).
+</p>
+</div>
+<p>
+The sequential composition operator <code>;</code> can be omitted:
+</p>
+<pre class="code">{ in+ out- in- out+ }</pre>
+
+<p>
+Furthermore, spaces, tabs, new lines and comments can be arbitrarily added or removed (as long as adjacent identifiers are not glued together into one identifier), e.g. the following expressions are equivalent to the initial specification:
+</p>
+<pre class="code">{in+out-in-out+}</pre>
+<pre class="code">  // this is a specification of an inverter with input in and output out,
+  // augmented with long-winded hair-splitting comments
+  { // begin iteration - the following behaviour is repeated 0 or more times:
+    in+  // the environment is allowed to swithch in from 0 to 1
+    out+ // in response, the circuit must switch out from 1 to 0
+    in-  // only after out+ has completed, the environment is allowed to switch in from 1 to 0
+    out- // in response, the circuit must switch out from 0 to 1
+  } // end iteration</pre>
+
+<p>
+<strong>Example 2:</strong> Specification of a C-element with inputs <code><span style='color:red; '>in1</span></code> and <code><span style='color:red; '>in2</span></code> and output <code><span style='color:blue; '>out</span></code>:
+</p>
+<pre class="code">{ (in1+ | in2+); out+; (in1- | in2-); out- }</pre>
+
+<p>
+Here, operator <code>|</code> is used to express the concurrency between inputs, and parentheses are used to override the default precedence of operators. The tool generates the following <abbr title="Signal Transition Graph">STG</abbr>:
+</p>
+
+<p>
+<img src="c-element-proflo.svg" width="193" height="84" class="svgscaleinsert mediacenter" alt="help:control_flow_expressions:c-element-proflo.svg">
+</p>
+
+<p>
+Again, the signal types in this <abbr title="Signal Transition Graph">STG</abbr> need to be amended manually.
+</p>
+
+<p>
+<strong>Example 3:</strong> Choice between 10 pairs of concurrent events:
+</p>
+<pre class="code">  (a0 | b0) # (a1 | b1) # (a2 | b2) # (a3 | b3) # (a4 | b4) #
+  (a5 | b5) # (a6 | b6) # (a7 | b7) # (a8 | b8) # (a9 | b9)</pre>
+
+<p>
+Here, operator <code>#</code> is used to express choices between pairs of concurrent events.
+</p>
+
+<p>
+The resulting Petri net contains 20 transitions <code>a0,…,a9,b0,…,b9</code> and several synthesised places to enforce the choices. Note that manually designing such a Petri net (if `silent&#039; transitions are disallowed) would be very difficult. An optimal solution has six places, e.g.:
+</p>
+
+<p>
+<img src="10-binary-bursts.svg" width="325" height="218" class="svgscaleinsert mediacenter" alt="help:control_flow_expressions:10-binary-bursts.svg">
+</p>
+<div class="wrap_center wrap_round wrap_tip plugin_wrap" style="width: 90%;">
+<p>
+The problem of synthesising a Petri net with minimum number of places is computationally expensive to solve exactly (it is in NP and may be NP-complete <a href="#refnotes:1:note2" name="refnotes:1:ref3" class="refnotes-ref note-popup">[2]</a>), so the current implementation of the exact algorithm takes too long to complete. This can be improved, e.g. by using a SAT solver. A fast heuristic method yields nine places. 
+</p>
+</div>
+</div>
+
+<h2 id="syntax">Syntax</h2>
+<div class="level2">
+
+</div>
+
+<h3 id="comments">Comments</h3>
+<div class="level3">
+
+<p>
+C++-style comments are supported:
+</p>
+<ul>
+<li class="level1"><div class="li"> from <strong>//</strong> to the end of the line</div>
+</li>
+<li class="level1"><div class="li"> enclosed in <strong>/*…*/</strong> <span class="wrap_warning "><strong>Note:</strong> This style of comments is not supported yet.</span></div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="actions_identifiers">Actions (identifiers)</h3>
+<div class="level3">
+
+<p>
+For Petri net models, the action names are built of English letters (case sensitive), digits, and symbols <code>_$@:.</code> not starting with <code>.</code> or a digit. <span class="wrap_important ">Workcraft uses <code>.</code> symbol as the hierarchy separator (and it is not supported by the translator yet). Moreover, Workcraft does not support symbols <code>$@:</code> in the identifiers.</span>
+</p>
+
+<p>
+For <abbr title="Signal Transition Graph">STG</abbr> models, the action names are as for Petri net models, but can optionally be postfixed with the signal edge, i.e. one of <code>+-~</code> symbols.
+</p>
+
+<p>
+The same action can occur multiple times within an expression – different transitions with the same label will be created in such a case.
+</p>
+
+</div>
+
+<h3 id="operators">Operators</h3>
+<div class="level3">
+
+<p>
+The operators are as follows (<code>A</code> and <code>B</code> are arbitrary expressions):
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Sequential composition</strong> <code>A ; B</code> or just <code>A B</code></div>
+</li>
+<li class="level1"><div class="li"> <strong>Choice</strong> <code>A # B</code></div>
+</li>
+<li class="level1"><div class="li"> <strong>Concurrency</strong> (a.k.a <strong>Interleaving</strong>) <code>A | B</code></div>
+</li>
+<li class="level1"><div class="li"> <strong>Iteration</strong> <code>{ A }</code> </div>
+</li>
+</ul>
+<div class="wrap_center wrap_round wrap_warning plugin_wrap" style="width: 90%;">
+<p>
+There are a few pitfalls when using the iteration, see below. At the moment, iteration is not properly supported, as incorrect Petri nets and STGs can be generated. For now, the only reasonably safe way of using iteration is to have a single outer iteration, i.e. when the whole expression has the form <code>{BODY}</code> where <code>BODY</code> does not use iteration and has some sequentiallity in each path.
+</p>
+</div>
+<p>
+The binary operators <code>;</code>, <code>#</code>, and <code>|</code> are given in the order of decreasing precedences, and parentheses <code>(…)</code> can be used to override the default precedence. All binary operators are associative; moreover, <code>#</code> and <code>|</code> are commutative.
+</p>
+
+</div>
+
+<h2 id="translation">Translation</h2>
+<div class="level2">
+
+<p>
+The translation of expressions (without iteration operator) to Petri nets is described in <a href="#refnotes:1:note1" name="refnotes:1:ref4" class="refnotes-ref note-popup">[1]</a><a href="#refnotes:1:note2" name="refnotes:1:ref5" class="refnotes-ref note-popup">[2]</a>.
+</p>
+
+<p>
+The translation creates a Petri net or <abbr title="Signal Transition Graph">STG</abbr> transition for each atomic action in the expression. (If there are several occurrences of the same atomic action in the expression, a separate transition is created for each occurrence.) In particular, no `silent&#039; transitions (a.k.a. dummy transitions or ε-transitions) are created by the translation.
+</p>
+
+<p>
+Then a set of places is synthesised to enforce the necessary sequencing and choice.
+</p>
+
+</div>
+
+<h2 id="pitfalls_with_the_iteration_operator">Pitfalls with the iteration operator</h2>
+<div class="level2">
+<div class="wrap_center wrap_round wrap_todo plugin_wrap" style="width: 90%;">
+<p>
+The translation of iteration is currently under development, and has a number of issues, including both fundamental theoretical ones and implementation problems. At the moment, many uses of iteration result in incorrect Petri nets and STGs being generated. For now, the only reasonably safe way of using iteration is to have a single outermost iteration, i.e. when the whole expression has the form <code>{BODY}</code> where <code>BODY</code> does not use iteration and has some sequentiallity in each path through it.
+</p>
+
+<p>
+There are a number of known pitfalls associated with the iteration operator. They can be solved by prefixing and/or postfixing the iteration with extra actions, i.e. making sure that iteration <code>{A}</code> is used in a context like <code>…;{A};…</code>, i.e. surrounded with <code>;</code>. 
+</p>
+
+<p>
+Besides, even if these pitfalls are avoided, the current implementation often generates incorrect Petri nets or STGs.
+</p>
+
+<p>
+Hopefully, one day the tool will be fixed and will analyse the syntax to detect these pitfalls and provide diagnostics.
+</p>
+</div>
+</div>
+
+<h3 id="pitfall_1bad_interaction_with_choice_or_outer_iteration">Pitfall 1: Bad interaction with choice or outer iteration</h3>
+<div class="level3">
+
+<p>
+Consider the Petri net for <code>{a}#b</code>:
+</p>
+
+<p>
+<img src="bad-choice-iter-beginning.svg" width="53" height="64" class="svgscaleinsert mediacenter" alt="help:control_flow_expressions:bad-choice-iter-beginning.svg">
+</p>
+
+<p>
+Unfortunately, this Petri net has illegal traces like <code>a b</code>. Intuitively, the Petri net lacks a separate marking indicating that the decision has been made to execute the branch of the choice containing the iteration – in the above Petri net this marking is confused with the initial marking. If `silent&#039; transitions were allowed, one could model this with the following Petri net:
+</p>
+
+<p>
+<img src="choice-iter-beginning-eps.svg" width="131" height="63" class="svgscaleinsert mediacenter" alt="help:control_flow_expressions:choice-iter-beginning-eps.svg">
+</p>
+
+<p>
+Note that a similar problem can occur when iteration is nested within another iteration – the initial state of the outer iteration is effectively a choice between executing its body and skipping it, e.g. the Petri net for <code>{{a};b};c</code> allows the illegal trace <code>a c</code> (without <code>b</code>).
+</p>
+
+<p>
+To work around problem, one should separate iteration from choice (or from outer iteration) with some sequencing, e.g. the following expressions avoid the problem: <code>(s;{a})#b</code>, <code>{s;{a};b};c</code>.
+</p>
+
+<p>
+A similar problem occurs when the end of the iteration body interacts with the merge point of a choice (or the end of the outer iteration&#039;s body). For example, consider <code>((s;{a})#b);c</code>. The resulting Petri net is as follows:
+</p>
+
+<p>
+<img src="bad-choice-iter-end.svg" width="88" height="124" class="svgscaleinsert mediacenter" alt="help:control_flow_expressions:bad-choice-iter-end.svg">
+</p>
+
+<p>
+Note that it allows an illegal trace <code>b a</code>. Similarly, the Petri net for <code>{s;{a}}</code> allows the illegal trace <code>a</code> (without <code>s</code>).
+</p>
+
+</div>
+
+<h3 id="pitfall_2concurrency_in_the_body">Pitfall 2: Concurrency in the body</h3>
+<div class="level3">
+
+<p>
+Another pitfall is that concurrency in the body of iteration can result in unsafe Petri net. For example, consider the Petri net for <code>{a|b}</code>:
+</p>
+
+<p>
+<img src="unsafe-iter-conc.svg" width="125" height="69" class="svgscaleinsert mediacenter" alt="help:control_flow_expressions:unsafe-iter-conc.svg">
+</p>
+
+<p>
+Note that firing either <code>a</code> or <code>b</code> transition results in an unsafe (though 2-bounded) marking. Intuitively, the reason is that traces like <code>a b b</code> are possible, where the transition corresponding to <code>b</code> can fire twice (but not more) in a row – to model this without `silent&#039; transitions one needs two tokens on some place. As many verification and synthesis tools in Workcraft can work only with safe Petri nets or STGs, constructions like this should be avoided.
+</p>
+
+<p>
+To work around this problem, one needs some sequencing in the body of the iteration, e.g. the Petri net for <code>{(a|b);(c|d)}</code> is safe.
+</p>
+
+</div>
+
+<h2 id="references">References</h2>
+<div class="level2">
+
+
+
+
+
+</div>
+<div class="refnotes">
+<hr>
+<div class="notes">
+<div class="note left">
+<b><a name="refnotes:1:note1" class="nolink">[1]</a></b>
+<span id="refnotes:1:note1:text">
+V. Khomenko, M. Koutny, A. Yakovlev: <a href="https://doi.org/10.1007/978-3-031-06653-5_14" class="urlextern" title="https://doi.org/10.1007/978-3-031-06653-5_14" rel="ugc nofollow">Avoiding Exponential Explosion in Petri Net Models of Control Flows</a>. Proc. Petri Nets (2022) 261-277.
+</span></div>
+<div class="note left">
+<b><a name="refnotes:1:note2" class="nolink">[2]</a></b>
+<span id="refnotes:1:note2:text">
+V. Khomenko, M. Koutny, A. Yakovlev: <a href="https://doi.org/10.4230/LIPIcs.CONCUR.2022.8" class="urlextern" title="https://doi.org/10.4230/LIPIcs.CONCUR.2022.8" rel="ugc nofollow">Slimming Down Petri Boxes: Compact Petri Net Models of Control Flows</a>. Proc. CONCUR, Leibniz International Proceedings in Informatics (LIPIcs) 243 (2022) 8:1-8:16.
+</span></div>
+</div>
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+<!--
+                <div class="docInfo">
+                    workcraft @ <bdi>help/control_flow_expressions/start.txt</bdi> · Modified 2023/01/26 18:32 by <bdi>victor</bdi>                </div>
+-->
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+<!--
+            <div id="dokuwiki__pagetools">
+                            <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="start.html" title="Edit this page [e]" rel="nofollow" accesskey="e"><span>Edit this page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="start.html" title="Old revisions [o]" rel="nofollow" accesskey="o"><span>Old revisions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="start.html" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="export_pdf"><a href="start.html" title="Export to PDF" rel="nofollow"><span>Export to PDF</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14 9h5.5L14 3.5V9M7 2h8l6 6v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m4.93 10.44c.41.9.93 1.64 1.53 2.15l.41.32c-.87.16-2.07.44-3.34.93l-.11.04.5-1.04c.45-.87.78-1.66 1.01-2.4m6.48 3.81c.18-.18.27-.41.28-.66.03-.2-.02-.39-.12-.55-.29-.47-1.04-.69-2.28-.69l-1.29.07-.87-.58c-.63-.52-1.2-1.43-1.6-2.56l.04-.14c.33-1.33.64-2.94-.02-3.6a.853.853 0 0 0-.61-.24h-.24c-.37 0-.7.39-.79.77-.37 1.33-.15 2.06.22 3.27v.01c-.25.88-.57 1.9-1.08 2.93l-.96 1.8-.89.49c-1.2.75-1.77 1.59-1.88 2.12-.04.19-.02.36.05.54l.03.05.48.31.44.11c.81 0 1.73-.95 2.97-3.07l.18-.07c1.03-.33 2.31-.56 4.03-.75 1.03.51 2.24.74 3 .74.44 0 .74-.11.91-.3m-.41-.71l.09.11c-.01.1-.04.11-.09.13h-.04l-.19.02c-.46 0-1.17-.19-1.9-.51.09-.1.13-.1.23-.1 1.4 0 1.8.25 1.9.35M8.83 17c-.65 1.19-1.24 1.85-1.69 2 .05-.38.5-1.04 1.21-1.69l.48-.31m3.02-6.91c-.23-.9-.24-1.63-.07-2.05l.07-.12.15.05c.17.24.19.56.09 1.1l-.03.16-.16.82-.05.04z"/></svg></a></li><li class="menuitemfolded"><a href="javascript:void(0);" title="Fold/unfold all" rel="nofollow" class="fold_unfold_all_new" onclick="fold_unfold_all();"><span>Fold/unfold all</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M 2,0 L 6.5,3 L 2,6 z M 8,6.6 L 12.5,9.6 L 8,12.6 z M 14,13.2 L 20,13.2 L 17,17.7 z"/></svg></a></li><li class="menuitem"><a href="start.html" title="Rename Page" rel="nofollow" class=" plugin_move_page "><span>Rename Page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18,4V3A1,1 0 0,0 17,2H5A1,1 0 0,0 4,3V7A1,1 0 0,0 5,8H17A1,1 0 0,0 18,7V6H19V10H9V21A1,1 0 0,0 10,22H12A1,1 0 0,0 13,21V12H21V4H18Z" /></svg></a></li><li class="siteexport_addpage"><a href="start.html" title="Export Page to HTML/PDF" rel="nofollow"><span>Export Page to HTML/PDF</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+                        </div>
+-->
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<!--
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="../lib/tpl/dokuwiki-light-export/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="../lib/tpl/dokuwiki-light-export/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="../check/referer" title="Valid HTML5" ><img
+            src="../lib/tpl/dokuwiki-light-export/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="../css-validator/check/referer.fe4c581d16fb9f59f07485ddb441e467" title="Valid CSS" ><img
+            src="../lib/tpl/dokuwiki-light-export/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="../lib/tpl/dokuwiki-light-export/images/button-dw.png" width="80" height="15"
+            alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div>
+-->
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="../lib/exe/taskrunner.3db0e8456e2fb55867a7cce799d2d1ce.gif" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>
