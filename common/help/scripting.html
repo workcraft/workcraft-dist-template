@@ -6,7 +6,7 @@
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
     <meta name="generator" content="DokuWiki"/>
 <meta name="theme-color" content="#008800"/>
-<meta name="robots" content="index,follow"/>
+<meta name="robots" content="noindex,nofollow"/>
 <meta name="keywords" content="help,scripting"/>
 <link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.html" title="Workcraft"/>
 <link rel="start" href="scripting.html"/>
@@ -17,10 +17,10 @@
 <link rel="edit" title="Edit this page" href="scripting.html"/>
 <link rel="alternate" type="text/html" title="Plain HTML" href="_export/xhtml/help/scripting.xhtml"/>
 <link rel="alternate" type="text/plain" title="Wiki Markup" href="_export/raw/help/scripting.raw"/>
-<link rel="canonical" href="http://192.168.0.4:8088/help/scripting"/>
+<link rel="canonical" href="http://workcraft.org/help/scripting"/>
 <link rel="stylesheet" href="lib/exe/css.php.t.dokuwiki-light-export.css"/>
 <!--[if gte IE 9]><!-->
-<script >/*<![CDATA[*/var NS='help';var SIG=" --- \/\/[[support@workcraft.org| ]] 2024\/01\/25 15:52\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":0,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":10,"preload_per_page":100,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"plugins":{"vshare":{"youtube":"youtube\\.com\/.*[&?]v=([a-z0-9_\\-]+)","vimeo":"vimeo\\.com\\\/(\\d+)","slideshare":"slideshare.*id=(\\d+)","dailymotion":"dailymotion\\.com\/video\/([a-z0-9]+)","archiveorg":"archive\\.org\/(?:embed|details)\/([a-zA-Z0-9_\\-]+)","soundcloud":"soundcloud\\.com\/([\\w-]+\/[\\w-]+)","niconico":"nicovideo\\.jp\/watch\/(sm[0-9]+)","bitchute":"bitchute\\.com\\\/video\\\/([a-zA-Z0-9_\\-]+)","coub":"coub\\.com\\\/view\\\/([a-zA-Z0-9_\\-]+)","odysee":"odysee\\.com\/\\$\/(?:embed|download)\/([-%_?=\/a-zA-Z0-9]+)","youku":"v\\.youku\\.com\/v_show\/id_([0-9A-Za-z=]+)\\.html","bilibili":"bilibili\\.com\\\/video\\\/(BV[0-9A-Za-z]+)","msoffice":"(?:office\\.com.*[&?]videoid=([a-z0-9\\-]+))","msstream":"microsoftstream\\.com\\\/video\\\/([a-f0-9\\-]{36})"}},"id":"help:scripting","namespace":"help","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+<script >/*<![CDATA[*/var NS='help';var SIG=" --- \/\/[[support@workcraft.org| ]] 2024\/09\/02 09:39\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":0,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":10,"preload_per_page":100,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"move_allowrename":true,"plugins":{"vshare":{"youtube":"youtube\\.com\/.*[&?]v=([a-z0-9_\\-]+)","vimeo":"vimeo\\.com\\\/(\\d+)","slideshare":"slideshare.*id=(\\d+)","dailymotion":"dailymotion\\.com\/video\/([a-z0-9]+)","archiveorg":"archive\\.org\/(?:embed|details)\/([a-zA-Z0-9_\\-]+)","soundcloud":"soundcloud\\.com\/([\\w-]+\/[\\w-]+)","niconico":"nicovideo\\.jp\/watch\/(sm[0-9]+)","bitchute":"bitchute\\.com\\\/video\\\/([a-zA-Z0-9_\\-]+)","coub":"coub\\.com\\\/view\\\/([a-zA-Z0-9_\\-]+)","odysee":"odysee\\.com\/\\$\/(?:embed|download)\/([-%_?=\/a-zA-Z0-9]+)","youku":"v\\.youku\\.com\/v_show\/id_([0-9A-Za-z=]+)\\.html","bilibili":"bilibili\\.com\\\/video\\\/(BV[0-9A-Za-z]+)","msoffice":"(?:office\\.com.*[&?]videoid=([a-z0-9\\-]+))","msstream":"microsoftstream\\.com\\\/video\\\/([a-f0-9\\-]{36})"}},"id":"help:scripting","namespace":"help","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
 <script src="lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer">/*<![CDATA[*/
 /*!]]>*/</script>
@@ -70,6 +70,7 @@
 <li class="level2"><div class="li"><a href="#gui_and_exit">GUI and exit</a></div></li>
 <li class="level2"><div class="li"><a href="#global_variables">Global variables</a></div></li>
 <li class="level2"><div class="li"><a href="#workspace_functions">Workspace functions</a></div></li>
+<li class="level2"><div class="li"><a href="#editor_functions">Editor functions</a></div></li>
 <li class="level2"><div class="li"><a href="#file_operations">File operations</a></div></li>
 <li class="level2"><div class="li"><a href="#configuration">Configuration</a></div></li>
 <li class="level2"><div class="li"><a href="#command_execution">Command execution</a></div></li>
@@ -233,6 +234,15 @@ Note that <code>quit()</code> and <code>exit()</code> do not terminate Workcraft
 <li class="level1"><div class="li"> <code>setWorkingDirectory(path)</code> – set <code>path</code> as the working directory <span class="wrap_info ">since <strong>v3.3.7</strong></span></div>
 </li>
 <li class="level1"><div class="li"> <code>getWorkingDirectory()</code> – get the working directory <span class="wrap_info ">since <strong>v3.3.7</strong></span></div>
+</li>
+</ul>
+
+</div>
+
+<h3 id="editor_functions">Editor functions</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <code>select(ref, …)</code> – select the nodes passed as a list of math references <span class="wrap_info ">since <strong>v3.5.1</strong></span></div>
 </li>
 </ul>
 
@@ -1017,6 +1027,6 @@ exit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0
 
             </div></div><!-- /site -->
 
-    <div class="no"><img src="lib/exe/taskrunner.b8c1040ed18392656d54358b84976975.gif" width="2" height="1" alt="" /></div>
+    <div class="no"><img src="lib/exe/taskrunner.97318f4c724da5012edddb17f796e3bb.gif" width="2" height="1" alt="" /></div>
     <div id="screen__mode" class="no"></div></body>
 </html>
