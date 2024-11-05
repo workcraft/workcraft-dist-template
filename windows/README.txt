@@ -3,7 +3,7 @@ verify graph models. It supports a wide range of popular graph formalisms
 and provides a plugin-based framework to model and analyze new model types.
 
 To start Workcraft execute the 'workcraft.bat' batch script (or the
-'workcraft.ps1' PowerShell script) -- it sets the path to JVM (Java 11
+'workcraft.ps1' PowerShell script) -- it sets the path to JVM (Java 17
 or newer is required) and the classpath for plugins.
 
 If you happen to find a bug in Workcraft, please help the developers by

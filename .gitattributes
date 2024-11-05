@@ -1,5 +1,5 @@
 *.exe binary
 
 # Treat windows files (CRLF) as binary to avoid newline magic
-windows/*.txt -text
-windows/*.bat -text
+windows/**/*.txt -text
+windows/**/*.bat -text
