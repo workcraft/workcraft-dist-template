@@ -99,7 +99,7 @@ ProFlo expressions <a href="#refnotes:1:note1" name="refnotes:1:ref1" class="ref
 <p>
 <strong>Example 1:</strong> Specification of an inverter with input <code><span style='color:red; '>in</span></code> and output <code><span style='color:blue; '>out</span></code>. It is assumed that the intial state of the signals is <code><span style='color:red; '>in</span>=0, <span style='color:blue; '>out</span>=1</code>, and that the environment is well-behaved, i.e. does not change the value of the input until the output changes:
 </p>
-<pre class="code">{ in+; out-; in1+; out+ }</pre>
+<pre class="code">{ in+; out-; in+; out+ }</pre>
 
 <p>
 Here the interpretation of actions (like <code>in+</code>) is as in STGs, operator <code>{…}</code> denotes iteration, i.e. the behavior in braces is repeated, and operator <code>;</code> denotes sequential composition, i.e. the four actions inside <code>{…}</code> are executed sequentially, one after another.
