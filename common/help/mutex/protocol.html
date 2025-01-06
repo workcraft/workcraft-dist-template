@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>help:mutex:protocol - [Workcraft]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,mutex,protocol"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.html" title="Workcraft"/>
+<link rel="start" href="protocol.html"/>
+<link rel="contents" href="protocol.html" title="Sitemap"/>
+<link rel="manifest" href="../lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="edit" title="Edit this page" href="protocol.html"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="../_export/xhtml/help/mutex/protocol.xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../_export/raw/help/mutex/protocol.raw"/>
+<link rel="canonical" href="http://workcraft.org/help/mutex/protocol"/>
+<link rel="stylesheet" href="../lib/exe/css.php.t.dokuwiki-light-export.css"/>
+<!--[if gte IE 9]><!-->
+<script >/*<![CDATA[*/var NS='help:mutex';var SIG=" --- \/\/[[support@workcraft.org| ]] 2025\/01\/06 11:51\/\/";var JSINFO = {"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":0,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":10,"preload_per_page":100,"locktime":840,"usedraft":1,"text_btn_show":"Show page","templatename":"dokuwiki-light-export"},"plugin_folded":{"hide":"hide","reveal":"reveal"},"move_renameokay":true,"move_allowrename":true,"plugins":{"vshare":{"youtube":"youtube\\.com\/.*[&?]v=([a-z0-9_\\-]+)","vimeo":"vimeo\\.com\\\/(\\d+)","slideshare":"slideshare.*id=(\\d+)","dailymotion":"dailymotion\\.com\/video\/([a-z0-9]+)","archiveorg":"archive\\.org\/(?:embed|details)\/([a-zA-Z0-9_\\-]+)","soundcloud":"soundcloud\\.com\/([\\w-]+\/[\\w-]+)","niconico":"nicovideo\\.jp\/watch\/(sm[0-9]+)","bitchute":"bitchute\\.com\\\/video\\\/([a-zA-Z0-9_\\-]+)","coub":"coub\\.com\\\/view\\\/([a-zA-Z0-9_\\-]+)","odysee":"odysee\\.com\/\\$\/(?:embed|download)\/([-%_?=\/a-zA-Z0-9]+)","youku":"v\\.youku\\.com\/v_show\/id_([0-9A-Za-z=]+)\\.html","bilibili":"bilibili\\.com\\\/video\\\/(BV[0-9A-Za-z]+)","msoffice":"(?:office\\.com.*[&?]videoid=([a-z0-9\\-]+))","msstream":"microsoftstream\\.com\\\/video\\\/([a-f0-9\\-]{36})"}},"id":"help:mutex:protocol","namespace":"help:mutex","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script src="../lib/exe/jquery.php.t.dokuwiki-light-export.js" defer="defer">/*<![CDATA[*/
+/*!]]>*/</script>
+<script src="../lib/exe/js.php.t.dokuwiki-light-export.js" defer="defer">/*<![CDATA[*/
+/*!]]>*/</script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki-light-export loggedIn    ">
+
+        
+<!-- ********** HEADER ********** -->
+<header id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <h1 class="logo"><a href="../start.html"  accesskey="" title=""><img src="../logo.png" width="381" height="64" alt="" /></a></h1>
+            </div>
+
+    <hr class="a11y" />
+</div></header><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <main id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>help:mutex:protocol</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_fastwiki_marker" style="display:none"></div>
+<h1 id="arbitration_protocols">Arbitration protocols</h1>
+<div class="level1">
+
+<p>
+This tutorial focuses mostly on the difference between <em>early</em> and <em>late</em> arbitration protocols and explains why the former is more robust and should be preferred.
+</p>
+
+<p>
+Related information:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="https://en.wikipedia.org/wiki/Metastability_(electronics)" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/Metastability_(electronics)">Metastability</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../a2a/start.html" class="wikilink1" title="a2a:start" data-wiki-id="a2a:start">Analog-to-asynchronous elements</a> (handling poorly behaving signals (e.g. glitchy or from analog circuitry)</div>
+</li>
+</ul>
+
+</div>
+
+<h2 id="early_vs_late_arbitration_protocols">Early vs late arbitration protocols</h2>
+<div class="level2">
+
+<p>
+The arbitration protocol can be viewed as a contract between the arbiter and the rest of the circuit. The <em>early</em> and <em>late</em> arbitration protocols can be formalised as the following STGs:
+</p>
+<div class="group plugin_wrap"><div class="wrap_half wrap_column plugin_wrap"><div class="table sectionedit5"><table class="inline">
+	<tr class="row0">
+		<td class="col0"><img src="mutex-early.stg.svg" width="182" height="151" class="svgscaleinsert mediacenter" alt="help:mutex:mutex-early.stg.svg"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  Early arbitration protocol  </td>
+	</tr>
+</table></div>
+</div><div class="wrap_half wrap_column plugin_wrap"><div class="table sectionedit8"><table class="inline">
+	<tr class="row0">
+		<td class="col0"><img src="mutex-late.stg.svg" width="182" height="151" class="svgscaleinsert mediacenter" alt="help:mutex:mutex-late.stg.svg"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  Late arbitration protocol  </td>
+	</tr>
+</table></div>
+</div></div>
+<p>
+The difference is in which transitions return the token back to place <code>me</code> – in the early protocol these transitions are requests <code><span style='color:red; '>r1-</span></code> and <code><span style='color:red; '>r2-</span></code> whereas in the late protocol they are grants <code><span style='color:blue; '>g1-</span></code> and <code><span style='color:blue; '>g2-</span></code>. (The intuition for the naming of the protocols is that the requests are reset prior to grants, i.e. the token returns to <code>me</code> early or late). In Workcraft one can mark a place (<code>me</code> in these STGs) as a MUTEX place and specify the contract – this will affect the visual representation, synthesis, and verification.
+</p>
+
+<p>
+One can observe that the early protocol can execute every trace that the late protocol can execute, but not vice versa: E.g. the trace <code><span style='color:red; '>r1+</span> <span style='color:red; '>r2+</span> <span style='color:blue; '>g1+</span> <span style='color:red; '>r1-</span> <span style='color:blue; '>g2+</span></code> is possible in the early protocol but impossible in the late protocol. At the end of this trace <code><span style='color:blue; '>g1</span>=<span style='color:blue; '>g2</span>=1</code>, i.e. both grants are high, whereas the grants are guaranteed to be mutually exclusive in the late protocol.
+</p>
+
+<p>
+From the point of view of circuit design, the arbiter is usually implemented using a (pre-designed) MUTEX cell, and one has to design a circuit around it, or more precisely, an <abbr title="Signal Transition Graph">STG</abbr> which is then synthesised in a circuit. In other words, an asynchronous designer does not design a MUTEX cell (it is provided as a basic cell), but designs an <abbr title="Signal Transition Graph">STG</abbr> that has to interface a MUTEX cell. Hence, the designer can, <em>conceptually</em>, factor out the MUTEX into the environment and design an <abbr title="Signal Transition Graph">STG</abbr> using, e.g., the early or late protocol shown above. 
+</p>
+
+<p>
+The early protocol is more permissive, i.e. it places strictly fewer requirements on the MUTEX implementation, in particular it does not require the grants to be mutually exclusive. This means that an <abbr title="Signal Transition Graph">STG</abbr> designed with the early protocol is strictly more robust – the synthesised circuit will be able to cope with the grants being not mutually exclusive. On the other hand, a circuit synthesised from an <abbr title="Signal Transition Graph">STG</abbr> designed with the late protocol may malfunction if in the physical implementation the grants are not mutually exclusive.
+</p>
+
+<p>
+Hence, there are two possible way to design a robust circuit (assuming MUTEX follows at least early protocol in either case):
+</p>
+<ul>
+<li class="level1"><div class="li"> make sure that MUTEX follows not just early but also late protocol, and design the circuit using either early or late protocol;</div>
+</li>
+<li class="level1"><div class="li"> design the circuit using early protocol.</div>
+</li>
+</ul>
+
+<p>
+In the following section, we show that the former option may be problematic in practice, and so the latter option is recommended.
+</p>
+
+</div>
+
+<h2 id="can_mutex_reliably_follow_the_late_protocol">Can MUTEX reliably follow the late protocol?</h2>
+<div class="level2">
+
+<p>
+One can derive the set and reset functions for the early and late protocol, and the set functions are different:
+</p>
+<div class="group plugin_wrap"><div class="wrap_half wrap_column plugin_wrap"><div class="table sectionedit13"><table class="inline">
+	<tr class="row0">
+		<td class="col0"><img src="mutex-early.circuit.svg" width="129" height="55" class="svgscaleinsert mediacenter" alt="help:mutex:mutex-early.circuit.svg"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  Early MUTEX  </td>
+	</tr>
+</table></div>
+</div><div class="wrap_half wrap_column plugin_wrap"><div class="table sectionedit16"><table class="inline">
+	<tr class="row0">
+		<td class="col0"><img src="mutex-late.circuit.svg" width="110" height="55" class="svgscaleinsert mediacenter" alt="help:mutex:mutex-late.circuit.svg"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  Late MUTEX  </td>
+	</tr>
+</table></div>
+</div></div>
+<p>
+Of course, one cannot just implement these functions – one has to contain the metastability due to the choice between the two grants, and so the real MUTEX implementation is usually as follows (sometimes outputs are buffered):
+</p>
+
+<p>
+<img src="mutex_implementation.svg" width="252" height="113" class="svgscaleinsert mediacenter" alt="help:mutex:mutex_implementation.svg">
+</p>
+
+<p>
+Consider the state of this circuit after the trace <code><span style='color:red; '>r1+</span> <span style='color:red; '>r2+</span> <span style='color:blue; '>g1+</span> <span style='color:red; '>r1-</span></code>: It can do <code><span style='color:blue; '>g1-</span></code> and <code><span style='color:blue; '>g2+</span></code> concurrently, and there is no mechanism (other than a timing assumption) that would ensure that <code><span style='color:blue; '>g1-</span></code> happens before <code><span style='color:blue; '>g2+</span></code>; in other words, there is no causal relationship that would make <code><span style='color:blue; '>g2+</span></code> wait for <code><span style='color:blue; '>g1-</span></code>.
+</p>
+
+<p>
+One can rely on the timing assumption that <code><span style='color:blue; '>g1-</span></code> is faster than <code><span style='color:blue; '>g2+</span></code>. However, this assumption then needs to be enforced in the physical circuit, which is non-trivial – it is not enough to consider the MUTEX circuit in isolation, one also need to take into account the loads on its outputs: If the loads are sufficiently misbalanced, e.g. <code><span style='color:blue; '>g1</span></code> has a high load and <code><span style='color:blue; '>g2</span></code> has a low load, <code><span style='color:blue; '>g1-</span></code> will be slower than <code><span style='color:blue; '>g2+</span></code> and so the grants will not be mutually exclusive. 
+</p>
+
+<p>
+Hence, to enforce the late protocol, one has to not only design the MUTEX cell carefully, but also impose design rules on its use, e.g. limit the load on its outputs. This means that the permissible loads need to be characterised for all corners and technologies, which is not an easy task, and they need to be checked and obeyed during the design. These rules may also make the designs difficult to port between the technologies.
+</p>
+
+<p>
+Furthermore, sometimes it may be difficult to ensure that the load on MUTEX outputs is limited – one cannot just buffer the outputs of a late MUTEX – this, in effect, would turn the late protocol into an early protocol unless one makes further timing assumptions about the delays of these buffers. In contrast, buffering the outputs of an early MUTEX is ok, even if the buffers&#039; delays are misbalanced.
+</p>
+
+<p>
+Given all the above consideration, the early protocol should be preferred unless there are strong reasons to use the late protocol (e.g. legacy design), in which case extra care should be taken to make sure the late protocol is followed.
+</p>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo">
+                    Copyright &copy; 2014-2024 workcraft.org                </div>
+
+                
+                <hr class="a11y" />
+            </div></main><!-- /content -->
+
+        </div><!-- /wrapper -->
+
+            </div></div><!-- /site -->
+
+    <div class="no"><img src="../lib/exe/taskrunner.1b0e6ed5ccbd2b50fcfb2a6ac50816ae.gif" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>
