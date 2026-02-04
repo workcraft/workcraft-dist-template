@@ -111,10 +111,6 @@ PIN *   INV     1 999 1 0.2 1 0.2
 GATE    AOI2BB2     28  ON=!(!A1N*!A2N+B1*B2);
 PIN *   INV     1 999 1 0.2 1 0.2
 
-
-GATE    AOA212      28  ON=(A1*A2+B)*(C1+C2);
-PIN *   INV     1 999 1 0.2 1 0.2
-
 GATE    AOAI212      24  ON=!((A1*A2+B)*(C1+C2));
 PIN *   INV     1 999 1 0.2 1 0.2
 
@@ -122,8 +118,14 @@ PIN *   INV     1 999 1 0.2 1 0.2
 GATE    AO21        20  O=A1*A2+B;
 PIN *   NONINV  1 999 1 0.2 1 0.2
 
-GATE    AO22        24   O=A1*A2+B1*B2;
+GATE    AO22        24  O=A1*A2+B1*B2;
 PIN *   NONINV  1 999 1 0.2 1 0.2
+
+GATE    AO222       32  O=A1*A2+B1*B2+C1*C2;
+PIN *   INV     1 999 1 0.2 1 0.2
+
+GATE    AOA212      28  O=(A1*A2+B)*(C1+C2);
+PIN *   INV     1 999 1 0.2 1 0.2
 
 
 GATE    OAI21       16  ON=!((A1+A2)*B);
@@ -156,6 +158,9 @@ PIN *   INV     1 999 1 0.2 1 0.2
 GATE    OAI2BB2     28  ON=!((!A1N+!A2N)*(B1+B2));
 PIN *   INV     1 999 1 0.2 1 0.2
 
+GATE    OAOI212      24 ON=!((A1+A2)*B+C1*C2);
+PIN *   INV     1 999 1 0.2 1 0.2
+
 
 GATE    OA21        20  O=(A1+A2)*B;
 PIN *   NONINV  1 999 1 0.2 1 0.2
@@ -163,11 +168,10 @@ PIN *   NONINV  1 999 1 0.2 1 0.2
 GATE    OA22        24  O=(A1+A2)*(B1+B2);
 PIN *   NONINV  1 999 1 0.2 1 0.2
 
-
-GATE    OAO212      28  ON=(A1+A2)*B+C1*C2;
+GATE    OA222       32  O=(A1+A2)*(B1+B2)*(C1+C2);
 PIN *   INV     1 999 1 0.2 1 0.2
 
-GATE    OAOI212      24  ON=!((A1+A2)*B+C1*C2);
+GATE    OAO212      28  O=(A1+A2)*B+C1*C2;
 PIN *   INV     1 999 1 0.2 1 0.2
 
 
