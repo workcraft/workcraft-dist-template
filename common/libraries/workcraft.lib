@@ -141,9 +141,9 @@ PIN *   NONINV  1 999 1 0.2 1 0.2
 GATE    AOI32       24  ON=!(A1*A2*A3+B1*B2);
 PIN *   INV     1 999 1 0.2 1 0.2
 
-# Note: double negation is needed due to a bug in Petrify that fails to read "O=A1*A2*A3+B1*B2*B3"
-GATE    AO33        32  O=!!((A1*A2*A3)+(B1*B2*B3));
-PIN *   NONINV  1 999 1 0.2 1 0.2
+# Note: Petrify fails to read "O=A1*A2*A3+B1*B2*B3"
+#GATE    AO33        32  O=A1*A2*A3+B1*B2*B3;
+#PIN *   NONINV  1 999 1 0.2 1 0.2
 
 GATE    AOI33       28  ON=!(A1*A2*A3+B1*B2*B3);
 PIN *   INV     1 999 1 0.2 1 0.2
@@ -208,9 +208,9 @@ PIN *   NONINV  1 999 1 0.2 1 0.2
 GATE    OAI32       24  ON=!((A1+A2+A3)*(B1+B2));
 PIN *   INV     1 999 1 0.2 1 0.2
 
-# Note: double negation is needed due to a bug in Petrify that fails to read "O=(A1+A2+A3)*(B1+B2+B3)"
-GATE    OA33        32  O=!!((A1+A2+A3)*(B1+B2+B3));
-PIN *   NONINV  1 999 1 0.2 1 0.2
+# Note: Petrify fails to read "O=(A1+A2+A3)*(B1+B2+B3)"
+#GATE    OA33        32  O=(A1+A2+A3)*(B1+B2+B3);
+#PIN *   NONINV  1 999 1 0.2 1 0.2
 
 GATE    OAI33       28  ON=!((A1+A2+A3)*(B1+B2+B3));
 PIN *   INV     1 999 1 0.2 1 0.2
