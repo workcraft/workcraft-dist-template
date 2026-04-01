@@ -232,6 +232,15 @@ PIN *   INV     1 999 1 0.2 1 0.2
 GATE    OAO212      28  O=(A1+A2)*B+C1*C2;
 PIN *   NONINV  1 999 1 0.2 1 0.2
 
+# Inverted Majority-of-3 (i.e. Minority)
+# CMOS implementation: pull-up stack: A*(B+C)+B*C, pull-down stack: A*(B+C)+B*C, so 10 FETs
+GATE    MAJI3       24  ON=!(A*B+A*C+B*C);
+PIN *   INV     1 999 1 0.2 1 0.2
+
+# Majority-of-3, built from MAJI3 above by adding an output inverter, so 12 FETs
+GATE    MAJ3        28  O=A*B+A*C+B*C;
+PIN *   NONINV  1 999 1 0.2 1 0.2
+ 
 
 # --- CONSTANTS
 
